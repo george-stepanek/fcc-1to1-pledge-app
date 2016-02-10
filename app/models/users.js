@@ -7,12 +7,8 @@ var User = new Schema({
 	github: {
 		id: String,
 		displayName: String,
-		username: String,
-      publicRepos: Number
-	},
-   nbrClicks: {
-      clicks: Number
-   }
+		username: String
+	}
 });
 
 module.exports = mongoose.model('User', User);

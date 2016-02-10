@@ -17,7 +17,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
 
 app.use(session({
-	secret: 'secretClementine',
+	secret: 'fcc-1to1-pledge-app',
 	resave: false,
 	saveUninitialized: true
 }));
