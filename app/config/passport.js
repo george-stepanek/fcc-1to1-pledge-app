@@ -9,19 +9,14 @@ module.exports = function (passport) {
 	});
 
 	passport.deserializeUser(function (id, done) {
-		User.findById(id, function (err, user) {
+		User.findOne({ 'id': id }, { '_id': false }, function (err, user) {
 			done(err, user);
 		});
 	});
 
-	passport.use(new GitHubStrategy({
-		clientID: process.env.GITHUB_KEY,
-		clientSecret: process.env.GITHUB_SECRET,
-		callbackURL: process.env.APP_URL + 'auth/github/callback'
-	},
-	function (token, refreshToken, profile, done) {
+	var authenticate = function (token, refreshToken, profile, done) {
 		process.nextTick(function () {
-			User.findOne({ 'github.id': profile.id }, function (err, user) {
+			User.findOne({ 'id': profile.id }, function (err, user) {
 				if (err) {
 					return done(err);
 				}
@@ -31,9 +26,9 @@ module.exports = function (passport) {
 				} else {
 					var newUser = new User();
 
-					newUser.github.id = profile.id;
-					newUser.github.username = profile.username;
-					newUser.github.displayName = profile.displayName;
+					newUser.id = profile.id;
+					newUser.username = profile.username;
+					newUser.displayName = profile.displayName;
 
 					newUser.save(function (err) {
 						if (err) {
@@ -45,5 +40,11 @@ module.exports = function (passport) {
 				}
 			});
 		});
-	}));
+	};
+	
+	passport.use(new GitHubStrategy({
+		clientID: process.env.GITHUB_KEY,
+		clientSecret: process.env.GITHUB_SECRET,
+		callbackURL: process.env.APP_URL + 'auth/github/callback'
+	}, authenticate));
 };
