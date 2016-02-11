@@ -1,6 +1,7 @@
 'use strict';
 
 var path = process.cwd();
+var PledgeHandler = require(path + '/app/handlers/pledgeHandler.server.js');
 
 module.exports = function (app, passport) {
 
@@ -41,4 +42,8 @@ module.exports = function (app, passport) {
 			successRedirect: '/',
 			failureRedirect: '/login'
 		}));
+		
+	var pledgeHandler = new PledgeHandler();
+	app.route('/api/pledges/all')
+		.get(pledgeHandler.getPledges);
 };
