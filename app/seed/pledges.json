@@ -6,7 +6,7 @@
 	source: "Reuse This Bag!",
 	citation: "http://www.reusethisbag.com/25-reasons-to-go-reusable.php",
 	imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Hemdchentuete.jpg",
-	smallImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Hemdchentuete.jpg/320px-Hemdchentuete.jpg"
+	thumbnailUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Hemdchentuete.jpg/320px-Hemdchentuete.jpg"
 },
 {
 	title: "STRAWS SUCK",
@@ -16,5 +16,5 @@
 	source: "Eco-cycle",
 	citation: "http://www.ecocycle.org/bestrawfree/faqs",
 	imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Drink_with_straw.jpg",
-	smallImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Drink_with_straw.jpg/180px-Drink_with_straw.jpg"	
+	thumbnailUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Drink_with_straw.jpg/180px-Drink_with_straw.jpg"	
 }

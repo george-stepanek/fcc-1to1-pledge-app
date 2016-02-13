@@ -6,7 +6,7 @@ $("document").ready(function() {
 				return (
 					<div key={pledge._id}>
 						<p>
-							<img src={pledge.smallImageUrl}/>
+							<img src={pledge.thumbnailUrl}/>
 							<br/>
 							{pledge.title}
 						</p>

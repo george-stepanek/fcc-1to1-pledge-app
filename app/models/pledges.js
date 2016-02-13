@@ -11,8 +11,8 @@ var Pledge = new Schema({
 	source: String,
 	citation: String,
 	imageUrl: String,
-	smallImageUrl: String, // thumbnail
-	user: {
+	thumbnailUrl: String,
+	users: {
 	    id: String,
 	    when: Date
 	}
