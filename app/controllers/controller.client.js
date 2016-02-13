@@ -1,7 +1,7 @@
 $("document").ready(function() {
 	// Probably not the best way to go about this but works for now 
 	if (window.location.pathname == "/") {
-		$.get(window.location.origin + '/api/pledges/all', function (pledges) {
+		$.get(window.location.origin + '/api/all/pledges', function (pledges) {
 			var pledgeNodes = pledges.map(function(pledge) {
 				return (
 					<div key={pledge._id}>

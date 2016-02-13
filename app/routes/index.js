@@ -48,6 +48,17 @@ module.exports = function (app, passport) {
 		}));
 		
 	var pledgeHandler = new PledgeHandler();
-	app.route('/api/pledges/all')
-		.get(pledgeHandler.getPledges);
+	
+	app.route('/api/all/pledges')
+		.get(pledgeHandler.getAllPledges);
+		
+	app.route('/api/pledge/:id')
+		.get(pledgeHandler.getPledge);
+		
+	app.route('/api/my/pledges')
+		.get(pledgeHandler.getMyPledges);
+		
+	app.route('/api/my/pledge/:id')
+		.post(pledgeHandler.addMeToPledge)
+		.delete(pledgeHandler.removeMeFromPledge);
 };

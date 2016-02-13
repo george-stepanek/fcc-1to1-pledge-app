@@ -20,3 +20,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task('default', ['watch']);
+
+// to refresh the database:
+// mongo clementinejs --eval "db.pledges.remove({})"
+// mongoimport --jsonArray --db clementinejs --collection pledges --file app/seed/pledges.json
