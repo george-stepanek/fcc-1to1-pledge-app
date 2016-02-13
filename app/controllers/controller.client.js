@@ -44,7 +44,37 @@ $("document").ready(function() {
 								<br/>
 								{pledge.title}
 							</p>
-							<button className="btn btn-primary" onClick={submitForm} id={"btn" + pledge._id}>{pledged}</button>
+							<button type="button" className="btn btn-primary" data-toggle="modal" data-target={"#modal" + pledge._id}>
+						  		View More
+							</button>
+							&nbsp;
+							<button className="btn btn-success" onClick={submitForm} id={"btn" + pledge._id}>
+								{pledged}
+							</button>
+							<div className="modal fade" id={"modal" + pledge._id} tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+								<div className="modal-dialog" role="document">
+									<div className="modal-content">
+										<div className="modal-header">
+											<button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 className="modal-title" id="modalLabel">{pledge.title}</h4>
+										</div>
+										<div className="modal-body">
+											<img src={pledge.thumbnailUrl}/>
+											<br/>
+											{pledge.explanation}
+											<br/>
+											Pledge to save {pledge.impactPerWeek + " " + pledge.impactUnits} per week!
+											<br/>
+											<cite>
+												Source: <a href={pledge.citation} target="_blank">{pledge.source}</a>
+											</cite>
+										</div>
+										<div className="modal-footer">
+											<button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
 							<hr/>
 						</div>
 					);
