@@ -12,10 +12,10 @@ var Pledge = new Schema({
 	citation: String,
 	imageUrl: String,
 	thumbnailUrl: String,
-	users: {
+	users: [ {
 	    id: String,
 	    when: Date
-	}
+	} ]
 });
 
 module.exports = mongoose.model('Pledge', Pledge);
