@@ -64,6 +64,9 @@ $("document").ready(function() {
 											<p>
 												Pledge to save <b>{pledge.impactPerWeek + " " + pledge.impactUnits}</b> per week.
 											</p>
+											<p>
+												<b>{pledge.impactSoFar + " " +  pledge.impactUnits}</b> saved already!
+											</p>
 											<cite>
 												Source: <a href={pledge.citation} target="_blank">{pledge.source}</a>
 											</cite>

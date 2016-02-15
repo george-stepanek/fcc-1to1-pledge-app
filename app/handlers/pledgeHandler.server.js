@@ -3,25 +3,38 @@
 var Pledges = require('../models/pledges.js');
 
 function PledgeHandler () {
+	
+	function calculateImpactSoFar (result) {
+	    for(var i = 0; i < result.length; i++) {
+	    	result[i].impactSoFar = 0;
+	    	if(result[0].users) {
+	    		for(var j = 0; j < result[i].users.length; j++) {
+	    			var millisecsDiff = new Date().getTime() - result[i].users[j].when.getTime();
+				    result[i].impactSoFar += Math.round(millisecsDiff / (1000 * 60 * 60 * 24)) * result[i].impactPerWeek;
+	    		}
+	    	}
+	    }
+	    return result;
+	}
     
 	this.getAllPledges = function (req, res) {
 		Pledges.find({ }).exec(function (err, result) { 
-		    if (err) { throw err; } 
-		    res.json(result);
+		    if (err) { throw err; }
+		    res.json(calculateImpactSoFar(result));
 		});
 	};
 	
 	this.getPledge = function (req, res) {
 		Pledges.findOne({ '_id': req.params.id }).exec(function (err, result) { 
 		    if (err) { throw err; } 
-		    res.json(result);
+		    res.json(calculateImpactSoFar([result])[0]);
 		});
 	};
 	
 	this.getMyPledges = function (req, res) {
 		Pledges.find({ 'users.id': req.user.id }).exec(function (err, result) { 
 		    if (err) { throw err; } 
-		    res.json(result);
+		    res.json(calculateImpactSoFar(result));
 		});
 	};
 	

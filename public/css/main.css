@@ -26,8 +26,8 @@ body {
 }
 .pledgeTitle { 
   position: absolute; 
-  top: 20px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
 }
 .pledgeTitle span { 
   color: white;

@@ -7,6 +7,7 @@ var Pledge = new Schema({
 	title: String,
 	explanation: String,
 	impactPerWeek: Number,
+	impactSoFar: Number,
 	impactUnits: String,
 	source: String,
 	citation: String,
