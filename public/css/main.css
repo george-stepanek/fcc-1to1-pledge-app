@@ -17,6 +17,9 @@ body {
   line-height: 45px;
   background-color: #f5f5f5;
 }
+.footer p {
+  margin-bottom: 0px;
+}
 
 /* Pledge thumbnails styles
 -------------------------------------------------- */
