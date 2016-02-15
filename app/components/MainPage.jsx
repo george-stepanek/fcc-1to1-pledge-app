@@ -1,3 +1,50 @@
+var Pledge = React.createClass({
+	submitButton: function() {
+		var self = this;
+		var id = "btn" + this.props.pledge._id;
+
+		// If the pledge has pledged users AND one of those users is me
+		if (this.props.pledge.users && this.props.pledge.users.filter(function(user) {return user.id == self.props.user.id;}).length > 0) {
+			return ( <button className="btn-danger" onClick={this.props.removeMe} id={id}>I've changed my mind</button> );
+		}
+		else {
+			return ( <button className="btn-success" onClick={this.props.addMe} id={id}>I pledge to do this</button> );
+		}
+	},
+	render: function() {
+		return (
+			<div key={this.props.pledge._id}>
+				<div className="pledgeLink" data-toggle="modal" data-target={"#modal" + this.props.pledge._id}>
+					<img src={this.props.pledge.thumbnailUrl}/>
+					<h4 className="pledgeTitle"><span>{this.props.pledge.title}</span></h4>
+				</div>
+				<div className="modal fade" id={"modal" + this.props.pledge._id} role="dialog" aria-labelledby="modalLabel">
+					<div className="modal-dialog" role="document">
+						<div className="modal-content">
+							<div className="modal-header">
+								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 className="modal-title" id="modalLabel">{this.props.pledge.title}</h4>
+							</div>
+							<div className="modal-body">
+								<p><img src={this.props.pledge.thumbnailUrl}/></p>
+								<p>{this.props.pledge.explanation}</p>
+								<p>Pledge to save <b>{this.props.pledge.impactPerWeek + " " + this.props.pledge.impactUnits}</b> per week.</p>
+								<p><b>{this.props.pledge.impactSoFar + " " +  this.props.pledge.impactUnits}</b> saved already!</p>
+								<cite>Source: <a href={this.props.pledge.citation} target="_blank">{this.props.pledge.source}</a></cite>
+							</div>
+							<div className="modal-footer">
+								{this.submitButton()}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+
 var MainPage = React.createClass({
     getInitialState: function() {
         var user, pledges;
@@ -19,92 +66,48 @@ var MainPage = React.createClass({
         });
         return {user: user, pledges: pledges};
     },
-    addMeToPledge: function() {
-    	
+    refreshPledges: function(id) {
+    	var self = this;
+        $.ajax({
+    		url: window.location.origin + '/api/all/pledges',
+    		type: "get",
+    		success: function(result) {
+		        $("#" + id).prop("disabled", false);
+		        self.setState({pledges: result});
+		    }
+        });    	
     },
-    removeMeFromPledge: function() {
-    	
+    addMe: function(e) {
+		$("#" + e.target.id).prop("disabled", true);
+		var id = e.target.id.replace("btn", "");
+		var self = this;
+		
+		$.ajax({
+			url: "/api/my/pledge/" + id,
+			type: "post",
+			success: function(result) {
+		        self.refreshPledges(e.target.id);
+		    }
+		});
+    },
+    removeMe: function(e) {
+		$("#" + e.target.id).prop("disabled", true);
+		var id = e.target.id.replace("btn", "");
+		var self = this;
+		
+		$.ajax({
+			url: "/api/my/pledge/" + id,
+			type: "delete",
+			success: function(result) {
+		        self.refreshPledges(e.target.id);
+		    }
+		});
     },
     render: function() {
+    	var self = this;
         var user = this.state.user;
 		var pledgeNodes = this.state.pledges.map(function(pledge) {
-			var method = "post"; // Default type
-			var pledged = "I pledge to do this"; // Default button text
-			var btnClass = "btn-success"; // Default button class
-			// If the pledge has pledged users
-			if (pledge.users) {
-				// Check if loggedin user has already pledged
-				if (pledge.users.filter(function(val) {return val.id == user.id;}).length > 0) {
-					btnClass = "btn-danger";
-					pledged = "I've changed my mind";
-					method = "delete";
-				}
-			}
-			var action = "/api/my/pledge/" + pledge._id; // Set url
-			// Button click function
-			function submitForm() {
-				// Get the pledge method (post/delete) and text
-				var method = $("#method" + pledge._id).val();
-				var pledged = $("#btn" + pledge._id).text();
-				// Disable button
-				$("#btn" + pledge._id).prop("disabled", true);
-				// Send ajax call
-				$.ajax({
-					url: action,
-					type: method,
-					success: function(result) {
-						// On success, change method and btn text
-						$("#method" + pledge._id).val(method == "post" ? "delete" : "post");
-				        $("#btn" + pledge._id).text(pledged == "I pledge to do this" ? "I've changed my mind" : "I pledge to do this");
-				        // Change class (color)
-				        $("#btn" + pledge._id).toggleClass("btn-success btn-danger");
-				        // Enable button
-				        $("#btn" + pledge._id).prop("disabled", false);
-				    }
-				});
-			}
-			// Return pseudo-form
-			return (
-				<div key={pledge._id}>
-					<input type="hidden" id={"method" + pledge._id} value={method}/>
-					<div className="pledgeLink" data-toggle="modal" data-target={"#modal" + pledge._id}>
-						<img src={pledge.thumbnailUrl}/>
-						<h4 className="pledgeTitle"><span>{pledge.title}</span></h4>
-					</div>
-					<div className="modal fade" id={"modal" + pledge._id} role="dialog" aria-labelledby="modalLabel">
-						<div className="modal-dialog" role="document">
-							<div className="modal-content">
-								<div className="modal-header">
-									<button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									<h4 className="modal-title" id="modalLabel">{pledge.title}</h4>
-								</div>
-								<div className="modal-body">
-									<p>
-										<img src={pledge.thumbnailUrl}/>
-									</p>
-									<p>
-										{pledge.explanation}
-									</p>
-									<p>
-										Pledge to save <b>{pledge.impactPerWeek + " " + pledge.impactUnits}</b> per week.
-									</p>
-									<p>
-										<b>{pledge.impactSoFar + " " +  pledge.impactUnits}</b> saved already!
-									</p>
-									<cite>
-										Source: <a href={pledge.citation} target="_blank">{pledge.source}</a>
-									</cite>
-								</div>
-								<div className="modal-footer">
-									<button className={"btn " + btnClass} onClick={submitForm} id={"btn" + pledge._id}>
-										{pledged}
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			);
+			return ( <Pledge pledge={pledge} user={user} removeMe={self.removeMe} addMe={self.addMe} key={pledge._id} /> );
 		});
 				
         return (

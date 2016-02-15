@@ -52,5 +52,13 @@ function PledgeHandler () {
 		    res.json(result);
 		});
 	};
+	
+	this.searchPledges = function(req, res) {
+		var q = req.query.q || "";
+		var re = RegExp(q, "i");
+		Pledges.find({ 'title': re}).exec(function (err, result) { 	
+			res.json(result);
+		});
+	};
 }
 module.exports = PledgeHandler;

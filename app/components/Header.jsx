@@ -1,5 +1,8 @@
 var Header = React.createClass({
 	render: function() {
+		function submitForm() {
+			
+		}
         return (
     		<nav className="navbar navbar-default">
     			<div className="container-fluid">
@@ -22,9 +25,9 @@ var Header = React.createClass({
     						
     					</ul>
     					<ul className="nav navbar-nav navbar-right">
-    						<form className="navbar-form navbar-left" role="search">
+    						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
     							<div className="input-group">
-    								<input type="text" className="form-control" placeholder="Search pledges..."/>
+    								<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
     								<span className="input-group-btn">
     									<button type="submit" className="btn btn-default">Search</button>
     								</span>
