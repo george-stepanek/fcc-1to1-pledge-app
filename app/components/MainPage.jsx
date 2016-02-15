@@ -19,6 +19,12 @@ var MainPage = React.createClass({
         });
         return {user: user, pledges: pledges};
     },
+    addMeToPledge: function() {
+    	
+    },
+    removeMeFromPledge: function() {
+    	
+    },
     render: function() {
         var user = this.state.user;
 		var pledgeNodes = this.state.pledges.map(function(pledge) {

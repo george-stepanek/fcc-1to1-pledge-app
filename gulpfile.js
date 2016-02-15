@@ -3,7 +3,7 @@ var concat = require('gulp-concat');
 var react = require('gulp-react');
 
 var path = {
-  JS: ['app/controllers/*.js*'],
+  JS: ['app/components/*.js*'],
   CONCAT_FILE: 'build.js',
   DEST: 'public/scripts'
 };

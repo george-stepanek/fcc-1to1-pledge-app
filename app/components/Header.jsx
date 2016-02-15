@@ -23,10 +23,12 @@ var Header = React.createClass({
     					</ul>
     					<ul className="nav navbar-nav navbar-right">
     						<form className="navbar-form navbar-left" role="search">
-    							<div className="form-group">
-    							<input type="text" className="form-control" placeholder="Search pledges..."/>
+    							<div className="input-group">
+    								<input type="text" className="form-control" placeholder="Search pledges..."/>
+    								<span className="input-group-btn">
+    									<button type="submit" className="btn btn-default">Search</button>
+    								</span>
     							</div>
-    							<button type="submit" className="btn btn-default">Search</button>
     						</form>
     						<li className="dropdown">
     							<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span className="caret"></span></a>
