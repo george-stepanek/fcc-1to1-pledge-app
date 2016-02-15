@@ -10,7 +10,7 @@ function PledgeHandler () {
 	    	if(result[0].users) {
 	    		for(var j = 0; j < result[i].users.length; j++) {
 	    			var millisecsDiff = new Date().getTime() - result[i].users[j].when.getTime();
-				    result[i].impactSoFar += Math.round(millisecsDiff / (1000 * 60 * 60 * 24)) * result[i].impactPerWeek;
+				    result[i].impactSoFar += Math.round(millisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 	    		}
 	    	}
 	    }
