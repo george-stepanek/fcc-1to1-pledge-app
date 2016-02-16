@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp transform"
+    "postinstall": "gulp transform && mongoimport --jsonArray --db heroku_snsk01fw --collection pledges --file app/seed/pledges.json"
   },
   "author": "Herman Fassett & George Stepanek",
   "dependencies": {
