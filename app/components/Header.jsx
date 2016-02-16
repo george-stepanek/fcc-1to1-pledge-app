@@ -49,4 +49,4 @@ var Header = React.createClass({
     		</nav>
 		);
 	}
-});    		
+});
