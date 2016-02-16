@@ -4,8 +4,8 @@ var LoginPage = React.createClass({
             <div>
                 <Header />
         		<div className="container">
-        		 	<a className="btn btn-social btn-github" href="/auth/github">
-        		    	<i className="fa fa-github"></i> Login with GitHub
+        		 	<a className="btn btn-social btn-facebook" href="/auth/facebook">
+        		    	<i className="fa fa-facebook"></i> Login with Facebook
         		  	</a>
         		  	&nbsp;
         		  	<a className="btn btn-social btn-google" href="/auth/google">

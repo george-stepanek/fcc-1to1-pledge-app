@@ -1,6 +1,17 @@
 var MainPage = React.createClass({
     getInitialState: function() {
-        var user, pledges;
+	    $("document").ready(function () {
+	        // recommended fix for facebook authentication bug
+	        if (window.location.hash && window.location.hash === "#_=_") {
+	            if (window.history && window.history.pushState) {
+	                window.history.pushState("", document.title, window.location.pathname);
+	            } else {
+	                location.hash = "";
+	            }
+	        }
+	    });
+    
+    	var user, pledges;
         $.ajax({
     		url: window.location.origin + '/api/:id',
     		async: false,

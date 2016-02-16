@@ -1,7 +1,7 @@
 'use strict';
 
-var GitHubStrategy = require('passport-github').Strategy;
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 var User = require('../models/users');
 
 module.exports = function (passport) {
@@ -14,6 +14,10 @@ module.exports = function (passport) {
 			done(err, user);
 		});
 	});
+	
+	var googleAuthenticate = function (req, token, refreshToken, profile, done) {
+		return authenticate(token, refreshToken, profile, done);
+	};
 
 	var authenticate = function (token, refreshToken, profile, done) {
 		process.nextTick(function () {
@@ -42,20 +46,18 @@ module.exports = function (passport) {
 		});
 	};
 	
-	var googleAuthenticate = function (req, token, refreshToken, profile, done) {
-		return authenticate(token, refreshToken, profile, done);
-	};
-	
-	passport.use(new GitHubStrategy({
-		clientID: process.env.GITHUB_KEY,
-		clientSecret: process.env.GITHUB_SECRET,
-		callbackURL: process.env.APP_URL + 'auth/github/callback'
-	}, authenticate));
-	
 	passport.use(new GoogleStrategy({
 		clientID: process.env.GOOGLE_CLIENT_ID,
 		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 		callbackURL: process.env.APP_URL + 'auth/google/callback',
     	passReqToCallback: false
 	}, googleAuthenticate));
+	
+	passport.use(new FacebookStrategy({
+		clientID: process.env.FACEBOOK_KEY,
+		clientSecret: process.env.FACEBOOK_SECRET,
+		callbackURL: process.env.APP_URL + 'auth/facebook/callback',
+		profileFields: ['id', 'displayName', 'photos']
+	},
+	authenticate));
 };

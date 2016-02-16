@@ -1,8 +1,5 @@
 var Header = React.createClass({
 	render: function() {
-		function submitForm() {
-			
-		}
         return (
     		<nav className="navbar navbar-default">
     			<div className="container-fluid">

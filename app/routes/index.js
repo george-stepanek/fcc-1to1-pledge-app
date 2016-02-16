@@ -39,15 +39,6 @@ module.exports = function (app, passport) {
 			res.json(req.user);
 		});
 
-	app.route('/auth/github')
-		.get(passport.authenticate('github'));
-
-	app.route('/auth/github/callback')
-		.get(passport.authenticate('github', {
-			successRedirect: '/',
-			failureRedirect: '/login'
-		}));
-
 	app.route('/auth/google')
 		.get(passport.authenticate('google', { scope: [ 'profile' ] } ));
 
@@ -55,6 +46,15 @@ module.exports = function (app, passport) {
 		.get(passport.authenticate('google', {
 			successRedirect: '/',
 			failureRedirect: '/login'
+		}));
+
+	app.route('/auth/facebook')
+		.get(passport.authenticate('facebook'));
+
+	app.route('/auth/facebook/callback')
+		.get(passport.authenticate('facebook', {
+			successRedirect: '/',
+			failureRedirect: '/'
 		}));
 		
 	var pledgeHandler = new PledgeHandler();
