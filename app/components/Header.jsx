@@ -17,8 +17,8 @@ var Header = React.createClass({
     				{/* Collect the nav links, forms, and other content for toggling */}
     				<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     					<ul className="nav navbar-nav">
-    						<li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
-    						<li><a href="#">Pledge</a></li>
+    						<li className="active"><a href="/">Home <span className="sr-only">(current)</span></a></li>
+    						<li><a href="/">My Pledges</a></li>
     						
     					</ul>
     					<ul className="nav navbar-nav navbar-right">
@@ -26,7 +26,7 @@ var Header = React.createClass({
     							<div className="input-group">
     								<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
     								<span className="input-group-btn">
-    									<button type="submit" className="btn btn-default">Search</button>
+    									<button type="submit" className="btn btn-default" disabled="true">Search</button>
     								</span>
     							</div>
     						</form>
@@ -34,8 +34,6 @@ var Header = React.createClass({
     							<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span className="caret"></span></a>
     							<ul className="dropdown-menu">
     								<li><a href="/profile">Profile</a></li>
-    								<li><a href="#">Pledges</a></li>
-    								<li><a href="#">Settings</a></li>
     								<li role="separator" className="divider"></li>
     								<li><a href="/logout">Logout</a></li>
     							</ul>
