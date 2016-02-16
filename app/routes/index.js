@@ -47,6 +47,15 @@ module.exports = function (app, passport) {
 			successRedirect: '/',
 			failureRedirect: '/login'
 		}));
+
+	app.route('/auth/google')
+		.get(passport.authenticate('google', { scope: [ 'profile' ] } ));
+
+	app.route('/auth/google/callback')
+		.get(passport.authenticate('google', {
+			successRedirect: '/',
+			failureRedirect: '/login'
+		}));
 		
 	var pledgeHandler = new PledgeHandler();
 	

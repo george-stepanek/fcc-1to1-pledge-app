@@ -1,6 +1,7 @@
 'use strict';
 
 var GitHubStrategy = require('passport-github').Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var User = require('../models/users');
 
 module.exports = function (passport) {
@@ -27,7 +28,6 @@ module.exports = function (passport) {
 					var newUser = new User();
 
 					newUser.id = profile.id;
-					newUser.username = profile.username;
 					newUser.displayName = profile.displayName;
 
 					newUser.save(function (err) {
@@ -42,9 +42,20 @@ module.exports = function (passport) {
 		});
 	};
 	
+	var googleAuthenticate = function (req, token, refreshToken, profile, done) {
+		return authenticate(token, refreshToken, profile, done);
+	};
+	
 	passport.use(new GitHubStrategy({
 		clientID: process.env.GITHUB_KEY,
 		clientSecret: process.env.GITHUB_SECRET,
 		callbackURL: process.env.APP_URL + 'auth/github/callback'
 	}, authenticate));
+	
+	passport.use(new GoogleStrategy({
+		clientID: process.env.GOOGLE_CLIENT_ID,
+		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+		callbackURL: process.env.APP_URL + 'auth/google/callback',
+    	passReqToCallback: false
+	}, googleAuthenticate));
 };

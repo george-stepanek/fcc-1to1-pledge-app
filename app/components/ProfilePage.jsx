@@ -12,12 +12,11 @@ var ProfilePage = React.createClass({
         return {user: user};
     },
 	render: function() {
-	    var name = (this.state.user.displayName !== null ? this.state.user.displayName : this.state.user.username);
         return (
             <div>
                 <Header />
         		<div className="container">
-        			<User name={name} />
+        			<User name={this.state.user.displayName} />
         			<a href="/logout">Logout</a>
         		</div>
         	    <Footer />
