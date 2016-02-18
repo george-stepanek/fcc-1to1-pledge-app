@@ -4,13 +4,19 @@ var Pledges = require('../models/pledges.js');
 
 function PledgeHandler () {
 	
-	function calculateImpactSoFar (result) {
+	function calculateImpactSoFar (req, result) {
 	    for(var i = 0; i < result.length; i++) {
 	    	result[i].impactSoFar = 0;
-	    	if(result[0].users) {
+	    	if(result[i].users) {
 	    		for(var j = 0; j < result[i].users.length; j++) {
 	    			var millisecsDiff = new Date().getTime() - result[i].users[j].when.getTime();
 				    result[i].impactSoFar += Math.round(millisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+	    		}
+	    		
+	    		var meIfPledged = result[i].users.filter(function(user) {return user.id == req.user.id;});
+	    		if(meIfPledged.length > 0) {
+	    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
+				    result[i].myImpactSoFar = Math.round(myMillisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 	    		}
 	    	}
 	    }
@@ -20,7 +26,7 @@ function PledgeHandler () {
 	this.getAllPledges = function (req, res) {
 		Pledges.find({ }).exec(function (err, result) { 
 		    if (err) { throw err; }
-		    res.json(calculateImpactSoFar(result));
+		    res.json(calculateImpactSoFar(req, result));
 		});
 	};
 	

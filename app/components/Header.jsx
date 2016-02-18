@@ -19,7 +19,6 @@ var Header = React.createClass({
     					<ul className="nav navbar-nav">
     						<li className="active"><a href="/">Home <span className="sr-only">(current)</span></a></li>
     						<li><a href="/">My Pledges</a></li>
-    						
     					</ul>
     					<ul className="nav navbar-nav navbar-right">
     						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
