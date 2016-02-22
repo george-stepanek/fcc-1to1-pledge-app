@@ -1,6 +1,7 @@
 'use strict';
 
 var Pledges = require('../models/pledges.js');
+var testid = "12345678";
 
 function PledgeHandler () {
 	
@@ -40,22 +41,25 @@ function PledgeHandler () {
 	};
 	
 	this.getMyPledges = function (req, res) {
-		Pledges.find({ 'users.id': req.user.id }).exec(function (err, result) { 
-		    if (err) { throw err; } 
-		    res.json(calculateImpactSoFar(result));
+		var id = req.user ? req.user.id : testid;
+		Pledges.find({ 'users.id': id }).exec(function (err, result) { 
+			if (err) { throw err; } 
+			res.json(calculateImpactSoFar(req, result));
 		});
 	};
 	
 	this.addMeToPledge = function (req, res) {
-		var user = { id: req.user.id, when: new Date() };
+		var id = req.user ? req.user.id : testid;
+		var user = { id: id, when: new Date() };
 		Pledges.findOneAndUpdate({ '_id': req.params.id }, { $push: { 'users': user } }).exec(function (err, result) { 
-		    if (err) { throw err; } 
+			if (err) { throw err; } 
 		    res.json(result);
 		});
 	};
 	
 	this.removeMeFromPledge = function (req, res) {
-		Pledges.findOneAndUpdate({ '_id': req.params.id }, { $pull: { "users" : { id: req.user.id } } }).exec(function (err, result) { 
+		var id = req.user ? req.user.id : testid;
+		Pledges.findOneAndUpdate({ '_id': req.params.id }, { $pull: { "users" : { id: id } } }).exec(function (err, result) { 
 		    if (err) { throw err; } 
 		    res.json(result);
 		});
@@ -65,7 +69,8 @@ function PledgeHandler () {
 		var q = req.query.q || "";
 		var re = RegExp(q, "i");
 		Pledges.find({ 'title': re}).exec(function (err, result) { 	
-			res.json(result);
+		    if (err) { throw err; } 
+		    res.json(result);
 		});
 	};
 }
