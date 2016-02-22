@@ -22,5 +22,10 @@
     "passport": "^0.3.0",
     "passport-facebook": "^2.1.0",
     "passport-google-oauth2": "^0.1.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.2.2",
+    "supertest": "^1.2.0"
   }
 }

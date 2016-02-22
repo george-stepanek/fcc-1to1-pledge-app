@@ -13,10 +13,12 @@ function PledgeHandler () {
 				    result[i].impactSoFar += Math.round(millisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 	    		}
 	    		
-	    		var meIfPledged = result[i].users.filter(function(user) {return user.id == req.user.id;});
-	    		if(meIfPledged.length > 0) {
-	    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
-				    result[i].myImpactSoFar = Math.round(myMillisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+	    		if(req.user) {
+		    		var meIfPledged = result[i].users.filter(function(user) {return user.id == req.user.id;});
+		    		if(meIfPledged.length > 0) {
+		    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
+					    result[i].myImpactSoFar = Math.round(myMillisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+		    		}
 	    		}
 	    	}
 	    }
