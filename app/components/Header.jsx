@@ -21,7 +21,7 @@ var Header = React.createClass({
     						<li><a href="/">My Pledges</a></li>
     					</ul>
     					<ul className="nav navbar-nav navbar-right">
-    						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
+    						<form className="navbar-form navbar-left" role="search" action="/api/search/pledges" method="get">
     							<div className="input-group">
     								<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
     								<span className="input-group-btn">
