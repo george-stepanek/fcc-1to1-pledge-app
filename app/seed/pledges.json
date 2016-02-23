@@ -18,4 +18,14 @@
 	"citation": "http://www.ecocycle.org/bestrawfree/faqs",
 	"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Drink_with_straw.jpg",
 	"thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Drink_with_straw.jpg/180px-Drink_with_straw.jpg"	
+},
+{
+	"title": "LOVE THOSE LEFTOVERS",
+	"explanation": "Cut down on food waste by ensuring that you have finished all perishable food in the fridge before shopping for more. If there is perishable food, figure out what you can incorporate into more meals!",
+	"impactPerWeek": 5,
+	"impactUnits": "pounds of food",
+	"source": "United States Department of Agriculture",
+	"citation": "http://www.rona.unep.org/documents/news/RONA%20Food%20Waste%20Fact%20Sheet.pdf",
+	"imageUrl": "",
+	"thumbnailUrl": "http://placehold.it/240x240"	
 }]
