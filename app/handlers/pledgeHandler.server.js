@@ -68,7 +68,7 @@ function PledgeHandler () {
 	this.searchPledges = function(req, res) {
 		Pledges.find({ 'title': RegExp(req.query.q || "", "i")}).exec(function (err, result) { 	
 		    if (err) { throw err; } 
-		    res.json(result);
+		    res.json(calculateImpactSoFar(req, result));
 		});
 	};
 }
