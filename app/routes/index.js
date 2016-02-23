@@ -59,7 +59,7 @@ module.exports = function (app, passport) {
 		
 	var pledgeHandler = new PledgeHandler();
 	
-	app.route('/search')
+	app.route('/api/search/pledges')
 		.get(pledgeHandler.searchPledges);
 	
 	app.route('/api/all/pledges')

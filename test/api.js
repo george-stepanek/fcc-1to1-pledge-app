@@ -4,19 +4,29 @@ var server = require("supertest").agent("http://localhost:" + process.env.PORT);
 describe('pledges api', function() {
     var pledgeId;
     
-    it('should return some pledges', function(done) {
+    it('should get some pledges', function(done) {
         server
             .get('/api/all/pledges')
             .expect("Content-type",/json/)
             .expect(200)
             .end(function(err,res){
                 if(err) throw err;
-                
                 res.status.should.equal(200);
                 res.body.length.should.be.above(0);
-                res.body[0].title.should.be.String;
-                
                 pledgeId = res.body[0]._id;
+                done();
+            });
+    });
+
+    it('should get a specific pledge', function(done) {
+        server
+            .get('/api/pledge/' + pledgeId)
+            .expect("Content-type",/json/)
+            .expect(200)
+            .end(function(err,res){
+                if(err) throw err;
+                res.status.should.equal(200);
+                res.body.title.should.be.String;
                 done();
             });
     });

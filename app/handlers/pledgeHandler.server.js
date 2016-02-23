@@ -34,9 +34,9 @@ function PledgeHandler () {
 	};
 	
 	this.getPledge = function (req, res) {
-		Pledges.findOne({ '_id': req.params.id }).exec(function (err, result) { 
+		Pledges.findOne({ '_id': req.params.id }).exec(function (err, result) {
 		    if (err) { throw err; } 
-		    res.json(calculateImpactSoFar([result])[0]);
+		    res.json(calculateImpactSoFar(req, [result])[0]);
 		});
 	};
 	
