@@ -1,4 +1,4 @@
-var MainPage = React.createClass({
+var MyPledgesPage = React.createClass({
     getInitialState: function() {
 	    $("document").ready(function () {
 	        // recommended fix for facebook authentication bug
@@ -13,7 +13,7 @@ var MainPage = React.createClass({
     
     	var pledges;
         $.ajax({
-    		url: window.location.origin + '/api/all/pledges',
+    		url: window.location.origin + '/api/my/pledges',
     		async: false,
     		type: "get",
     		success: function(result) {
@@ -25,7 +25,7 @@ var MainPage = React.createClass({
     refreshPledges: function(id) {
     	var self = this;
         $.ajax({
-    		url: window.location.origin + '/api/all/pledges',
+    		url: window.location.origin + '/api/my/pledges',
     		type: "get",
     		success: function(result) {
 		        $("#" + id).prop("disabled", false);
