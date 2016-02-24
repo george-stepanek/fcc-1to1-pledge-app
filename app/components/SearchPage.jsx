@@ -1,8 +1,10 @@
-var MainPage = React.createClass({
+var SearchPage = React.createClass({
+    searchTerm: "",
     getInitialState: function() {
-    	var pledges;
+        this.searchTerm = window.location.search.replace("?", "").split("=")[1];
+    	var pledges, self = this;
         $.ajax({
-    		url: window.location.origin + '/api/all/pledges',
+    		url: window.location.origin + '/api/search/pledges?q=' + self.searchTerm,
     		async: false,
     		type: "get",
     		success: function(result) {
@@ -14,7 +16,7 @@ var MainPage = React.createClass({
     refreshPledges: function(id) {
     	var self = this;
         $.ajax({
-    		url: window.location.origin + '/api/all/pledges',
+    		url: window.location.origin + '/api/search/pledges?q=' + self.searchTerm,
     		type: "get",
     		success: function(result) {
 		        $("#" + id).prop("disabled", false);

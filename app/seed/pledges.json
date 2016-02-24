@@ -1,5 +1,5 @@
 [{
-	"title": "REFUSE THE BAG",
+	"title": "Refuse The Bag",
 	"explanation": "Say no to plastic bags when eating out. Plastic can take 1,000 years to degrade in a landfill. Bring your own bag!",
 	"impactPerWeek": 8,
 	"impactUnits": "plastic bags",
@@ -10,7 +10,7 @@
 	"users": [ { "id": "12345678", "when": "2015-12-12" } ]
 },
 {
-	"title": "STRAWS SUCK",
+	"title": "Straws Suck",
 	"explanation": "Refuse straws when eating out at restaurants. Humans use 500,000,000 per day.",
 	"impactPerWeek": 12,
 	"impactUnits": "straws",
@@ -20,7 +20,7 @@
 	"thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Drink_with_straw.jpg/180px-Drink_with_straw.jpg"	
 },
 {
-	"title": "LOVE THOSE LEFTOVERS",
+	"title": "Love Those Leftovers",
 	"explanation": "Cut down on food waste by ensuring that you have finished all perishable food in the fridge before shopping for more. If there is perishable food, figure out what you can incorporate into more meals!",
 	"impactPerWeek": 5,
 	"impactUnits": "pounds of food",

@@ -31,6 +31,19 @@ describe('pledges api', function() {
             });
     });
 
+    it('should search a pledge', function(done) {
+        server
+            .get('/api/search/pledges?q=straws+suck')
+            .expect("Content-type",/json/)
+            .expect(200)
+            .end(function(err,res){
+                if(err) throw err;
+                res.status.should.equal(200);
+                res.body.length.should.equal(1);
+                done();
+            });
+    });
+
     it('should add me to a pledge', function(done) {
         server
             .post('/api/my/pledge/' + pledgeId)

@@ -17,15 +17,15 @@ var Header = React.createClass({
     				{/* Collect the nav links, forms, and other content for toggling */}
     				<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     					<ul className="nav navbar-nav">
-    						<li className="active"><a href="/">Home <span className="sr-only">(current)</span></a></li>
+    						<li className="active"><a href="/">Home</a></li>
     						<li><a href="/mypledges">My Pledges</a></li>
     					</ul>
     					<ul className="nav navbar-nav navbar-right">
-    						<form className="navbar-form navbar-left" role="search" action="/api/search/pledges" method="get">
+    						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
     							<div className="input-group">
     								<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
     								<span className="input-group-btn">
-    									<button type="submit" className="btn btn-default" disabled="true">Search</button>
+    									<button type="submit" className="btn btn-default">Search</button>
     								</span>
     							</div>
     						</form>

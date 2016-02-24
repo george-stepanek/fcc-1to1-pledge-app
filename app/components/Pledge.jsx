@@ -35,7 +35,7 @@ var Pledge = React.createClass({
 			<div key={this.props.pledge._id}>
 				<div className="pledgeLink" data-toggle="modal" data-target={"#modal" + this.props.pledge._id}>
 					<img src={this.props.pledge.thumbnailUrl}/>
-					<h4 className="pledgeTitle"><span>{this.props.pledge.title}</span></h4>
+					<h4 className="pledgeTitle"><span>{this.props.pledge.title.toUpperCase()}</span></h4>
 				</div>
 				<div className="modal fade" id={"modal" + this.props.pledge._id} role="dialog" aria-labelledby="modalLabel">
 					<div className="modal-dialog" role="document">
@@ -44,7 +44,7 @@ var Pledge = React.createClass({
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 className="modal-title" id="modalLabel">{this.props.pledge.title}</h4>
+								<h4 className="modal-title" id="modalLabel">{this.props.pledge.title.toUpperCase()}</h4>
 							</div>
 							<div className="modal-body">
 								<p><img src={this.props.pledge.thumbnailUrl}/></p>
