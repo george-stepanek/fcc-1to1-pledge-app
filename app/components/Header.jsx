@@ -26,7 +26,6 @@ var Header = React.createClass({
 		if (this.state.user) {
 			return ( 
 				<ul className="dropdown-menu">
-					<li><a href="/profile">Profile</a></li>
 					<li><a href="/mypledges">My Pledges</a></li>
 					<li role="separator" className="divider"></li>
 					<li><a href="/logout">Logout</a></li>
@@ -36,10 +35,14 @@ var Header = React.createClass({
 		else {
 			return ( 
 				<ul className="dropdown-menu">
-					<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+					<li><a href="#" onClick={this.showLogin}>Login</a></li>
 				</ul>
 			);
 		}
+	},
+	showLogin: function() {
+	    $.cookie("pageBeforeLogin", window.location.href);
+	    $('#login-modal').modal('show');	
 	},
 	render: function() {
         return (
@@ -72,9 +75,9 @@ var Header = React.createClass({
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 className="modal-title" id="modalLabel">Login</h4>
+								<h4 className="modal-title" id="modalLabel">Please login via the same service you used last time:</h4>
 							</div>
-							<div className="modal-body">
+							<div className="modal-body login-buttons">
 								<a className="btn btn-social btn-facebook" href="/auth/facebook">
 			        		    	<i className="fa fa-facebook"></i> Login with Facebook
 			        		  	</a>

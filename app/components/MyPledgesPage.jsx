@@ -11,12 +11,20 @@ var MyPledgesPage = React.createClass({
         });
         return {pledges: pledges};
     },
+    pledgeGroup: function() {
+        if(this.state.pledges.length > 0) {
+            return ( <PledgeGroup pledges={this.state.pledges} /> );
+        }
+        else {
+            return ( <span>You don't appear to have made any pledges yet.</span> );
+        }
+    },
     render: function() {
         return (
             <div>
                 <Header />
         		<div className="container">
-                    <PledgeGroup pledges={this.state.pledges} />
+                    {this.pledgeGroup()}
         		</div>
         	    <Footer />
     		</div>

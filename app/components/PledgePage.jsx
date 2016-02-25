@@ -118,3 +118,12 @@ var PledgePage = React.createClass({
 		);
 	}
 });
+
+/*
+https://www.tumblr.com/widgets/share/tool?canonicalUrl=http://testkitchen.huffingtonpost.com/tumblr-porn/
+https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2F482583%2F&display=popup&ref=plugin&src=like&app_id=113869198637480
+https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=Inside%20the%20Surprisingly%20Sexy%20World%20of%20Tumblr%20Porn&tw_p=tweetbutton&url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn%2F
+https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn&media=https%3A%2F%2Frm-content.s3.amazonaws.com%2Freadymag%2Fupload-4ca89e30-d57f-11e5-87f8-5f96c7c39296.jpg&description=Inside%20The%20Surprising%20World%20of%20Tumblr%20Porn
+
+http://testkitchen.github.io/social_share.jpg
+*/

@@ -23,11 +23,11 @@ body {
 
 /* Login modal styles
 -------------------------------------------------- */
-.modal-body {
+.login-buttons {
   text-align: center;
 }
 .btn-facebook, .btn-google {
-  margin: 40px 30px !important;
+  margin: 40px !important;
 }
 
 
