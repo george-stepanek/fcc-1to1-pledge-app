@@ -13,23 +13,12 @@ var SearchPage = React.createClass({
         });
         return {pledges: pledges};
     },
-    refreshPledges: function(id) {
-    	var self = this;
-        $.ajax({
-    		url: window.location.origin + '/api/search/pledges?q=' + self.searchTerm,
-    		type: "get",
-    		success: function(result) {
-		        $("#" + id).prop("disabled", false);
-		        self.setState({pledges: result});
-		    }
-        });    	
-    },
     render: function() {
         return (
             <div>
                 <Header />
         		<div className="container">
-                    <PledgeGroup pledges={this.state.pledges} refreshPledges={this.refreshPledges} />
+                    <PledgeGroup pledges={this.state.pledges} />
         		</div>
         	    <Footer />
     		</div>

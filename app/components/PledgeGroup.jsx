@@ -1,64 +1,8 @@
 var PledgeGroup = React.createClass({
-    getInitialState: function() {
-	    $("document").ready(function () {
-	        // recommended fix for facebook authentication bug
-	        if (window.location.hash && window.location.hash === "#_=_") {
-	            if (window.history && window.history.pushState) {
-	                window.history.pushState("", document.title, window.location.pathname);
-	            } else {
-	                location.hash = "";
-	            }
-	        }
-	    });
- 
-     	var user;
-        $.ajax({
-    		url: window.location.origin + '/api/:id',
-    		async: false,
-    		type: "get",
-    		success: function(result) {
-                user = result;
-    		}
-        });
-        return {user: user};
-    },
-    addMe: function(e) {
-		$("#" + e.target.id).prop("disabled", true);
-		var id = e.target.id.replace("btn", "");
-		var self = this;
-		
-		$.ajax({
-			url: "/api/my/pledge/" + id,
-			type: "post",
-			success: function(result) {
-		        self.props.refreshPledges(e.target.id);
-		    }
-		});
-    },
-    removeMe: function(e) {
-		$("#" + e.target.id).prop("disabled", true);
-		var id = e.target.id.replace("btn", "");
-		var self = this;
-		
-		$.ajax({
-			url: "/api/my/pledge/" + id,
-			type: "delete",
-			success: function(result) {
-		        self.props.refreshPledges(e.target.id);
-		    }
-		});
-    },
     render: function() {
-    	var self = this;
-        var user = this.state.user;
 		var pledgeNodes = this.props.pledges.map(function(pledge) {
-			return ( <Pledge pledge={pledge} user={user} removeMe={self.removeMe} addMe={self.addMe} key={pledge._id} /> );
+			return ( <PledgeThumbnail pledge={pledge} key={pledge._id} /> );
 		});
-				
-        return (
-    		<div>
-                {pledgeNodes}
-    		</div>
-		);
+        return ( <div>{pledgeNodes}</div> );
 	}
 });

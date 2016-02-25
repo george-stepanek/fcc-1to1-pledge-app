@@ -18,6 +18,11 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/index.html');
 		});
 
+	app.route('/pledge')
+		.get(isLoggedIn, function (req, res) {
+			res.sendFile(path + '/public/pledge.html');
+		});
+
 	app.route('/search')
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/search.html');
