@@ -21,6 +21,16 @@ body {
   margin-bottom: 0px;
 }
 
+/* Login modal styles
+-------------------------------------------------- */
+.modal-body {
+  text-align: center;
+}
+.btn-facebook, .btn-google {
+  margin: 40px 30px !important;
+}
+
+
 /* Pledge thumbnails styles
 -------------------------------------------------- */
 .pledgeLink {

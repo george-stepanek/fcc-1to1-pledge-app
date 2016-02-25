@@ -11,6 +11,12 @@ var PledgePage = React.createClass({
                 user = result;
     		}
         });
+        
+        if($.cookie("pledgeToAdd") == this.pledgeId && user) {
+		    this.addMe("afterLogin");
+        }
+	    $.removeCookie("pledgeToAdd");
+	    
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
     		async: false,
@@ -23,7 +29,8 @@ var PledgePage = React.createClass({
     },
 	myImpact: function() {
 		var self = this;
-		if (this.state.pledge.users && this.state.pledge.users.filter(function(user) {return user.id == self.state.user.id;}).length > 0) {
+		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
+		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			return ( 
 				<p>Your contribution has been <b>{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}</b> so far.</p>
 			);
@@ -34,57 +41,60 @@ var PledgePage = React.createClass({
 	},
 	submitButton: function() {
 		var self = this;
-		var id = "btn" + this.state.pledge._id;
 
 		// If the pledge has pledged users AND one of those users is me
-		if (this.state.pledge.users && this.state.pledge.users.filter(function(user) {return user.id == self.state.user.id;}).length > 0) {
+		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
+		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			return ( 
-				<button className="btn btn-social btn-danger" onClick={this.removeMe} id={id}>
-					<i className="fa fa-times"id={id}></i><span id={id}> I've changed my mind</span>
+				<button className="btn btn-social btn-danger" onClick={this.removeMe} id="submit-button">
+					<i className="fa fa-times"></i> I've changed my mind
 				</button> 
 			);
 		}
 		else {
 			return ( 
-				<button className="btn btn-social btn-success" onClick={this.addMe} id={id}>
-					<i className="fa fa-check" id={id}></i><span id={id}> I pledge to do this</span>
+				<button className="btn btn-social btn-success" onClick={this.addMe} id="submit-button">
+					<i className="fa fa-check"></i> I pledge to do this
 				</button> 
 			);
 		}
 	},
-    addMe: function(e) {
-		$("#" + e.target.id).prop("disabled", true);
-		var id = e.target.id.replace("btn", "");
+    addMe: function(afterLogin) {
+		if(afterLogin != "afterLogin" && !this.state.user) {
+		    $.cookie("pledgeToAdd", this.pledgeId);
+		    $('#login-modal').modal('show');
+		    return;
+		}
+
+		$("#submit-button").prop("disabled", true);
 		var self = this;
-		
 		$.ajax({
-			url: "/api/my/pledge/" + id,
-			type: "post",
+			url: "/api/my/pledge/" + self.pledgeId,
+    		async: false,
+    		type: "post",
 			success: function(result) {
-		        self.refreshPledge(e.target.id);
+	            self.refreshPledge();
 		    }
 		});
     },
-    removeMe: function(e) {
-		$("#" + e.target.id).prop("disabled", true);
-		var id = e.target.id.replace("btn", "");
+    removeMe: function() {
+		$("#submit-button").prop("disabled", true);
 		var self = this;
-		
 		$.ajax({
-			url: "/api/my/pledge/" + id,
+			url: "/api/my/pledge/" + self.pledgeId,
 			type: "delete",
 			success: function(result) {
-		        self.refreshPledge(e.target.id);
+		        self.refreshPledge();
 		    }
 		});
     },
-    refreshPledge: function(id) {
+    refreshPledge: function() {
     	var self = this;
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
     		type: "get",
     		success: function(result) {
-		        $("#" + id).prop("disabled", false);
+		        $("#submit-button").prop("disabled", false);
 		        self.setState({pledge: result});
 		    }
         });    	

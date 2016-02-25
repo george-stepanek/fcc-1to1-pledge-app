@@ -1,5 +1,10 @@
 var MainPage = React.createClass({
     getInitialState: function() {
+        if($.cookie("pledgeToAdd")) {
+            window.location.replace(window.location.origin + '/pledge?id=' + $.cookie("pledgeToAdd"));
+            return null;
+        }
+        
     	var pledges;
         $.ajax({
     		url: window.location.origin + '/api/all/pledges',
