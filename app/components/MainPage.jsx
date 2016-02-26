@@ -28,7 +28,6 @@ var MainPage = React.createClass({
         		<div className="container">
                     <PledgeGroup pledges={this.state.pledges} />
         		</div>
-        	    <Footer />
     		</div>
 		);
 	}

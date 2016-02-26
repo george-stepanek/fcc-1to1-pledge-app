@@ -9,7 +9,12 @@ var Header = React.createClass({
 	                location.hash = "";
 	            }
 	        }
-	    });
+	        
+			// cancel the post-login redirect if the user cancels out of the login modal
+			$('#login-modal').on('hide.bs.modal', function () {
+	        	$.removeCookie("pageBeforeLogin");
+			});
+		});
 	    
     	var user;
         $.ajax({
@@ -25,17 +30,16 @@ var Header = React.createClass({
 	userMenu: function() {
 		if (this.state.user) {
 			return ( 
-				<ul className="dropdown-menu">
-					<li><a href="/mypledges">My Pledges</a></li>
-					<li role="separator" className="divider"></li>
-					<li><a href="/logout">Logout</a></li>
+				<ul className="nav navbar-nav navbar-right">
+					<li><a href="/mypledges">MY PLEDGES</a></li>
+					<li><a href="/logout">SIGN OUT</a></li>
 				</ul>
 			);
 		}
 		else {
 			return ( 
-				<ul className="dropdown-menu">
-					<li><a href="#" onClick={this.showLogin}>Login</a></li>
+				<ul className="nav navbar-nav navbar-right">
+					<li><a href="#" onClick={this.showLogin}>SIGN IN</a></li>
 				</ul>
 			);
 		}
@@ -49,7 +53,7 @@ var Header = React.createClass({
     		<nav className="navbar navbar-default">
     			<div className="container-fluid">
     				<div className="navbar-header">
-    					<a className="navbar-brand" href="/">1to1 Movement <i>Pledges</i></a>
+    					<a href="/"><img className="logo-img" src="/public/images/Logo.jpg"/></a>
     				</div>
 					<ul className="nav navbar-nav navbar-right">
 						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
@@ -60,14 +64,9 @@ var Header = React.createClass({
 								</span>
 							</div>
 						</form>
-						<li className="dropdown">
-							<a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-								<span className="glyphicon glyphicon-menu-hamburger"></span>
-							</a>
-							{this.userMenu()}
-						</li>
 					</ul>
-    			</div>
+					{this.userMenu()}
+				</div>
 				<div className="modal fade" id="login-modal" role="dialog" aria-labelledby="modalLabel">
 					<div className="modal-dialog" role="document">
 						<div className="modal-content">
@@ -75,21 +74,20 @@ var Header = React.createClass({
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 className="modal-title" id="modalLabel">Please login via the same service you used last time:</h4>
+								<h4 className="modal-title" id="modalLabel">Please sign in using the same service each time:</h4>
 							</div>
 							<div className="modal-body login-buttons">
-								<a className="btn btn-social btn-facebook" href="/auth/facebook">
-			        		    	<i className="fa fa-facebook"></i> Login with Facebook
+								<a className="btn btn-social btn-facebook login-btn" href="/auth/facebook">
+			        		    	<i className="fa fa-facebook"></i> Sign in with Facebook
 			        		  	</a>
 			        		  	&nbsp;
-			        		  	<a className="btn btn-social btn-google" href="/auth/google">
-			        		    	<i className="fa fa-google"></i> Login with Google
+			        		  	<a className="btn btn-social btn-google login-btn" href="/auth/google">
+			        		    	<i className="fa fa-google"></i> Sign in with Google
 			        		  	</a>
 							</div>
 						</div>
 					</div>
 				</div>
-    			
     		</nav>
 		);
 	}

@@ -26,7 +26,6 @@ var MyPledgesPage = React.createClass({
         		<div className="container">
                     {this.pledgeGroup()}
         		</div>
-        	    <Footer />
     		</div>
 		);
 	}

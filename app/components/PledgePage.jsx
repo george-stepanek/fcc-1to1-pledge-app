@@ -113,7 +113,6 @@ var PledgePage = React.createClass({
 					{this.myImpact()}
 					{this.submitButton()}
 				</div>
-        	    <Footer />
     		</div>
 		);
 	}

@@ -11,16 +11,29 @@ var SearchPage = React.createClass({
                 pledges = result;
     		}
         });
+        
+        if(pledges.length == 1) {
+            window.location.replace(window.location.origin + '/pledge?id=' + pledges[0]._id);
+            return null;
+        }
+        
         return {pledges: pledges};
+    },
+    pledgeGroup: function() {
+        if(this.state.pledges.length > 0) {
+            return ( <PledgeGroup pledges={this.state.pledges} /> );
+        }
+        else {
+            return ( <span>No pledges found for the search term: "{this.searchTerm}"</span> );
+        }
     },
     render: function() {
         return (
             <div>
                 <Header />
         		<div className="container">
-                    <PledgeGroup pledges={this.state.pledges} />
+                    {this.pledgeGroup()}
         		</div>
-        	    <Footer />
     		</div>
 		);
 	}
