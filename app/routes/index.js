@@ -25,11 +25,6 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/mypledges.html');
 		});
 
-	app.route('/login')
-		.get(function (req, res) {
-			res.sendFile(path + '/public/login.html');
-		});
-
 	app.route('/logout')
 		.get(function (req, res) {
 			req.logout();
