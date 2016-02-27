@@ -10,7 +10,7 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/index.html');
 		});
 
-	app.route('/pledge')
+	app.route('/pledge/:id')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/pledge.html');
 		});

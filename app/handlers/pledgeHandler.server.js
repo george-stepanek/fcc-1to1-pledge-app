@@ -39,7 +39,7 @@ function PledgeHandler () {
 		    res.json(calculateImpactSoFar(req, [result])[0]);
 		});
 	};
-	
+
 	this.getMyPledges = function (req, res) {
 		var id = req.user ? req.user.id : testid;
 		Pledges.find({ 'users.id': id }).exec(function (err, result) { 

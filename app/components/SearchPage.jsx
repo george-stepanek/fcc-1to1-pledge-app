@@ -13,7 +13,7 @@ var SearchPage = React.createClass({
         });
         
         if(pledges.length == 1) {
-            window.location.replace(window.location.origin + '/pledge?id=' + pledges[0]._id);
+            window.location.replace(window.location.origin + '/pledge/' + pledges[0]._id);
             return null;
         }
         
