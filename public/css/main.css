@@ -25,7 +25,7 @@ body {
 }
 .logo-img {
   height: 45px;
-  margin: 4px 0 0 -11px;
+  margin: 4px 0 0 4px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
@@ -48,6 +48,9 @@ body {
 }
 .nav li:hover {
   border-bottom-color: black;
+}
+.nav form {
+  width: 100%; /* Removes scrollbar for collapsed menu */
 }
 
 /* Login popup 

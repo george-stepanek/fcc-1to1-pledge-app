@@ -53,22 +53,30 @@ var Header = React.createClass({
     		<nav className="navbar navbar-default">
     			<div className="container-fluid">
     				<div className="navbar-header">
+	    				<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+							<span className="sr-only">Toggle navigation</span>
+							<span className="icon-bar"></span>
+							<span className="icon-bar"></span>
+							<span className="icon-bar"></span>
+						</button>
     					<a className="logo-link" href="/">
     						<img className="logo-img" src="/public/images/Logo.jpg"/>
     						<span className="logo-text">PLEDGES</span>
     					</a>
     				</div>
-					<ul className="nav navbar-nav navbar-right">
-						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
-							<div className="input-group">
-								<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
-								<span className="input-group-btn">
-									<button type="submit" className="btn btn-default"><span className="glyphicon glyphicon-search"></span></button>
-								</span>
-							</div>
-						</form>
-					</ul>
-					{this.userMenu()}
+    				<div className="collapse navbar-collapse" id="navbar-collapse">
+    					{this.userMenu()}
+						<ul className="nav navbar-nav navbar-right">
+							<form className="navbar-form" role="search" action="/search" method="get">
+								<div className="input-group">
+									<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
+									<span className="input-group-btn">
+										<button type="submit" className="btn btn-default"><span className="glyphicon glyphicon-search"></span></button>
+									</span>
+								</div>
+							</form>
+						</ul>
+					</div>
 				</div>
 				<div className="modal fade" id="login-modal" role="dialog" aria-labelledby="modalLabel">
 					<div className="modal-dialog" role="document">
