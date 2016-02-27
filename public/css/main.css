@@ -88,6 +88,8 @@ body {
 /* Pledge page
 ----------------------------------*/
 .pledge-page {
+  padding-bottom: 10px;
+  background-color: rgba(0,0,0,0.4);
   text-align: center;
   color: white;
   font-size: 2em;
@@ -95,8 +97,11 @@ body {
 .pledge-img {
   position: fixed;
   top: 0;
-  width: 100%;
-  margin-left: -50%;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  transform: translateX(-50%);
+  background-position: 50% 50%;
   z-index: -1;
 }
 .pledge-title {

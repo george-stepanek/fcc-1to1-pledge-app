@@ -1,10 +1,9 @@
 var PledgePage = React.createClass({
     pledgeId: "",
     getInitialState: function() {
+    	// This refactoring works fine for now I guess
     	var path = window.location.pathname;
     	this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
-    	// Closer but still working on refactoring this
-        //this.pledgeId = window.location.search.replace("?", "").split("=")[1];
     	var user, pledge, self = this;
         $.ajax({
     		url: window.location.origin + '/api/:id',
