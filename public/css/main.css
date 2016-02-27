@@ -3,19 +3,45 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css");
 @import url('https://fonts.googleapis.com/css?family=Questrial|Montserrat:400,700');
 
+@font-face {
+  font-family: Heartwell;
+  font-style: normal;
+  src: url("/public/fonts/Heartwell 1.2.otf") format("opentype");
+}
+@font-face {
+  font-family: Heartwell;
+  font-style: italic;
+  src: url("/public/fonts/Heartwell Italic 1.2.otf") format("opentype");
+}
+
 body {
   font-family: 'Questrial', sans-serif;
 }
 
 /* Menu bar 
 ----------------------------------*/
+.logo-link {
+  text-decoration: none !important;  
+}
 .logo-img {
   height: 45px;
-  margin: 4px 0 0 -10px;
+  margin: 4px 0 0 -11px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.logo-text {
+  font-family: Heartwell;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  color: #A0A0A0 !important;
+  position:relative;
+  bottom:-7px;
+  left: 10px;
 }
 .navbar-default {
     background-color: white;
     border-color: white;
+    border: 0;
 }
 .nav li {
   border-bottom: 3px solid white;
@@ -24,7 +50,7 @@ body {
   border-bottom-color: black;
 }
 
-/* Login modal 
+/* Login popup 
 ----------------------------------*/
 .login-buttons {
   text-align: center;
@@ -38,20 +64,42 @@ body {
 
 /* Pledge group 
 ----------------------------------*/
-.pledgeLink {
+.pledge-link {
   position: relative; 
   cursor: pointer;
   float: left;
   margin: 5px;
 }
-.pledgeTitle { 
+.pledge-thumb-title { 
   position: absolute; 
   top: 15px;
   left: 15px;
 }
-.pledgeTitle span { 
+.pledge-thumb-title span { 
   color: white;
   background: rgb(8, 8, 8);
   background: rgba(0, 0, 0, 0.5);
   padding: 10px; 
+}
+
+/* Pledge page
+----------------------------------*/
+.pledge-page {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+.pledge-img {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-left: -50%;
+  z-index: -1;
+}
+.pledge-title {
+  font-family: 'Heartwell';
+  font-size: 4em;
+}
+.pledge {
+  max-width: 800px;
 }

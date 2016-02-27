@@ -103,15 +103,17 @@ var PledgePage = React.createClass({
         return (
             <div>
                 <Header />
-        		<div className="container">
-					<h4>{this.state.pledge.title.toUpperCase()}</h4>
-					<p><img src={this.state.pledge.thumbnailUrl}/></p>
-					<p>{this.state.pledge.explanation}</p>
-					<p>Pledge to save <b>{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}</b> per week.&nbsp;
-					<cite>(Source: <a href={this.state.pledge.citation} target="_blank">{this.state.pledge.source}</a>)</cite></p>
-					<p><b>{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}</b> saved already!</p>
-					{this.myImpact()}
-					{this.submitButton()}
+        		<div className="pledge-page">
+					<img className="pledge-img" src={this.state.pledge.imageUrl}/>
+					<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
+					<div className="container-fluid pledge">
+						<p>{this.state.pledge.explanation}</p>
+						<p>Pledge to save <b>{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}</b> per week.</p>
+						<p><cite>(Source: <a href={this.state.pledge.citation} target="_blank">{this.state.pledge.source}</a>)</cite></p>
+						<p><b>{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}</b> saved already!</p>
+						{this.myImpact()}
+						{this.submitButton()}
+					</div>
 				</div>
     		</div>
 		);
@@ -119,10 +121,10 @@ var PledgePage = React.createClass({
 });
 
 /*
-https://www.tumblr.com/widgets/share/tool?canonicalUrl=http://testkitchen.huffingtonpost.com/tumblr-porn/
-https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2F482583%2F&display=popup&ref=plugin&src=like&app_id=113869198637480
-https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=Inside%20the%20Surprisingly%20Sexy%20World%20of%20Tumblr%20Porn&tw_p=tweetbutton&url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn%2F
-https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn&media=https%3A%2F%2Frm-content.s3.amazonaws.com%2Freadymag%2Fupload-4ca89e30-d57f-11e5-87f8-5f96c7c39296.jpg&description=Inside%20The%20Surprising%20World%20of%20Tumblr%20Porn
+???    https://www.tumblr.com/widgets/share/tool?canonicalUrl=http://testkitchen.huffingtonpost.com/tumblr-porn/
+Share  https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2F482583%2F&display=popup&ref=plugin&src=like&app_id=113869198637480
+Tweet  https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=Inside%20the%20Surprisingly%20Sexy%20World%20of%20Tumblr%20Porn&tw_p=tweetbutton&url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn%2F
+Pin it https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn&media=https%3A%2F%2Frm-content.s3.amazonaws.com%2Freadymag%2Fupload-4ca89e30-d57f-11e5-87f8-5f96c7c39296.jpg&description=Inside%20The%20Surprising%20World%20of%20Tumblr%20Porn
 
 http://testkitchen.github.io/social_share.jpg
 */

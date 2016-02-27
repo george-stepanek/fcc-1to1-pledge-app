@@ -53,7 +53,10 @@ var Header = React.createClass({
     		<nav className="navbar navbar-default">
     			<div className="container-fluid">
     				<div className="navbar-header">
-    					<a href="/"><img className="logo-img" src="/public/images/Logo.jpg"/></a>
+    					<a className="logo-link" href="/">
+    						<img className="logo-img" src="/public/images/Logo.jpg"/>
+    						<span className="logo-text">PLEDGES</span>
+    					</a>
     				</div>
 					<ul className="nav navbar-nav navbar-right">
 						<form className="navbar-form navbar-left" role="search" action="/search" method="get">
