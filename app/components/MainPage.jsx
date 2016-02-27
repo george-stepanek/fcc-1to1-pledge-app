@@ -1,7 +1,7 @@
 var MainPage = React.createClass({
     getInitialState: function() {
         if($.cookie("pledgeToAdd")) {
-            window.location.replace(window.location.origin + '/pledge?id=' + $.cookie("pledgeToAdd"));
+            window.location.replace(window.location.origin + '/pledge/' + $.cookie("pledgeToAdd"));
             return null;
         }
         else if ($.cookie("pageBeforeLogin")) {

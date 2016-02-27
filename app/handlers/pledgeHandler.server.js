@@ -34,7 +34,8 @@ function PledgeHandler () {
 	};
 	
 	this.getPledge = function (req, res) {
-		Pledges.findOne({ '_id': req.params.id }).exec(function (err, result) {
+		var title = req.params.title.replace(/-/g, " ");
+		Pledges.findOne({ 'title': { $regex : new RegExp(title, "i") } }).exec(function (err, result) {
 		    if (err) { throw err; } 
 		    res.json(calculateImpactSoFar(req, [result])[0]);
 		});
