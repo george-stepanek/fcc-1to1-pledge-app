@@ -159,7 +159,11 @@ body {
 .pledge-source {
   color: white;
   text-decoration: none !important;
+  margin: 0 20px 0 20px;
 }
 .pledge-source:hover {
   color: lightgrey;
+}
+.pledge-para {
+  margin-bottom: 50px;
 }

@@ -36,35 +36,34 @@ var PledgePage = React.createClass({
 		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			return ( 
 				<div>
-					<p>
-						<a className="btn btn-social btn-lg btn-facebook" target="_blank" href=""> 
-		    		    	<i className="fa fa-facebook"></i> Share it {/*todo*/}
-		    		  	</a>
-		    		  	&nbsp;
-		    		  	<a className="btn btn-social btn-lg btn-pinterest" target="_blank" href="">
-		    		    	<i className="fa fa-pinterest"></i> Pin it {/*todo*/}
-		    		  	</a>
-		    		  	&nbsp;
-		    		  	<a className="btn btn-social btn-lg btn-twitter" target="_blank" href="">
-		    		    	<i className="fa fa-twitter"></i> Tweet it {/*todo*/}
-		    		  	</a>
-	    		  	</p>
-					<p>
+					<p className="pledge-para">
 						Thank you for pledging!
 						<br/>
 						Your contribution has been <i><b>
 							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
 						</b></i> so far.
 					</p>
-	    		  	<button className="btn btn-social btn-default" onClick={this.removeMe} id="submit-button">
-						<i className="fa fa-times"></i> I've changed my mind
-					</button>
+					<a className="pledge-source" target="_blank" href="" title="Share it"> 
+	    		    	<i className="fa fa-facebook"></i>{/*todo*/}
+	    		  	</a>
+	    		  	&nbsp;
+	    		  	<a className="pledge-source" target="_blank" href="" title="Pin it">
+	    		    	<i className="fa fa-pinterest"></i>{/*todo*/}
+	    		  	</a>
+	    		  	&nbsp;
+	    		  	<a className="pledge-source" target="_blank" href="" title="Tweet it">
+	    		    	<i className="fa fa-twitter"></i>{/*todo*/}
+	    		  	</a>
+	    		  	&nbsp;
+		    		<a className="pledge-source" href="#" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
+						<i className="fa fa-times-circle-o"></i>
+					</a>
 				</div>
 			);
 		}
 		else {
 			return (
-				<button className="btn btn-social btn-lg btn-success" onClick={this.addMe} id="submit-button">
+				<button className="btn btn-social btn-lg btn-default" onClick={this.addMe} id="submit-button">
 					<i className="fa fa-check"></i> I pledge to do this
 				</button>
 			);
@@ -118,15 +117,15 @@ var PledgePage = React.createClass({
 					<img className="pledge-img" src={this.state.pledge.imageUrl}/>
 					<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
 					<div className="container-fluid pledge">
-						<p>{this.state.pledge.explanation}</p>
-						<p>Pledge to save <i><b>
+						<p className="pledge-para">{this.state.pledge.explanation}</p>
+						<p className="pledge-para">Pledge to save <i><b>
 							{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
 							</b></i> per week.
 							<a href={this.state.pledge.citation} target="_blank" className="pledge-source">
 								&nbsp;<i className="fa fa-external-link"></i>
 							</a>
 						</p>
-						<p>A total of <i><b>
+						<p className="pledge-para">A total of <i><b>
 							{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
 						</b></i> have been saved already!</p>
 						{this.myImpactAndButtons()}
