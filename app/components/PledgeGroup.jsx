@@ -11,6 +11,9 @@ var PledgeGroup = React.createClass({
 				</div>
 			);
 		});
-        return ( <div>{pledges}</div> );
+        return (<div className="grid">
+        			{pledges}
+        		</div>
+        );
 	}
 });

@@ -70,29 +70,35 @@ body {
 
 /* Pledge group 
 ----------------------------------*/
+.grid {
+  padding-top: 50px;
+}
+
 .pledge-link {
-  border: 2px solid #A0A0A0;
-  padding: 10px;
-  margin: 5px;
-  position: relative; 
+  background: rgba(64,180,194,0.8);
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   float: left;
-  width: 250px;
+  min-width: 250px;
+  width: 33%;
   height: 250px;
+  text-align: center;
 }
 .pledge-info {
   opacity: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  padding: 5px;
   color: black;
   text-shadow: 0px 0px 5px white;
   transition: opacity .5s
 }
 .pledge-link img {
   position: relative;
-  max-width: 100%;
-  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   top: 50%;
   left: 50%;
   transition: transform .2s, opacity 0.3s;
@@ -104,16 +110,18 @@ body {
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .pledge-link:hover img {
-  opacity: 0.5;
-  transform: translate(-50%, -50%) translateY(-5px);
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 .pledge-link:hover .pledge-info {
   opacity: 1;
 }
 .pledge-thumb-title { 
   position: absolute; 
+  white-space: nowrap;
   top: 15px;
-  left: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .pledge-thumb-title span { 
   color: white;
@@ -147,4 +155,11 @@ body {
 }
 .pledge {
   max-width: 800px;
+}
+.pledge-source {
+  color: white;
+  text-decoration: none !important;
+}
+.pledge-source:hover {
+  color: lightgrey;
 }

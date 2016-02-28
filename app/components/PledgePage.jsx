@@ -28,19 +28,7 @@ var PledgePage = React.createClass({
         });
         return {user: user, pledge: pledge};
     },
-	myImpact: function() {
-		var self = this;
-		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
-		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
-			return ( 
-				<p>Your contribution has been <b>{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}</b> so far.</p>
-			);
-		}
-		else {
-			return "";
-		}
-	},
-	submitButton: function() {
+	myImpactAndButtons: function() {
 		var self = this;
 
 		// If the pledge has pledged users AND one of those users is me
@@ -49,18 +37,25 @@ var PledgePage = React.createClass({
 			return ( 
 				<div>
 					<p>
-						<a className="btn btn-social btn-lg btn-facebook" href=""> 
+						<a className="btn btn-social btn-lg btn-facebook" target="_blank" href=""> 
 		    		    	<i className="fa fa-facebook"></i> Share it {/*todo*/}
 		    		  	</a>
 		    		  	&nbsp;
-		    		  	<a className="btn btn-social btn-lg btn-pinterest" href="">
+		    		  	<a className="btn btn-social btn-lg btn-pinterest" target="_blank" href="">
 		    		    	<i className="fa fa-pinterest"></i> Pin it {/*todo*/}
 		    		  	</a>
 		    		  	&nbsp;
-		    		  	<a className="btn btn-social btn-lg btn-twitter" href="">
+		    		  	<a className="btn btn-social btn-lg btn-twitter" target="_blank" href="">
 		    		    	<i className="fa fa-twitter"></i> Tweet it {/*todo*/}
 		    		  	</a>
 	    		  	</p>
+					<p>
+						Thank you for pledging!
+						<br/>
+						Your contribution has been <i><b>
+							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
+						</b></i> so far.
+					</p>
 	    		  	<button className="btn btn-social btn-default" onClick={this.removeMe} id="submit-button">
 						<i className="fa fa-times"></i> I've changed my mind
 					</button>
@@ -124,11 +119,17 @@ var PledgePage = React.createClass({
 					<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
 					<div className="container-fluid pledge">
 						<p>{this.state.pledge.explanation}</p>
-						<p>Pledge to save <b>{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}</b> per week.</p>
-						<p><cite>(Source: <a href={this.state.pledge.citation} target="_blank">{this.state.pledge.source}</a>)</cite></p>
-						<p><b>{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}</b> saved already!</p>
-						{this.myImpact()}
-						{this.submitButton()}
+						<p>Pledge to save <i><b>
+							{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
+							</b></i> per week.
+							<a href={this.state.pledge.citation} target="_blank" className="pledge-source">
+								&nbsp;<i className="fa fa-external-link"></i>
+							</a>
+						</p>
+						<p>A total of <i><b>
+							{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
+						</b></i> have been saved already!</p>
+						{this.myImpactAndButtons()}
 					</div>
 				</div>
     		</div>
