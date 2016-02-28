@@ -14,10 +14,10 @@ var PledgePage = React.createClass({
         });
         
         if($.cookie("pledgeToAdd") == this.pledgeId && user) {
-	    	$.removeCookie("pledgeToAdd", { path: '/' });
 	    	this.addMe("afterLogin");
         }
-
+	    $.removeCookie("pledgeToAdd", { path: '/' });
+	    	
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
     		async: false,
@@ -53,12 +53,12 @@ var PledgePage = React.createClass({
 		    		    	<i className="fa fa-facebook"></i> Share it {/*todo*/}
 		    		  	</a>
 		    		  	&nbsp;
-		    		  	<a className="btn btn-social btn-lg btn-twitter" href="">
-		    		    	<i className="fa fa-twitter"></i> Tweet it {/*todo*/}
-		    		  	</a>
-		    		  	&nbsp;
 		    		  	<a className="btn btn-social btn-lg btn-pinterest" href="">
 		    		    	<i className="fa fa-pinterest"></i> Pin it {/*todo*/}
+		    		  	</a>
+		    		  	&nbsp;
+		    		  	<a className="btn btn-social btn-lg btn-twitter" href="">
+		    		    	<i className="fa fa-twitter"></i> Tweet it {/*todo*/}
 		    		  	</a>
 	    		  	</p>
 	    		  	<button className="btn btn-social btn-default" onClick={this.removeMe} id="submit-button">

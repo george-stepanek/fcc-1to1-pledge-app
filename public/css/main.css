@@ -19,9 +19,6 @@
 body {
   font-family: 'Questrial', sans-serif;
 }
-html, body, .content, #content, .pledge-page { 
-  height:100%;
-}
 
 /* Menu bar 
 ----------------------------------*/
@@ -128,7 +125,6 @@ html, body, .content, #content, .pledge-page {
 /* Pledge page
 ----------------------------------*/
 .pledge-page {
-  background-color: rgba(0,0,0,0.4);
   text-align: center;
   color: white;
   font-size: 2em;
@@ -142,6 +138,8 @@ html, body, .content, #content, .pledge-page {
   transform: translateX(-50%);
   background-position: 50% 50%;
   z-index: -1;
+  -webkit-filter: brightness(60%);
+  filter: brightness(60%);
 }
 .pledge-title {
   font-family: 'Heartwell';
