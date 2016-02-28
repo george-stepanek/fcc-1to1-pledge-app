@@ -1,7 +1,6 @@
 var PledgePage = React.createClass({
     pledgeId: "",
     getInitialState: function() {
-    	// This refactoring works fine for now I guess
     	var path = window.location.pathname;
     	this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
     	var user, pledge, self = this;
@@ -15,10 +14,10 @@ var PledgePage = React.createClass({
         });
         
         if($.cookie("pledgeToAdd") == this.pledgeId && user) {
-		    this.addMe("afterLogin");
+	    	$.removeCookie("pledgeToAdd", { path: '/' });
+	    	this.addMe("afterLogin");
         }
-	    $.removeCookie("pledgeToAdd");
-	    
+
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
     		async: false,
@@ -70,7 +69,7 @@ var PledgePage = React.createClass({
 		}
 		else {
 			return (
-				<button className="btn btn-social btn-success" onClick={this.addMe} id="submit-button">
+				<button className="btn btn-social btn-lg btn-success" onClick={this.addMe} id="submit-button">
 					<i className="fa fa-check"></i> I pledge to do this
 				</button>
 			);
@@ -78,7 +77,7 @@ var PledgePage = React.createClass({
 	},
     addMe: function(afterLogin) {
 		if(afterLogin != "afterLogin" && !this.state.user) {
-		    $.cookie("pledgeToAdd", this.pledgeId);
+		    $.cookie("pledgeToAdd", this.pledgeId, { path: '/' });
             $('#login-modal').modal('show');
 		    return;
 		}

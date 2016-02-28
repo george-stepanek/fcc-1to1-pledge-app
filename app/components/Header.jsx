@@ -45,8 +45,8 @@ var Header = React.createClass({
 		}
 	},
 	showLogin: function() {
-	    $.cookie("pageBeforeLogin", window.location.href);
-	    $('#login-modal').modal('show');	
+	    $.cookie("pageBeforeLogin", window.location.href, { path: '/' });
+        $('#login-modal').modal('show');	
 	},
 	render: function() {
         return (
@@ -61,7 +61,6 @@ var Header = React.createClass({
 						</button>
     					<a className="logo-link" href="/">
     						<img className="logo-img" src="/public/images/Logo.jpg"/>
-    						
     					</a>
     				</div>
     				<div className="collapse navbar-collapse" id="navbar-collapse">
