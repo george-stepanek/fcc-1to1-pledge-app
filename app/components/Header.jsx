@@ -91,11 +91,11 @@ var Header = React.createClass({
 								<h4 className="modal-title" id="modalLabel">Please sign in using the same service each time:</h4>
 							</div>
 							<div className="modal-body login-buttons">
-								<a className="btn btn-social btn-facebook login-btn" href="/auth/facebook">
+								<a className="btn btn-social btn-lg btn-facebook login-btn" href="/auth/facebook">
 			        		    	<i className="fa fa-facebook"></i> Sign in with Facebook
 			        		  	</a>
 			        		  	&nbsp;
-			        		  	<a className="btn btn-social btn-google login-btn" href="/auth/google">
+			        		  	<a className="btn btn-social btn-lg btn-google login-btn" href="/auth/google">
 			        		    	<i className="fa fa-google"></i> Sign in with Google
 			        		  	</a>
 							</div>

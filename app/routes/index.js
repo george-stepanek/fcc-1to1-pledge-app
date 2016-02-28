@@ -68,7 +68,7 @@ module.exports = function (app, passport) {
 	app.route('/api/my/pledges')
 		.get(pledgeHandler.getMyPledges);
 		
-	app.route('/api/my/pledge/:id')
+	app.route('/api/my/pledge/:title')
 		.post(pledgeHandler.addMeToPledge)
 		.delete(pledgeHandler.removeMeFromPledge);
 };

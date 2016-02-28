@@ -14,8 +14,13 @@
   src: url("/public/fonts/Heartwell Italic 1.2.otf") format("opentype");
 }
 
+/* General styles
+----------------------------------*/
 body {
   font-family: 'Questrial', sans-serif;
+}
+html, body, .content, #content, .pledge-page { 
+  height:100%;
 }
 
 /* Menu bar 
@@ -42,6 +47,7 @@ body {
     background-color: white;
     border-color: white;
     border: 0;
+    margin-bottom: 0;
 }
 .nav li {
   border-bottom: 3px solid white;
@@ -59,7 +65,7 @@ body {
   text-align: center;
 }
 .login-btn {
-  margin: 30px !important;
+  margin: 20px !important;
 }
 * {
   border-radius: 0 !important;
@@ -122,7 +128,6 @@ body {
 /* Pledge page
 ----------------------------------*/
 .pledge-page {
-  padding-bottom: 10px;
   background-color: rgba(0,0,0,0.4);
   text-align: center;
   color: white;

@@ -48,23 +48,38 @@ var PledgePage = React.createClass({
 		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
 		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			return ( 
-				<button className="btn btn-social btn-danger" onClick={this.removeMe} id="submit-button">
-					<i className="fa fa-times"></i> I've changed my mind
-				</button> 
+				<div>
+					<p>
+						<a className="btn btn-social btn-lg btn-facebook" href=""> 
+		    		    	<i className="fa fa-facebook"></i> Share it {/*todo*/}
+		    		  	</a>
+		    		  	&nbsp;
+		    		  	<a className="btn btn-social btn-lg btn-twitter" href="">
+		    		    	<i className="fa fa-twitter"></i> Tweet it {/*todo*/}
+		    		  	</a>
+		    		  	&nbsp;
+		    		  	<a className="btn btn-social btn-lg btn-pinterest" href="">
+		    		    	<i className="fa fa-pinterest"></i> Pin it {/*todo*/}
+		    		  	</a>
+	    		  	</p>
+	    		  	<button className="btn btn-social btn-default" onClick={this.removeMe} id="submit-button">
+						<i className="fa fa-times"></i> I've changed my mind
+					</button>
+				</div>
 			);
 		}
 		else {
-			return ( 
+			return (
 				<button className="btn btn-social btn-success" onClick={this.addMe} id="submit-button">
 					<i className="fa fa-check"></i> I pledge to do this
-				</button> 
+				</button>
 			);
 		}
 	},
     addMe: function(afterLogin) {
 		if(afterLogin != "afterLogin" && !this.state.user) {
 		    $.cookie("pledgeToAdd", this.pledgeId);
-		    $('#login-modal').modal('show');
+            $('#login-modal').modal('show');
 		    return;
 		}
 
@@ -103,7 +118,7 @@ var PledgePage = React.createClass({
     },
     render: function() {
         return (
-            <div>
+            <div className="content">
                 <Header />
         		<div className="pledge-page">
 					<img className="pledge-img" src={this.state.pledge.imageUrl}/>

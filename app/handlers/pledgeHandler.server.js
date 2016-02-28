@@ -52,7 +52,8 @@ function PledgeHandler () {
 	this.addMeToPledge = function (req, res) {
 		var id = req.user ? req.user.id : testid;
 		var user = { id: id, when: new Date() };
-		Pledges.findOneAndUpdate({ '_id': req.params.id }, { $push: { 'users': user } }).exec(function (err, result) { 
+		var title = req.params.title.replace(/-/g, " ");
+		Pledges.findOneAndUpdate({ 'title': { $regex : new RegExp(title, "i") } }, { $push: { 'users': user } }).exec(function (err, result) { 
 			if (err) { throw err; } 
 		    res.json(result);
 		});
@@ -60,7 +61,8 @@ function PledgeHandler () {
 	
 	this.removeMeFromPledge = function (req, res) {
 		var id = req.user ? req.user.id : testid;
-		Pledges.findOneAndUpdate({ '_id': req.params.id }, { $pull: { "users" : { id: id } } }).exec(function (err, result) { 
+		var title = req.params.title.replace(/-/g, " ");
+		Pledges.findOneAndUpdate({ 'title': { $regex : new RegExp(title, "i") } }, { $pull: { "users" : { id: id } } }).exec(function (err, result) { 
 		    if (err) { throw err; } 
 		    res.json(result);
 		});
