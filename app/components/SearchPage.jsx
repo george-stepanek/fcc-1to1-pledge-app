@@ -31,7 +31,7 @@ var SearchPage = React.createClass({
         return (
             <div>
                 <Header />
-        		<div className="container">
+        		<div>
                     {this.pledgeGroup()}
         		</div>
     		</div>
