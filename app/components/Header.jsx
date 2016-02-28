@@ -12,7 +12,7 @@ var Header = React.createClass({
 	        
 			// cancel the post-login redirect if the user cancels out of the login modal
 			$('#login-modal').on('hide.bs.modal', function () {
-	        	$.removeCookie("pageBeforeLogin");
+	        	$.removeCookie("pageBeforeLogin", { path: '/' });
 			});
 		});
 	    

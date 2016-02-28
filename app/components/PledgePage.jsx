@@ -13,7 +13,7 @@ var PledgePage = React.createClass({
     		}
         });
         
-        if($.cookie("pledgeToAdd") == this.pledgeId && user) {
+		if($.cookie("pledgeToAdd") == this.pledgeId && user) {
 	    	this.addMe("afterLogin");
         }
 	    $.removeCookie("pledgeToAdd", { path: '/' });
@@ -44,15 +44,15 @@ var PledgePage = React.createClass({
 						</b></i> so far.
 					</p>
 					<a className="pledge-source" target="_blank" href="" title="Share it"> 
-	    		    	<i className="fa fa-facebook"></i>{/*todo*/}
+	    		    	<i className="fa fa-facebook"></i>{/***TODO***/}
 	    		  	</a>
 	    		  	&nbsp;
 	    		  	<a className="pledge-source" target="_blank" href="" title="Pin it">
-	    		    	<i className="fa fa-pinterest"></i>{/*todo*/}
+	    		    	<i className="fa fa-pinterest"></i>{/***TODO***/}
 	    		  	</a>
 	    		  	&nbsp;
 	    		  	<a className="pledge-source" target="_blank" href="" title="Tweet it">
-	    		    	<i className="fa fa-twitter"></i>{/*todo*/}
+	    		    	<i className="fa fa-twitter"></i>{/***TODO***/}
 	    		  	</a>
 	    		  	&nbsp;
 		    		<a className="pledge-source" href="#" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
@@ -121,7 +121,7 @@ var PledgePage = React.createClass({
 						<p className="pledge-para">Pledge to save <i><b>
 							{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
 							</b></i> per week.
-							<a href={this.state.pledge.citation} target="_blank" className="pledge-source">
+							<a href={this.state.pledge.citation} target="_blank" className="pledge-source" title={"Source: " + this.state.pledge.source}>
 								&nbsp;<i className="fa fa-external-link"></i>
 							</a>
 						</p>
@@ -137,10 +137,8 @@ var PledgePage = React.createClass({
 });
 
 /*
-???    https://www.tumblr.com/widgets/share/tool?canonicalUrl=http://testkitchen.huffingtonpost.com/tumblr-porn/
-Share  https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2F482583%2F&display=popup&ref=plugin&src=like&app_id=113869198637480
-Tweet  https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=Inside%20the%20Surprisingly%20Sexy%20World%20of%20Tumblr%20Porn&tw_p=tweetbutton&url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn%2F
-Pin it https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn&media=https%3A%2F%2Frm-content.s3.amazonaws.com%2Freadymag%2Fupload-4ca89e30-d57f-11e5-87f8-5f96c7c39296.jpg&description=Inside%20The%20Surprising%20World%20of%20Tumblr%20Porn
-
-http://testkitchen.github.io/social_share.jpg
+https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2F482583%2F&display=popup&ref=plugin&src=like&app_id=113869198637480
+https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=Inside%20the%20Surprisingly%20Sexy%20World%20of%20Tumblr%20Porn&tw_p=tweetbutton&url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn%2F
+https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn&media=https%3A%2F%2Frm-content.s3.amazonaws.com%2Freadymag%2Fupload-4ca89e30-d57f-11e5-87f8-5f96c7c39296.jpg&description=Inside%20The%20Surprising%20World%20of%20Tumblr%20Porn
+https://www.flickr.com/photos/kathycsus/4311836838
 */

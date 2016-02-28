@@ -79,9 +79,7 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  float: left;
-  min-width: 250px;
-  width: 33%;
+  padding: 0;
   height: 250px;
   text-align: center;
 }
@@ -150,13 +148,14 @@ body {
   filter: brightness(60%);
 }
 .pledge-title {
+  margin: 20px 0 20px 0;
   font-family: 'Heartwell';
   font-size: 4em;
 }
 .pledge {
   max-width: 800px;
 }
-.pledge-source {
+.pledge-source, .pledge-source:visited {
   color: white;
   text-decoration: none !important;
   margin: 0 20px 0 20px;
@@ -165,5 +164,5 @@ body {
   color: lightgrey;
 }
 .pledge-para {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }

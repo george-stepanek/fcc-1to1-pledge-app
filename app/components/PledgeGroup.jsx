@@ -2,7 +2,7 @@ var PledgeGroup = React.createClass({
     render: function() {
 		var pledges = this.props.pledges.map(function(pledge) {
 			return (
-				<div className="pledge-link" key={pledge._id}>
+				<div className="pledge-link col-md-4" key={pledge._id}>
 					<a href={"/pledge/" + pledge.title.toLowerCase().replace(/\s/g, "-")} >
 						<img src={pledge.thumbnailUrl}/>
 						<h4 className="pledge-thumb-title"><span>{pledge.title}</span></h4>
@@ -11,7 +11,7 @@ var PledgeGroup = React.createClass({
 				</div>
 			);
 		});
-        return (<div className="grid">
+        return (<div className="row grid">
         			{pledges}
         		</div>
         );
