@@ -25,7 +25,7 @@ var MainPage = React.createClass({
         return (
             <div>
                 <Header />
-        		<div className="container">
+        		<div>
                     <PledgeGroup pledges={this.state.pledges} />
         		</div>
     		</div>

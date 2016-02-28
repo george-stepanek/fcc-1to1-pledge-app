@@ -26,6 +26,56 @@
 	"impactUnits": "pounds of food",
 	"source": "United States Department of Agriculture",
 	"citation": "http://www.rona.unep.org/documents/news/RONA%20Food%20Waste%20Fact%20Sheet.pdf",
+	"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg/1280px-Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg",
+	"thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg/640px-Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg"	
+},
+{
+	"title": "Think Before You Plant",
+	"explanation": "Plant native plants that are acclimated to the climate you live in so you have to use less water to help them thrive.",
+	"impactPerWeek": 672,
+	"impactUnits": "gallons of water",
+	"source": "Environmental Protection Agency",
+	"citation": "http://www.epa.gov/WaterSense/pubs/outdoor.html",
+	"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Boy_in_blue_t-shirt_watering_plants.jpg/1024px-Boy_in_blue_t-shirt_watering_plants.jpg",
+	"thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Boy_in_blue_t-shirt_watering_plants.jpg/480px-Boy_in_blue_t-shirt_watering_plants.jpg"	
+},
+{
+	"title": "Recycle",
+	"explanation": "Recycle all paper, glass, aluminum, and plastics! Check out ways that your community is making it easier, as well as incentives that pay you for recyclables.",
+	"impactPerWeek": 14,
+	"impactUnits": "pounds of recyclable goods",
+	"source": "Green Waste",
+	"citation": "http://www.greenwaste.com/recycling-stats",
+	"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Paper_recycling_in_Ponte_a_Serraglio.JPG/1280px-Paper_recycling_in_Ponte_a_Serraglio.JPG",
+	"thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Paper_recycling_in_Ponte_a_Serraglio.JPG/640px-Paper_recycling_in_Ponte_a_Serraglio.JPG"	
+},
+{
+	"title": "Blank",
+	"explanation": "Placeholder pledge",
+	"impactPerWeek": 1,
+	"impactUnits": "pledge",
+	"source": "Google it",
+	"citation": "http://www.google.com",
+	"imageUrl": "http://placehold.it/1800x1200",
+	"thumbnailUrl": "http://placehold.it/600x400"	
+},
+{
+	"title": "Blank",
+	"explanation": "Placeholder pledge",
+	"impactPerWeek": 1,
+	"impactUnits": "pledge",
+	"source": "Google it",
+	"citation": "http://www.google.com",
+	"imageUrl": "http://placehold.it/1800x1200",
+	"thumbnailUrl": "http://placehold.it/600x400"	
+},
+{
+	"title": "Blank",
+	"explanation": "Placeholder pledge",
+	"impactPerWeek": 1,
+	"impactUnits": "pledge",
+	"source": "Google it",
+	"citation": "http://www.google.com",
 	"imageUrl": "http://placehold.it/1800x1200",
 	"thumbnailUrl": "http://placehold.it/600x400"	
 }]

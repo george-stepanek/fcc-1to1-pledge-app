@@ -70,17 +70,16 @@ body {
 
 /* Pledge group 
 ----------------------------------*/
-.grid {
-  padding-top: 50px;
+.row {
+  margin: 0;
 }
-
 .pledge-link {
   background: rgba(64,180,194,0.8);
   position: relative;
   overflow: hidden;
   cursor: pointer;
   padding: 0;
-  height: 250px;
+  height: 328.5px;
   text-align: center;
 }
 .pledge-info {
