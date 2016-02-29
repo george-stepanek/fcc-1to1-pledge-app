@@ -60,10 +60,18 @@ function PledgeHandler () {
 		var user = { id: id, when: new Date() };
 		var title = req.params.title.replace(/-/g, " ");
 		
-		// should check that we're not already signed up ***TODO***
-		Pledges.findOneAndUpdate({ 'title': { $regex : new RegExp(title, "i") } }, { $push: { 'users': user } }).exec(function (err, result) { 
-			if (err) { throw err; } 
-		    res.json(result);
+		// check that we're not already signed up for this pledge
+		Pledges.find({ $and: [{'users.id': id}, {'title': { $regex : new RegExp(title, "i") } }] }).exec(function (err, result) {
+			if (err) { throw err; }
+			if(result.length == 0) {
+				Pledges.findOneAndUpdate({ 'title': { $regex : new RegExp(title, "i") } }, { $push: { 'users': user } }).exec(function (err, result) { 
+					if (err) { throw err; } 
+				    res.json(result);
+				});
+			}
+			else {
+				res.json(result);
+			}
 		});
 	};
 	
