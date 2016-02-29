@@ -130,6 +130,8 @@ body {
 /* Pledge page
 ----------------------------------*/
 .pledge-page {
+  position: relative;
+  width: 100%;
   text-align: center;
   color: white;
   font-size: 2em;
@@ -147,7 +149,7 @@ body {
   filter: brightness(60%);
 }
 .pledge-title {
-  margin: 20px 0 20px 0;
+  margin: 30px 0 30px 0;
   font-family: 'Heartwell';
   font-size: 4em;
 }
@@ -162,27 +164,22 @@ body {
 .pledge-para {
   margin-bottom: 40px;
 }
-.arr-btns {
-  position: relative;
-  width: 100%;
-}
 .arr-btn {
 	opacity: 1;
 	position: absolute;
-	top: 50px;
+	top: -10px;
 	width: 60px;
 	height: 30px;
   text-decoration: none !important;
-  margin-bottom: 50px;
 }
 .arr-btn:hover {
 	opacity:0.7;
 }
 .arr-prev { 
 	background: url(/public/images/left-arrow.svg) no-repeat;
-	left: 50px;
+	left: 20px;
 }
 .arr-next {
 	background: url(/public/images/right-arrow.svg) no-repeat;
-	right: 50px;
+	right: 20px;
 }

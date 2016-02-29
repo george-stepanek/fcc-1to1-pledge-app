@@ -22,6 +22,9 @@ function PledgeHandler () {
 		    		}
 	    		}
 	    	}
+	    	
+	    	result[i].prevPledge = result[i > 0 ? i - 1 : result.length - 1].title.toLowerCase().replace(/\s/g, "-");
+	    	result[i].nextPledge = result[i < result.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
 	    }
 	    return result;
 	}
@@ -34,10 +37,11 @@ function PledgeHandler () {
 	};
 	
 	this.getPledge = function (req, res) {
-		var title = req.params.title.replace(/-/g, " ");
-		Pledges.findOne({ 'title': { $regex : new RegExp(title, "i") } }).exec(function (err, result) {
-		    if (err) { throw err; } 
-		    res.json(calculateImpactSoFar(req, [result])[0]);
+		var regex = new RegExp(req.params.title.replace(/-/g, " "), "i");
+		Pledges.find({ }).exec(function (err, result) { 
+		    if (err) { throw err; }
+		    var pledges = calculateImpactSoFar(req, result);
+		    res.json(pledges.filter(function (pledge) {	return regex.test(pledge.title) })[0]);
 		});
 	};
 

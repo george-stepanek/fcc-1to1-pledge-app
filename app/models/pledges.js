@@ -14,6 +14,8 @@ var Pledge = new Schema({
 	citation: String,
 	imageUrl: String,
 	thumbnailUrl: String,
+	prevPledge: String,
+	nextPledge: String,
 	users: [ {
 	    id: String,
 	    when: Date
