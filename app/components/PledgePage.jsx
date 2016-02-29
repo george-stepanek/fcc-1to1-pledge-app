@@ -131,7 +131,7 @@ var PledgePage = React.createClass({
         		<div className="pledge-page">
 					<img className="pledge-img" src={this.state.pledge.imageUrl}/>
 					<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
-					<div className="container-fluid row">
+					<div className="row">
 						<div className="pledge-col col-md-6">
 							<p className="pledge-para">{this.state.pledge.explanation}</p>
 							<p className="pledge-para">A total of <i><b>
@@ -139,6 +139,10 @@ var PledgePage = React.createClass({
 							</b></i> have been saved already!</p>
 						</div>
 						{this.myImpactAndButtons()}
+					</div>
+					<div className="arr-btns">
+						<a className="arr-btn arr-prev" href="">&nbsp;</a>
+						<a className="arr-btn arr-next" href="">&nbsp;</a>
 					</div>
 				</div>
     		</div>

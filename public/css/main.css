@@ -162,3 +162,27 @@ body {
 .pledge-para {
   margin-bottom: 40px;
 }
+.arr-btns {
+  position: relative;
+  width: 100%;
+}
+.arr-btn {
+	opacity: 1;
+	position: absolute;
+	top: 50px;
+	width: 60px;
+	height: 30px;
+  text-decoration: none !important;
+  margin-bottom: 50px;
+}
+.arr-btn:hover {
+	opacity:0.7;
+}
+.arr-prev { 
+	background: url(/public/images/left-arrow.svg) no-repeat;
+	left: 50px;
+}
+.arr-next {
+	background: url(/public/images/right-arrow.svg) no-repeat;
+	right: 50px;
+}
