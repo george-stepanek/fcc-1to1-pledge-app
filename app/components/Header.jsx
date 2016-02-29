@@ -61,12 +61,10 @@ var Header = React.createClass({
 						</button>
     					<a className="logo-link" href="/">
     						<img className="logo-img" src="/public/images/Logo.jpg"/>
-    					</a>
-    				</div>
-    				<div className="collapse navbar-collapse" id="navbar-collapse">
-	    				<a className="logo-link" href="/">
 	    					<span className="logo-text">PLEDGES</span>
 	    				</a>
+    				</div>
+    				<div className="collapse navbar-collapse" id="navbar-collapse">
     					{this.userMenu()}
 						<ul className="nav navbar-nav navbar-right">
 							<form className="navbar-form" role="search" action="/search" method="get">

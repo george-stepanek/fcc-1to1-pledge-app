@@ -28,6 +28,17 @@ var PledgePage = React.createClass({
         });
         return {user: user, pledge: pledge};
     },
+    impactPerWeek: function() {
+    	return (
+			<p className="pledge-para">Pledge to save <i><b>
+				{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
+				</b></i> per week.
+				<a href={this.state.pledge.citation} target="_blank" className="pledge-source" title={"Source: " + this.state.pledge.source}>
+					&nbsp;<i className="fa fa-external-link"></i>
+				</a>
+			</p>    		
+		);
+    },
 	myImpactAndButtons: function() {
 		var self = this;
 
@@ -35,7 +46,8 @@ var PledgePage = React.createClass({
 		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
 		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			return ( 
-				<div>
+				<div className="pledge-col col-md-6">
+					{this.impactPerWeek()}
 					<p className="pledge-para">
 						Thank you for pledging!
 						<br/>
@@ -63,9 +75,12 @@ var PledgePage = React.createClass({
 		}
 		else {
 			return (
-				<button className="btn btn-social btn-lg btn-default" onClick={this.addMe} id="submit-button">
-					<i className="fa fa-check"></i> I pledge to do this
-				</button>
+				<div className="pledge-col col-md-6">
+					{this.impactPerWeek()}
+					<button className="btn btn-social btn-lg btn-default" onClick={this.addMe} id="submit-button">
+						<i className="fa fa-check"></i> I pledge to do this
+					</button>
+				</div>
 			);
 		}
 	},
@@ -116,18 +131,13 @@ var PledgePage = React.createClass({
         		<div className="pledge-page">
 					<img className="pledge-img" src={this.state.pledge.imageUrl}/>
 					<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
-					<div className="container-fluid pledge">
-						<p className="pledge-para">{this.state.pledge.explanation}</p>
-						<p className="pledge-para">Pledge to save <i><b>
-							{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
-							</b></i> per week.
-							<a href={this.state.pledge.citation} target="_blank" className="pledge-source" title={"Source: " + this.state.pledge.source}>
-								&nbsp;<i className="fa fa-external-link"></i>
-							</a>
-						</p>
-						<p className="pledge-para">A total of <i><b>
-							{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
-						</b></i> have been saved already!</p>
+					<div className="container-fluid row">
+						<div className="pledge-col col-md-6">
+							<p className="pledge-para">{this.state.pledge.explanation}</p>
+							<p className="pledge-para">A total of <i><b>
+								{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
+							</b></i> have been saved already!</p>
+						</div>
 						{this.myImpactAndButtons()}
 					</div>
 				</div>

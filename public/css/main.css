@@ -151,9 +151,6 @@ body {
   font-family: 'Heartwell';
   font-size: 4em;
 }
-.pledge {
-  max-width: 800px;
-}
 .pledge-source, .pledge-source:visited {
   color: white;
   text-decoration: none !important;
