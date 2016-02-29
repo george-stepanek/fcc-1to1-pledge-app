@@ -153,12 +153,12 @@ body {
   font-family: 'Heartwell';
   font-size: 4em;
 }
-.pledge-source, .pledge-source:visited {
+.pledge-btn, .pledge-btn:visited {
   color: white;
   text-decoration: none !important;
   margin: 0 20px 0 20px;
 }
-.pledge-source:hover {
+.pledge-btn:hover {
   color: lightgrey;
 }
 .pledge-para {

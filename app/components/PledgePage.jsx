@@ -33,7 +33,7 @@ var PledgePage = React.createClass({
 			<p className="pledge-para">Pledge to save <i><b>
 				{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
 				</b></i> per week.
-				<a href={this.state.pledge.citation} target="_blank" className="pledge-source" title={"Source: " + this.state.pledge.source}>
+				<a href={this.state.pledge.citation} target="_blank" className="pledge-btn" title={"Source: " + this.state.pledge.source}>
 					&nbsp;<i className="fa fa-external-link"></i>
 				</a>
 			</p>    		
@@ -55,19 +55,19 @@ var PledgePage = React.createClass({
 							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
 						</b></i> so far.
 					</p>
-					<a className="pledge-source" target="_blank" href="" title="Share it"> 
+					<a className="pledge-btn" target="_blank" href="" title="Share it"> 
 	    		    	<i className="fa fa-facebook"></i>{/***TODO***/}
 	    		  	</a>
 	    		  	&nbsp;
-	    		  	<a className="pledge-source" target="_blank" href="" title="Pin it">
+	    		  	<a className="pledge-btn" target="_blank" href="" title="Pin it">
 	    		    	<i className="fa fa-pinterest"></i>{/***TODO***/}
 	    		  	</a>
 	    		  	&nbsp;
-	    		  	<a className="pledge-source" target="_blank" href="" title="Tweet it">
+	    		  	<a className="pledge-btn" target="_blank" href="" title="Tweet it">
 	    		    	<i className="fa fa-twitter"></i>{/***TODO***/}
 	    		  	</a>
 	    		  	&nbsp;
-		    		<a className="pledge-source" href="#" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
+		    		<a className="pledge-btn" href="#" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
 						<i className="fa fa-times-circle-o"></i>
 					</a>
 				</div>

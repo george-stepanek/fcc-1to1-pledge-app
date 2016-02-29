@@ -13,7 +13,7 @@ describe('pledges api', function() {
                 if(err) throw err;
                 res.status.should.equal(200);
                 res.body.length.should.be.above(0);
-                pledgeId = res.body[0]._id;
+                pledgeId = res.body[0].title.toLowerCase().replace(/\s/g, "-");
                 done();
             });
     });

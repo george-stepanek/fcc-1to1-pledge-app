@@ -5,7 +5,7 @@ var testid = "12345678";
 
 function PledgeHandler () {
 	
-	function calculateImpactSoFar (req, result) {
+	function populateCalculatedProperties (req, result) {
 	    for(var i = 0; i < result.length; i++) {
 	    	result[i].impactSoFar = 0;
 	    	if(result[i].users) {
@@ -32,15 +32,17 @@ function PledgeHandler () {
 	this.getAllPledges = function (req, res) {
 		Pledges.find({ }).exec(function (err, result) { 
 		    if (err) { throw err; }
-		    res.json(calculateImpactSoFar(req, result));
+		    res.json(populateCalculatedProperties(req, result));
 		});
 	};
 	
 	this.getPledge = function (req, res) {
-		var regex = new RegExp(req.params.title.replace(/-/g, " "), "i");
+		// first need to get all of the pledges, so we can populate the prevPledge and nextPledge properties
 		Pledges.find({ }).exec(function (err, result) { 
 		    if (err) { throw err; }
-		    var pledges = calculateImpactSoFar(req, result);
+			var regex = new RegExp(req.params.title.replace(/-/g, " "), "i");
+			var pledges = populateCalculatedProperties(req, result);
+			// return only the requested pledge
 		    res.json(pledges.filter(function (pledge) {	return regex.test(pledge.title) })[0]);
 		});
 	};
@@ -49,7 +51,7 @@ function PledgeHandler () {
 		var id = req.user ? req.user.id : testid;
 		Pledges.find({ 'users.id': id }).exec(function (err, result) { 
 			if (err) { throw err; } 
-			res.json(calculateImpactSoFar(req, result));
+			res.json(populateCalculatedProperties(req, result));
 		});
 	};
 	
@@ -77,7 +79,7 @@ function PledgeHandler () {
 	this.searchPledges = function(req, res) {
 		Pledges.find({ 'title': RegExp(req.query.q || "", "i")}).exec(function (err, result) { 	
 		    if (err) { throw err; } 
-		    res.json(calculateImpactSoFar(req, result));
+		    res.json(populateCalculatedProperties(req, result));
 		});
 	};
 }
