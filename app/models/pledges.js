@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 var Pledge = new Schema({
 	title: String,
+	category: String,
 	explanation: String,
 	impactPerWeek: Number,
 	impactSoFar: Number,

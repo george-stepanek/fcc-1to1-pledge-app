@@ -10,7 +10,7 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/index.html');
 		});
 
-	app.route('/pledge/:id')
+	app.route('/pledge/:title')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/pledge.html');
 		});
@@ -23,6 +23,11 @@ module.exports = function (app, passport) {
 	app.route('/mypledges')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/mypledges.html');
+		});
+
+	app.route('/category/:category')
+		.get(function (req, res) {
+			res.sendFile(path + '/public/category.html');
 		});
 
 	app.route('/logout')
@@ -71,4 +76,10 @@ module.exports = function (app, passport) {
 	app.route('/api/my/pledge/:title')
 		.post(pledgeHandler.addMeToPledge)
 		.delete(pledgeHandler.removeMeFromPledge);
+		
+	app.route('/api/all/categories')
+		.get(pledgeHandler.getCategories);
+		
+	app.route('/api/category/pledges/:category')
+		.get(pledgeHandler.getPledgesForCategory);
 };

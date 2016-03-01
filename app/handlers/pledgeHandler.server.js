@@ -85,10 +85,24 @@ function PledgeHandler () {
 	};
 	
 	this.searchPledges = function(req, res) {
-		Pledges.find({ 'title': RegExp(req.query.q || "", "i")}).exec(function (err, result) { 	
+		Pledges.find({ 'title': RegExp(req.query.q || "", "i") }).exec(function (err, result) { 	
 		    if (err) { throw err; } 
 		    res.json(populateCalculatedProperties(req, result));
 		});
+	};
+	
+	this.getCategories = function(req, res) {
+		Pledges.distinct('category', function(err, result) {
+		    if (err) { throw err; }
+		    res.json(result);
+		});
+	};
+	
+	this.getPledgesForCategory = function(req, res) {
+		Pledges.find({ 'category': req.params.category }).exec(function (err, result) { 	
+		    if (err) { throw err; } 
+		    res.json(populateCalculatedProperties(req, result));
+		});	
 	};
 }
 module.exports = PledgeHandler;

@@ -1,5 +1,6 @@
 [{
 	"title": "Refuse The Bag",
+	"category": "waste",
 	"explanation": "Say no to plastic bags when eating out. Plastic can take 1,000 years to degrade in a landfill. Bring your own bag!",
 	"impactPerWeek": 8,
 	"impactUnits": "plastic bags",
@@ -12,6 +13,7 @@
 {
 	"title": "Straws Suck",
 	"explanation": "Refuse straws when eating out at restaurants. Humans use 500,000,000 per day.",
+	"category": "waste",
 	"impactPerWeek": 12,
 	"impactUnits": "straws",
 	"source": "Eco-cycle",
@@ -21,6 +23,7 @@
 },
 {
 	"title": "Love Those Leftovers",
+	"category": "food",
 	"explanation": "Cut down on food waste by ensuring that you have finished all perishable food in the fridge before shopping for more. If there is perishable food, figure out what you can incorporate into more meals!",
 	"impactPerWeek": 5,
 	"impactUnits": "pounds of food",
@@ -31,6 +34,7 @@
 },
 {
 	"title": "Think Before You Plant",
+	"category": "water",
 	"explanation": "Plant native plants that are acclimated to the climate you live in so you have to use less water to help them thrive.",
 	"impactPerWeek": 672,
 	"impactUnits": "gallons of water",
@@ -41,6 +45,7 @@
 },
 {
 	"title": "Recycle",
+	"category": "waste",
 	"explanation": "Recycle all paper, glass, aluminum, and plastics! Check out ways that your community is making it easier, as well as incentives that pay you for recyclables.",
 	"impactPerWeek": 14,
 	"impactUnits": "pounds of recyclable goods",
@@ -51,9 +56,10 @@
 },
 {
 	"title": "Blank 1",
+	"category": "energy",
 	"explanation": "Placeholder pledge",
 	"impactPerWeek": 1,
-	"impactUnits": "pledge",
+	"impactUnits": "pledges",
 	"source": "Google it",
 	"citation": "http://www.google.com",
 	"imageUrl": "http://placehold.it/1800x1200",
@@ -61,9 +67,10 @@
 },
 {
 	"title": "Blank 2",
+	"category": "energy",
 	"explanation": "Placeholder pledge",
 	"impactPerWeek": 1,
-	"impactUnits": "pledge",
+	"impactUnits": "pledges",
 	"source": "Google it",
 	"citation": "http://www.google.com",
 	"imageUrl": "http://placehold.it/1800x1200",
@@ -71,9 +78,10 @@
 },
 {
 	"title": "Blank 3",
+	"category": "energy",
 	"explanation": "Placeholder pledge",
 	"impactPerWeek": 1,
-	"impactUnits": "pledge",
+	"impactUnits": "pledges",
 	"source": "Google it",
 	"citation": "http://www.google.com",
 	"imageUrl": "http://placehold.it/1800x1200",

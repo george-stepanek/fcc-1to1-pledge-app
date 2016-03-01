@@ -55,7 +55,7 @@ var PledgePage = React.createClass({
 						<br/>
 						Your contribution has been <i><b>
 							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
-						</b></i> so far.
+						</b></i> so far.<br/>(Check back here for your progress!)
 					</p>
 	    		  	<a className="pledge-btn" target="_blank" title="Tweet it" 
 	    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
@@ -131,7 +131,7 @@ var PledgePage = React.createClass({
     },
     render: function() {
         return (
-            <div className="content">
+            <div>
                 <Header />
         		<div className="pledge-page">
 					<img className="pledge-img" src={this.state.pledge.imageUrl}/>
