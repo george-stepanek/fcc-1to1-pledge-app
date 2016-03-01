@@ -30,18 +30,18 @@ function PledgeHandler () {
 	}
     
 	this.getAllPledges = function (req, res) {
-		Pledges.find({ }).exec(function (err, result) { 
+		Pledges.find({ }).exec(function (err, results) { 
 		    if (err) { throw err; }
-		    res.json(populateCalculatedProperties(req, result));
+		    res.json(populateCalculatedProperties(req, results));
 		});
 	};
 	
 	this.getPledge = function (req, res) {
 		// first need to get all of the pledges, so we can populate the prevPledge and nextPledge properties
-		Pledges.find({ }).exec(function (err, result) { 
+		Pledges.find({ }).exec(function (err, results) { 
 		    if (err) { throw err; }
 			var regex = new RegExp(req.params.title.replace(/-/g, " "), "i");
-			var pledges = populateCalculatedProperties(req, result);
+			var pledges = populateCalculatedProperties(req, results);
 			// return only the requested pledge
 		    res.json(pledges.filter(function (pledge) {	return regex.test(pledge.title) })[0]);
 		});
@@ -49,9 +49,9 @@ function PledgeHandler () {
 
 	this.getMyPledges = function (req, res) {
 		var id = req.user ? req.user.id : testid;
-		Pledges.find({ 'users.id': id }).exec(function (err, result) { 
+		Pledges.find({ 'users.id': id }).exec(function (err, results) { 
 			if (err) { throw err; } 
-			res.json(populateCalculatedProperties(req, result));
+			res.json(populateCalculatedProperties(req, results));
 		});
 	};
 	
@@ -85,23 +85,31 @@ function PledgeHandler () {
 	};
 	
 	this.searchPledges = function(req, res) {
-		Pledges.find({ 'title': RegExp(req.query.q || "", "i") }).exec(function (err, result) { 	
+		Pledges.find({ 'title': RegExp(req.query.q || "", "i") }).exec(function (err, results) { 	
 		    if (err) { throw err; } 
-		    res.json(populateCalculatedProperties(req, result));
+		    res.json(populateCalculatedProperties(req, results));
 		});
 	};
 	
 	this.getCategories = function(req, res) {
-		Pledges.distinct('category', function(err, result) {
+		Pledges.distinct('category', function(err, categories) {
 		    if (err) { throw err; }
-		    res.json(result);
+			Pledges.find({ }).exec(function (err, results) { 
+			    if (err) { throw err; }
+			    var output = [];
+				for(var i = 0; i < categories.length; i++) {
+					var url = results.filter(function (value) { return value.category == categories[i]})[0].thumbnailUrl;
+					output.push({ title: categories[i], imageUrl: url });
+				}
+		    	res.json(output);
+			});
 		});
 	};
 	
 	this.getPledgesForCategory = function(req, res) {
-		Pledges.find({ 'category': req.params.category }).exec(function (err, result) { 	
+		Pledges.find({ 'category': req.params.category }).exec(function (err, results) { 	
 		    if (err) { throw err; } 
-		    res.json(populateCalculatedProperties(req, result));
+		    res.json(populateCalculatedProperties(req, results));
 		});	
 	};
 }

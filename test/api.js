@@ -2,11 +2,25 @@ var should = require("should");
 var server = require("supertest").agent("http://localhost:" + process.env.PORT);
 
 describe('pledges api', function() {
-    var pledgeId;
+    var category, pledgeId;
     
-    it('should get some pledges', function(done) {
+    it('should get some categories', function(done) {
         server
-            .get('/api/all/pledges')
+            .get('/api/all/categories')
+            .expect("Content-type",/json/)
+            .expect(200)
+            .end(function(err,res){
+                if(err) throw err;
+                res.status.should.equal(200);
+                res.body.length.should.be.above(0);
+                category = res.body[0].title;
+                done();
+            });
+    });
+    
+    it('should get pledges for a category', function(done) {
+        server
+            .get('/api/category/pledges/' + category)
             .expect("Content-type",/json/)
             .expect(200)
             .end(function(err,res){

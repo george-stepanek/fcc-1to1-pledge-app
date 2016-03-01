@@ -50,7 +50,7 @@ var Header = React.createClass({
 							<span className="icon-bar"></span>
 							<span className="icon-bar"></span>
 						</button>
-    					<a className="logo-link" href="/">
+    					<a className="logo-link" href="/" title="Home">
     						<img className="logo-img" src="/public/images/Logo.jpg"/>
 	    					<span className="logo-text">PLEDGES</span>
 	    				</a>

@@ -10,23 +10,35 @@ var MainPage = React.createClass({
 	        return null;
         }
         
-    	var pledges;
+    	var categories;
         $.ajax({
-    		url: window.location.origin + '/api/all/pledges',
+    		url: window.location.origin + '/api/all/categories',
     		async: false,
     		type: "get",
-    		success: function(result) {
-                pledges = result;
+    		success: function(results) {
+                categories = results;
     		}
         });
-        return {pledges: pledges};
+        return {categories: categories};
     },
     render: function() {
-        return (
+		var categories = this.state.categories.map(function(category) {
+			return (
+				<div className="pledge-link col-lg-3 col-md-4 col-sm-6" key={category.title}>
+					<a href={"/category/" + category.title}>
+						<img src={category.imageUrl}/>
+						<h4 className="pledge-thumb-title">
+						    <span>{category.title.charAt(0).toUpperCase() + category.title.substr(1)}</span>
+						</h4>
+					</a>
+				</div>
+			);
+		});
+		return (
             <div>
                 <Header />
         		<div>
-                    <PledgeGroup pledges={this.state.pledges} />
+                    {categories}
         		</div>
     		</div>
 		);

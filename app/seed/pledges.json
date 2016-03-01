@@ -1,8 +1,8 @@
 [{
 	"title": "Refuse The Bag",
 	"category": "waste",
-	"explanation": "Say no to plastic bags when eating out. Plastic can take 1,000 years to degrade in a landfill. Bring your own bag!",
-	"impactPerWeek": 8,
+	"explanation": "Say no to plastic bags when shopping. Plastic can take 1,000 years to degrade in a landfill. Bring your own bag!",
+	"impactPerWeek": 6,
 	"impactUnits": "plastic bags",
 	"source": "Reuse This Bag!",
 	"citation": "http://www.reusethisbag.com/25-reasons-to-go-reusable.php",
@@ -12,7 +12,7 @@
 },
 {
 	"title": "Straws Suck",
-	"explanation": "Refuse straws when eating out at restaurants. Humans use 500,000,000 per day.",
+	"explanation": "Refuse straws when eating out at restaurants. People in the US use 500 million per day.",
 	"category": "waste",
 	"impactPerWeek": 12,
 	"impactUnits": "straws",
@@ -28,7 +28,7 @@
 	"impactPerWeek": 5,
 	"impactUnits": "pounds of food",
 	"source": "United States Department of Agriculture",
-	"citation": "http://www.rona.unep.org/documents/news/RONA%20Food%20Waste%20Fact%20Sheet.pdf",
+	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
 	"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg/1280px-Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg",
 	"thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg/640px-Broccoli_leftovers_fusili_thick_soup_%288169302156%29.jpg"	
 },
@@ -57,7 +57,7 @@
 {
 	"title": "Blank 1",
 	"category": "energy",
-	"explanation": "Placeholder pledge",
+	"explanation": "Placeholder pledge.",
 	"impactPerWeek": 1,
 	"impactUnits": "pledges",
 	"source": "Google it",
@@ -68,7 +68,7 @@
 {
 	"title": "Blank 2",
 	"category": "energy",
-	"explanation": "Placeholder pledge",
+	"explanation": "Placeholder pledge.",
 	"impactPerWeek": 1,
 	"impactUnits": "pledges",
 	"source": "Google it",
@@ -79,7 +79,7 @@
 {
 	"title": "Blank 3",
 	"category": "energy",
-	"explanation": "Placeholder pledge",
+	"explanation": "Placeholder pledge.",
 	"impactPerWeek": 1,
 	"impactUnits": "pledges",
 	"source": "Google it",
