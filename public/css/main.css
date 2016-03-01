@@ -19,6 +19,12 @@
 body {
   font-family: 'Questrial', sans-serif;
 }
+.none-found {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 40px;
+  color: grey;
+}
 
 /* Menu bar 
 ----------------------------------*/

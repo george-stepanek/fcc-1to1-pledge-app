@@ -16,7 +16,7 @@ var MyPledgesPage = React.createClass({
             return ( <PledgeGroup pledges={this.state.pledges} /> );
         }
         else {
-            return ( <span>You don't appear to have made any pledges yet.</span> );
+            return ( <div className="none-found">You don't appear to have made any pledges yet.</div> );
         }
     },
     render: function() {

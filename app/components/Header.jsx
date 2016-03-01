@@ -1,15 +1,6 @@
 var Header = React.createClass({
     getInitialState: function() {
 	    $("document").ready(function () {
-	        // recommended fix for facebook authentication bug
-	        if (window.location.hash && window.location.hash === "#_=_") {
-	            if (window.history && window.history.pushState) {
-	                window.history.pushState("", document.title, window.location.pathname);
-	            } else {
-	                location.hash = "";
-	            }
-	        }
-	        
 			// cancel the post-login redirect if the user cancels out of the login modal
 			$('#login-modal').on('hide.bs.modal', function () {
 	        	$.removeCookie("pageBeforeLogin", { path: '/' });
@@ -71,7 +62,9 @@ var Header = React.createClass({
 								<div className="input-group">
 									<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
 									<span className="input-group-btn">
-										<button type="submit" className="btn btn-default"><span className="glyphicon glyphicon-search"></span></button>
+										<button type="submit" className="btn btn-default">
+											<span className="glyphicon glyphicon-search"></span>
+										</button>
 									</span>
 								</div>
 							</form>

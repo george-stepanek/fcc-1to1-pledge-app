@@ -3,6 +3,7 @@ var PledgePage = React.createClass({
     getInitialState: function() {
     	var path = window.location.pathname;
     	this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
+    	
     	var user, pledge, self = this;
         $.ajax({
     		url: window.location.origin + '/api/:id',
@@ -62,8 +63,7 @@ var PledgePage = React.createClass({
 	    		  	</a>
 	    		  	&nbsp;
 	    		  	<a className="pledge-btn" target="_blank" title="Pin it" 
-	    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + 
-	    		  			"&media=" + this.state.pledge.imageUrl + "&description=" + myPledge}>
+	    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +	"&media=" + this.state.pledge.imageUrl}>
 	    		    	<i className="fa fa-pinterest"></i>
 	    		  	</a>
 	    		  	&nbsp;
