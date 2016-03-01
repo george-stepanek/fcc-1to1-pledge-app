@@ -45,6 +45,7 @@ var PledgePage = React.createClass({
 		// If the pledge has pledged users AND one of those users is me
 		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
 		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
+			var myPledge = "I've pledged to save " + this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits + " per week.";
 			return ( 
 				<div className="pledge-col col-md-6">
 					{this.impactPerWeek()}
@@ -55,16 +56,20 @@ var PledgePage = React.createClass({
 							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
 						</b></i> so far.
 					</p>
-					<a className="pledge-btn" target="_blank" href="" title="Share it"> 
-	    		    	<i className="fa fa-facebook"></i>{/***TODO***/}
+	    		  	<a className="pledge-btn" target="_blank" title="Tweet it" 
+	    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
+	    		    	<i className="fa fa-twitter"></i>
 	    		  	</a>
 	    		  	&nbsp;
-	    		  	<a className="pledge-btn" target="_blank" href="" title="Pin it">
-	    		    	<i className="fa fa-pinterest"></i>{/***TODO***/}
+	    		  	<a className="pledge-btn" target="_blank" title="Pin it" 
+	    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + 
+	    		  			"&media=" + this.state.pledge.imageUrl + "&description=" + myPledge}>
+	    		    	<i className="fa fa-pinterest"></i>
 	    		  	</a>
 	    		  	&nbsp;
-	    		  	<a className="pledge-btn" target="_blank" href="" title="Tweet it">
-	    		    	<i className="fa fa-twitter"></i>{/***TODO***/}
+					<a className="pledge-btn" target="_blank" title="Share it" 
+						href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledge}> 
+	    		    	<i className="fa fa-tumblr"></i>
 	    		  	</a>
 	    		  	&nbsp;
 		    		<a className="pledge-btn" href="#" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
@@ -147,10 +152,3 @@ var PledgePage = React.createClass({
 		);
 	}
 });
-
-/*
-https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2F482583%2F&display=popup&ref=plugin&src=like&app_id=113869198637480
-https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=Inside%20the%20Surprisingly%20Sexy%20World%20of%20Tumblr%20Porn&tw_p=tweetbutton&url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn%2F
-https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Ftestkitchen.huffingtonpost.com%2Ftumblr-porn&media=https%3A%2F%2Frm-content.s3.amazonaws.com%2Freadymag%2Fupload-4ca89e30-d57f-11e5-87f8-5f96c7c39296.jpg&description=Inside%20The%20Surprising%20World%20of%20Tumblr%20Porn
-https://www.flickr.com/photos/kathycsus/4311836838
-*/
