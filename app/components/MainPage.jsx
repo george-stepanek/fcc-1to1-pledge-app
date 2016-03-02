@@ -30,6 +30,7 @@ var MainPage = React.createClass({
 						<h4 className="pledge-thumb-title">
 						    <span>{category.title.charAt(0).toUpperCase() + category.title.substr(1)}</span>
 						</h4>
+						<h4 className="pledge-info">Click to see the {category.title}&#8209;related pledges&hellip;</h4>
 					</a>
 				</div>
 			);
