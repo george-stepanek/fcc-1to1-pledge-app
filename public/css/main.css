@@ -26,10 +26,10 @@ body {
   color: grey;
 }
 
-/* Menu bar 
+/* Menu bar
 ----------------------------------*/
 .logo-link {
-  text-decoration: none !important;  
+  text-decoration: none !important;
 }
 .logo-img {
   height: 45px;
@@ -62,7 +62,7 @@ body {
   width: 100%; /* Removes scrollbar for collapsed menu */
 }
 
-/* Login popup 
+/* Login popup
 ----------------------------------*/
 .login-buttons {
   text-align: center;
@@ -74,7 +74,7 @@ body {
   border-radius: 0 !important;
 }
 
-/* Pledge group 
+/* Pledge group
 ----------------------------------*/
 .row {
   margin: 0;
@@ -119,18 +119,18 @@ body {
 .pledge-link:hover .pledge-info {
   opacity: 1;
 }
-.pledge-thumb-title { 
-  position: absolute; 
+.pledge-thumb-title {
+  position: absolute;
   white-space: nowrap;
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
 }
-.pledge-thumb-title span { 
+.pledge-thumb-title span {
   color: white;
   background: rgb(8, 8, 8);
   background: rgba(0, 0, 0, 0.5);
-  padding: 10px; 
+  padding: 10px;
 }
 
 /* Pledge page
@@ -157,7 +157,8 @@ body {
 .pledge-title {
   margin: 30px 0 30px 0;
   font-family: 'Heartwell';
-  font-size: 4em;
+  font-size: 4em; /* Fallback */
+  font-size: 10vw; /* Resize title for width */
 }
 .pledge-btn, .pledge-btn:visited {
   color: white;
@@ -181,7 +182,7 @@ body {
 .arr-btn:hover {
 	opacity:0.7;
 }
-.arr-prev { 
+.arr-prev {
 	background: url(/public/images/left-arrow.svg) no-repeat;
 	left: 20px;
 }
