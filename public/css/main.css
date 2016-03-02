@@ -22,8 +22,9 @@ body {
 .none-found {
   text-align: center;
   font-size: 2em;
-  margin-top: 40px;
+  margin: 40px auto 40px auto;
   color: grey;
+  max-width: 1000px;
 }
 
 /* Menu bar
