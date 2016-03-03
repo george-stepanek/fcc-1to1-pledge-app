@@ -5,28 +5,42 @@ var testid = "12345678";
 
 function PledgeHandler () {
 	
-	function populateCalculatedProperties (req, result) {
-	    for(var i = 0; i < result.length; i++) {
-	    	result[i].impactSoFar = 0;
-	    	if(result[i].users) {
-	    		for(var j = 0; j < result[i].users.length; j++) {
-	    			var millisecsDiff = new Date().getTime() - result[i].users[j].when.getTime();
-				    result[i].impactSoFar += Math.round(millisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+	function populateCalculatedProperties (req, results) {
+		var output = results.sort(function(a, b) {
+			if(a.category != b.category) {
+				return a.category > b.category ? 1 : -1;
+			}
+			else {
+				if(a.title != b.title) {
+					return a.title > b.title ? 1 : -1;
+				}
+				else {
+					return 0;
+				}
+			}
+		});
+		
+	    for(var i = 0; i < output.length; i++) {
+	    	output[i].impactSoFar = 0;
+	    	if(output[i].users) {
+	    		for(var j = 0; j < output[i].users.length; j++) {
+	    			var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
+				    output[i].impactSoFar += Math.round(millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 	    		}
 	    		
 	    		if(req.user) {
-		    		var meIfPledged = result[i].users.filter(function(user) {return user.id == req.user.id;});
+		    		var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
 		    		if(meIfPledged.length > 0) {
 		    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
-					    result[i].myImpactSoFar = Math.round(myMillisecsDiff * result[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+					    output[i].myImpactSoFar = Math.round(myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 		    		}
 	    		}
 	    	}
 	    	
-	    	result[i].prevPledge = result[i > 0 ? i - 1 : result.length - 1].title.toLowerCase().replace(/\s/g, "-");
-	    	result[i].nextPledge = result[i < result.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
+	    	output[i].prevPledge = output[i > 0 ? i - 1 : output.length - 1].title.toLowerCase().replace(/\s/g, "-");
+	    	output[i].nextPledge = output[i < output.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
 	    }
-	    return result;
+	    return output;
 	}
     
 	this.getAllPledges = function (req, res) {
@@ -92,8 +106,9 @@ function PledgeHandler () {
 	};
 	
 	this.getCategories = function(req, res) {
-		Pledges.distinct('category', function(err, categories) {
+		Pledges.distinct('category', function(err, results) {
 		    if (err) { throw err; }
+		    var categories = results.sort();
 			Pledges.find({ }).exec(function (err, results) { 
 			    if (err) { throw err; }
 			    var output = [];
