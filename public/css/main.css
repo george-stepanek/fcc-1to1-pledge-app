@@ -42,14 +42,12 @@ body {
 .logo-img {
   height: 45px;
   margin: 4px 0 0 4px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
 }
 .logo-text {
   font-family: Heartwell;
   font-size: 1.8em;
   letter-spacing: 2px;
-  color: #A0A0A0 !important;
+  color: #787878 !important;
   position:relative;
   bottom:-7px;
   left: 10px;
