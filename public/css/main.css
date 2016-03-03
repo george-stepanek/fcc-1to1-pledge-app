@@ -7,12 +7,19 @@
   font-family: Heartwell;
   font-style: normal;
   src: url("/public/fonts/Heartwell 1.2.otf") format("opentype");
+	src: url('/public/fonts/Heartwell 1.2.eot');
+  src: url('/public/fonts/Heartwell 1.2.woff') format('woff'), 
+    url('/public/fonts/Heartwell 1.2.ttf') format('truetype'), 
+    url('/public/fonts/Heartwell 1.2.svg') format('svg');
 }
 @font-face {
   font-family: Heartwell;
   font-style: italic;
   src: url("/public/fonts/Heartwell Italic 1.2.otf") format("opentype");
-}
+	src: url('/public/fonts/Heartwell Italic 1.2.eot');
+  src: url('/public/fonts/Heartwell Italic 1.2.woff') format('woff'), 
+    url('/public/fonts/Heartwell Italic 1.2.ttf') format('truetype'), 
+    url('/public/fonts/Heartwell Italic 1.2.svg') format('svg');}
 
 /* General styles
 ----------------------------------*/
