@@ -9,8 +9,8 @@
   src: url("/public/fonts/Heartwell 1.2.otf") format("opentype");
 	src: url('/public/fonts/Heartwell 1.2.eot');
   src: url('/public/fonts/Heartwell 1.2.woff') format('woff'), 
-    url('/public/fonts/Heartwell 1.2.ttf') format('truetype'), 
-    url('/public/fonts/Heartwell 1.2.svg') format('svg');
+       url('/public/fonts/Heartwell 1.2.ttf') format('truetype'), 
+       url('/public/fonts/Heartwell 1.2.svg') format('svg');
 }
 @font-face {
   font-family: Heartwell;
@@ -18,8 +18,8 @@
   src: url("/public/fonts/Heartwell Italic 1.2.otf") format("opentype");
 	src: url('/public/fonts/Heartwell Italic 1.2.eot');
   src: url('/public/fonts/Heartwell Italic 1.2.woff') format('woff'), 
-    url('/public/fonts/Heartwell Italic 1.2.ttf') format('truetype'), 
-    url('/public/fonts/Heartwell Italic 1.2.svg') format('svg');}
+       url('/public/fonts/Heartwell Italic 1.2.ttf') format('truetype'), 
+       url('/public/fonts/Heartwell Italic 1.2.svg') format('svg');}
 
 /* General styles
 ----------------------------------*/
@@ -162,6 +162,7 @@ body {
   -webkit-filter: brightness(60%);
   filter: brightness(60%);
 }
+@media screen\0 { .pledge-img { transform: translateX(0%); } } /* IE hack */
 .pledge-title {
   margin: 30px 0 30px 0;
   font-family: 'Heartwell';
