@@ -5,6 +5,10 @@ var Header = React.createClass({
 			$('#login-modal').on('hide.bs.modal', function () {
 	        	$.removeCookie("pageBeforeLogin", { path: '/' });
 			});
+			
+			$('#q').keypress(function(e){
+	        	if(e.keyCode == 13) { $('#search-submit').click(); }
+    		});
 		});
 	    
     	var user;
@@ -39,6 +43,10 @@ var Header = React.createClass({
 	    $.cookie("pageBeforeLogin", window.location.href, { path: '/' });
         $('#login-modal').modal('show');	
 	},
+	searchPledges: function() {
+		this.props.updateUrl('/search?q=' + $('#q').val());
+		$('#q').val("");
+	},
 	render: function() {
         return (
     		<nav className="navbar navbar-default">
@@ -58,16 +66,16 @@ var Header = React.createClass({
     				<div className="collapse navbar-collapse" id="navbar-collapse">
     					{this.userMenu()}
 						<ul className="nav navbar-nav navbar-right">
-							<form className="navbar-form" role="search" action="/search" method="get">
+							<div className="navbar-form">
 								<div className="input-group">
-									<input type="text" name="q" className="form-control" placeholder="Search pledges..."/>
+									<input type="text" id="q" className="form-control" placeholder="Search pledges..."/>
 									<span className="input-group-btn">
-										<button type="submit" className="btn btn-default">
+										<button id="search-submit" className="btn btn-default" onClick={this.searchPledges}>
 											<span className="glyphicon glyphicon-search"></span>
 										</button>
 									</span>
 								</div>
-							</form>
+							</div>
 						</ul>
 					</div>
 				</div>

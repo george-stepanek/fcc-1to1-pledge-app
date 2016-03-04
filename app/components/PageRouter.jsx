@@ -12,12 +12,20 @@ var PageRouter = React.createClass({
         $('a').click(function(e) {
             var href = $(this).attr("href");
             if (href.indexOf("/") > -1 && href.indexOf("logout") < 0) {
-                history.pushState('', 'New URL: ' + href, href);
-                self.setState({url: href});
-                 self.updateLinks();
-                 e.preventDefault();
+                self.updateUrl(href);
+                e.preventDefault();
          	}
         });
+    },
+    updateUrl: function(href, replace) {
+        if(replace) {
+            history.replaceState('', 'New URL: ' + href, href);
+        }
+        else {
+            history.pushState('', 'New URL: ' + href, href);
+        }
+        this.setState({url: href});
+        this.updateLinks();        
     },
     getPage: function() {
         if(this.state.url.indexOf('/category/') > -1) {
@@ -27,12 +35,12 @@ var PageRouter = React.createClass({
         } else if(this.state.url.indexOf('/mypledges') > -1) {
             return ( <MyPledgesPage key={this.state.url} /> );
         } else if(this.state.url.indexOf('/search') > -1) {
-            return ( <SearchPage key={this.state.url} /> );
+            return ( <SearchPage key={this.state.url} updateUrl={this.updateUrl} /> );
         } else {
             return ( <MainPage key={this.state.url} /> );
         }
     },
     render: function() {
-        return ( <div><Header />{this.getPage()}</div> );
+        return ( <div><Header updateUrl={this.updateUrl} />{this.getPage()}</div> );
     }
 });

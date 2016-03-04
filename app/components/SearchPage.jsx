@@ -13,14 +13,14 @@ var SearchPage = React.createClass({
         });
         
         if(pledges.length == 1) {
-            window.location.replace(window.location.origin + '/pledge/' + pledges[0].title.toLowerCase().replace(/\s/g, "-"));
+            this.props.updateUrl('/pledge/' + pledges[0].title.toLowerCase().replace(/\s/g, "-"), true);
             return null;
         }
         
         return {pledges: pledges};
     },
     pledgeGroup: function() {
-        if(this.state.pledges.length > 0) {
+        if(this.state && this.state.pledges && this.state.pledges.length > 0) {
             return ( <PledgeGroup pledges={this.state.pledges} /> );
         }
         else {
