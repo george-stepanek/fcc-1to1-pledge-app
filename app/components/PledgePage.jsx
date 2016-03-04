@@ -131,24 +131,21 @@ var PledgePage = React.createClass({
     },
     render: function() {
         return (
-            <div>
-                <Header />
-        		<div className="pledge-page">
-					<img className="pledge-img" src={this.state.pledge.imageUrl}/>
-					<a className="arr-btn arr-prev" href={"/pledge/" + this.state.pledge.prevPledge} title="Previous pledge">&nbsp;</a>
-					<a className="arr-btn arr-next" href={"/pledge/" + this.state.pledge.nextPledge} title="Next pledge">&nbsp;</a>
-					<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
-					<div className="row">
-						<div className="pledge-col col-md-6">
-							<p className="pledge-para">{this.state.pledge.explanation}</p>
-							<p className="pledge-para">A total of <i><b>
-								{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
-							</b></i> have been saved already!</p>
-						</div>
-						{this.myImpactAndButtons()}
+    		<div className="pledge-page">
+				<img className="pledge-img" src={this.state.pledge.imageUrl}/>
+				<a className="arr-btn arr-prev" href={"/pledge/" + this.state.pledge.prevPledge} title="Previous pledge">&nbsp;</a>
+				<a className="arr-btn arr-next" href={"/pledge/" + this.state.pledge.nextPledge} title="Next pledge">&nbsp;</a>
+				<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
+				<div className="row">
+					<div className="pledge-col col-md-6">
+						<p className="pledge-para">{this.state.pledge.explanation}</p>
+						<p className="pledge-para">A total of <i><b>
+							{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
+						</b></i> have been saved already!</p>
 					</div>
+					{this.myImpactAndButtons()}
 				</div>
-    		</div>
+			</div>
 		);
 	}
 });

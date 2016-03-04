@@ -12,22 +12,22 @@ module.exports = function (app, passport) {
 
 	app.route('/pledge/:title')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/pledge.html');
+			res.sendFile(path + '/public/index.html');
 		});
 
 	app.route('/search')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/search.html');
+			res.sendFile(path + '/public/index.html');
 		});
 		
 	app.route('/mypledges')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/mypledges.html');
+			res.sendFile(path + '/public/index.html');
 		});
 
 	app.route('/category/:category')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/category.html');
+			res.sendFile(path + '/public/index.html');
 		});
 
 	app.route('/logout')

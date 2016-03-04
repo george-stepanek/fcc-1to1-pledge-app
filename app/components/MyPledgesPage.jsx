@@ -20,13 +20,6 @@ var MyPledgesPage = React.createClass({
         }
     },
     render: function() {
-        return (
-            <div>
-                <Header />
-        		<div>
-                    {this.pledgeGroup()}
-        		</div>
-    		</div>
-		);
+        return ( <div>{this.pledgeGroup()}</div> );
 	}
 });
