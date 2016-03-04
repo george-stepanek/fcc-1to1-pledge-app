@@ -1,11 +1,17 @@
 var Header = React.createClass({
     getInitialState: function() {
 	    $("document").ready(function () {
+			// fix for facebook authentication bug
+			if(window.location.hash === "#_=_") {
+				history.replaceState("", document.title, "/");
+			}
+
 			// cancel the post-login redirect if the user cancels out of the login modal
 			$('#login-modal').on('hide.bs.modal', function () {
 	        	$.removeCookie("pageBeforeLogin", { path: '/' });
 			});
 			
+			// pressing enter in the search text input will invoke it 
 			$('#q').keypress(function(e){
 	        	if(e.keyCode == 13) { $('#search-submit').click(); }
     		});
