@@ -34,7 +34,7 @@ var Header = React.createClass({
 		else {
 			return ( 
 				<ul className="nav navbar-nav navbar-right">
-					<li><a href="#" onClick={this.showLogin}>SIGN IN</a></li>
+					<li><a onClick={this.showLogin}>SIGN IN</a></li>
 				</ul>
 			);
 		}

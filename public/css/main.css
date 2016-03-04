@@ -59,6 +59,7 @@ body {
     margin-bottom: 0;
 }
 .nav li {
+  cursor: pointer;
   border-bottom: 3px solid white;
 }
 .nav li:hover {
