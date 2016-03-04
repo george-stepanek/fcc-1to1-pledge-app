@@ -3,7 +3,7 @@ var PledgePage = React.createClass({
     getInitialState: function() {
     	var path = window.location.pathname;
     	this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
-    	
+
     	var user, pledge, self = this;
         $.ajax({
     		url: window.location.origin + '/api/:id',
@@ -13,12 +13,12 @@ var PledgePage = React.createClass({
                 user = result;
     		}
         });
-        
+
 		if($.cookie("pledgeToAdd") == this.pledgeId && user) {
 	    	this.addMe("afterLogin");
         }
 	    $.removeCookie("pledgeToAdd", { path: '/' });
-	    	
+
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
     		async: false,
@@ -37,7 +37,7 @@ var PledgePage = React.createClass({
 				<a href={this.state.pledge.citation} target="_blank" className="pledge-btn" title={"Source: " + this.state.pledge.source}>
 					&nbsp;<i className="fa fa-external-link"></i>
 				</a>
-			</p>    		
+			</p>
 		);
     },
 	myImpactAndButtons: function() {
@@ -47,7 +47,7 @@ var PledgePage = React.createClass({
 		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
 		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			var myPledge = "I've pledged to save " + this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits + " per week.";
-			return ( 
+			return (
 				<div className="pledge-col col-md-6">
 					{this.impactPerWeek()}
 					<p className="pledge-para">
@@ -57,18 +57,18 @@ var PledgePage = React.createClass({
 							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
 						</b></i> so far.<br/>(Check back here for your progress!)
 					</p>
-	    		  	<a className="pledge-btn" target="_blank" title="Tweet it" 
+	    		  	<a className="pledge-btn" target="_blank" title="Tweet it"
 	    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
 	    		    	<i className="fa fa-twitter"></i>
 	    		  	</a>
 	    		  	&nbsp;
-	    		  	<a className="pledge-btn" target="_blank" title="Pin it" 
+	    		  	<a className="pledge-btn" target="_blank" title="Pin it"
 	    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +	"&media=" + this.state.pledge.imageUrl}>
 	    		    	<i className="fa fa-pinterest"></i>
 	    		  	</a>
 	    		  	&nbsp;
-					<a className="pledge-btn" target="_blank" title="Share it" 
-						href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledge}> 
+					<a className="pledge-btn" target="_blank" title="Share it"
+						href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledge}>
 	    		    	<i className="fa fa-tumblr"></i>
 	    		  	</a>
 	    		  	&nbsp;
@@ -127,11 +127,12 @@ var PledgePage = React.createClass({
 		        $("#submit-button").prop("disabled", false);
 		        self.setState({pledge: result});
 		    }
-        });    	
+        });
     },
     render: function() {
         return (
     		<div className="pledge-page">
+        <span className="pledge-img pledge-span"></span>
 				<img className="pledge-img" src={this.state.pledge.imageUrl}/>
 				<a className="arr-btn arr-prev" href={"/pledge/" + this.state.pledge.prevPledge} title="Previous pledge">&nbsp;</a>
 				<a className="arr-btn arr-next" href={"/pledge/" + this.state.pledge.nextPledge} title="Next pledge">&nbsp;</a>
