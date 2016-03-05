@@ -17,6 +17,8 @@ var Pledge = new Schema({
 	thumbnailUrl: String,
 	prevPledge: String,
 	nextPledge: String,
+	prevUrl: String,
+	nextUrl: String,
 	users: [ {
 	    id: String,
 	    when: Date

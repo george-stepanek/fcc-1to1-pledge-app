@@ -44,6 +44,8 @@ function PledgeHandler () {
 	    	
 	    	output[i].prevPledge = output[i > 0 ? i - 1 : output.length - 1].title.toLowerCase().replace(/\s/g, "-");
 	    	output[i].nextPledge = output[i < output.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
+	    	output[i].prevUrl = output[i > 0 ? i - 1 : output.length - 1].imageUrl;
+	    	output[i].nextUrl = output[i < output.length - 1 ? i + 1 : 0].imageUrl;
 	    }
 	    return output;
 	}

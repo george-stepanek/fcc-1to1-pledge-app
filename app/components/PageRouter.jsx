@@ -11,7 +11,7 @@ var PageRouter = React.createClass({
         var self = this;
         $('a').click(function(e) {
             var href = $(this).attr("href");
-            if (href && href.indexOf("/") > -1 && href.indexOf("logout") < 0) {
+            if (href && href.indexOf("logout") < 0 && href.indexOf("/auth/") < 0) {
                 self.updateUrl(href);
                 e.preventDefault();
          	}
