@@ -28,12 +28,17 @@ function PledgeHandler () {
 				    output[i].impactSoFar += Math.round(millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 	    		}
 	    		
+	    		// drop all other user data from the pledge, for reasons of security and scalability
 	    		if(req.user) {
 		    		var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
 		    		if(meIfPledged.length > 0) {
 		    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
 					    output[i].myImpactSoFar = Math.round(myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 		    		}
+		    		output[i].users = meIfPledged;
+	    		}
+	    		else {
+	    			output[i].users = [];
 	    		}
 	    	}
 	    	
@@ -42,14 +47,7 @@ function PledgeHandler () {
 	    }
 	    return output;
 	}
-    
-	this.getAllPledges = function (req, res) {
-		Pledges.find({ }).exec(function (err, results) { 
-		    if (err) { throw err; }
-		    res.json(populateCalculatedProperties(req, results));
-		});
-	};
-	
+
 	this.getPledge = function (req, res) {
 		// first need to get all of the pledges, so we can populate the prevPledge and nextPledge properties
 		Pledges.find({ }).exec(function (err, results) { 
