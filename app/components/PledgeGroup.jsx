@@ -1,4 +1,11 @@
 var PledgeGroup = React.createClass({
+    componentDidMount: function() {
+    	// preload the images for the pledges in this group, for better performance
+    	for(var i = 0; i < this.props.pledges.length; i++) {
+		    var img = new Image();
+		    img.src = this.props.pledges[i].imageUrl;
+    	}
+    },
     render: function() {
 		var pledges = this.props.pledges.map(function(pledge) {
 			return (

@@ -30,7 +30,7 @@ var PledgePage = React.createClass({
         return {user: user, pledge: pledge};
     },
     componentDidMount: function() {
-    	// preload images for the next/prev pledges for better performance
+    	// preload the images for the next/prev pledges, for better performance
 	    var next = new Image();
 	    next.src = this.state.pledge.imageUrl;
 	    var prev = new Image();

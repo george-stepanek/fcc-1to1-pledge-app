@@ -46,7 +46,7 @@ var Header = React.createClass({
 		}
 	},
 	showLogin: function() {
-	//	$.cookie("pageBeforeLogin", window.location.href, { path: '/' });
+		$.cookie("pageBeforeLogin", window.location.href, { path: '/' });
         $('#login-modal').modal('show');	
 	},
 	searchPledges: function() {

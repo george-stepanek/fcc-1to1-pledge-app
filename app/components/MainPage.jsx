@@ -4,13 +4,12 @@ var MainPage = React.createClass({
             window.location.replace(window.location.origin + '/pledge/' + $.cookie("pledgeToAdd"));
             return null;
         }
-/*	Commenting this out because it doesn't seem to work at the moment, and may be causing problems on Android	
 		else if ($.cookie("pageBeforeLogin")) {
 	        window.location.replace($.cookie("pageBeforeLogin"));
 	        $.removeCookie("pageBeforeLogin");
 	        return null;
         }
-*/
+
     	var categories;
         $.ajax({
     		url: window.location.origin + '/api/all/categories',
