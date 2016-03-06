@@ -66,24 +66,26 @@ var PledgePage = React.createClass({
 							{this.state.pledge.myImpactSoFar + " " +  this.state.pledge.impactUnits}
 						</b></i> so far.<br/>(Check back here for your progress!)
 					</p>
-	    		  	<a className="pledge-btn" target="_blank" title="Tweet it"
-	    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
-	    		    	<i className="fa fa-twitter"></i>
-	    		  	</a>
-	    		  	&nbsp;
-	    		  	<a className="pledge-btn" target="_blank" title="Pin it"
-	    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +	"&media=" + this.state.pledge.imageUrl}>
-	    		    	<i className="fa fa-pinterest"></i>
-	    		  	</a>
-	    		  	&nbsp;
-					<a className="pledge-btn" target="_blank" title="Share it"
-						href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledge}>
-	    		    	<i className="fa fa-tumblr"></i>
-	    		  	</a>
-	    		  	&nbsp;
-		    		<a className="pledge-btn" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
-						<i className="fa fa-times-circle-o"></i>
-					</a>
+					<p>
+		    		  	<a className="pledge-btn" target="_blank" title="Tweet it"
+		    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
+		    		    	<i className="fa fa-twitter"></i>
+		    		  	</a>
+		    		  	&nbsp;
+		    		  	<a className="pledge-btn" target="_blank" title="Pin it"
+		    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +	"&media=" + this.state.pledge.imageUrl}>
+		    		    	<i className="fa fa-pinterest"></i>
+		    		  	</a>
+		    		  	&nbsp;
+						<a className="pledge-btn" target="_blank" title="Share it"
+							href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledge}>
+		    		    	<i className="fa fa-tumblr"></i>
+		    		  	</a>
+		    		  	&nbsp;
+			    		<a className="pledge-btn" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
+							<i className="fa fa-times-circle-o"></i>
+						</a>
+					</p>
 				</div>
 			);
 		}
@@ -91,9 +93,11 @@ var PledgePage = React.createClass({
 			return (
 				<div className="pledge-col col-md-6">
 					{this.impactPerWeek()}
-					<button className="btn btn-social btn-lg btn-default" onClick={this.addMe} id="submit-button">
-						<i className="fa fa-check"></i> I pledge to do this
-					</button>
+					<p>
+						<button className="btn btn-social btn-lg btn-default" onClick={this.addMe} id="submit-button">
+							<i className="fa fa-check"></i> I pledge to do this
+						</button>
+					</p>
 				</div>
 			);
 		}
