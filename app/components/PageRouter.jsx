@@ -37,7 +37,7 @@ var PageRouter = React.createClass({
         } else if(this.state.url.indexOf('/search') > -1) {
             return ( <SearchPage key={this.state.url} updateUrl={this.updateUrl} /> );
         } else {
-            return ( <MainPage key={this.state.url} /> );
+            return ( <MainPage key={this.state.url} updateUrl={this.updateUrl} /> );
         }
     },
     render: function() {

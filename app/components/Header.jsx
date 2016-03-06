@@ -1,11 +1,6 @@
 var Header = React.createClass({
     getInitialState: function() {
 	    $("document").ready(function () {
-			// fix for facebook authentication bug
-			if(window.location.hash === "#_=_") {
-				history.replaceState("", document.title, "/");
-			}
-
 			// cancel the post-login redirect if the user cancels out of the login modal
 			$('#login-modal').on('hide.bs.modal', function () {
 	        	$.removeCookie("pageBeforeLogin", { path: '/' });
@@ -27,7 +22,6 @@ var Header = React.createClass({
                 user = result;
     		}
         });
-        console.log(user);
         return {user: user};
     },
 	userMenu: function() {
@@ -48,7 +42,8 @@ var Header = React.createClass({
 		}
 	},
 	showLogin: function() {
-		$.cookie("pageBeforeLogin", window.location.href, { path: '/' });
+		var url = window.location.href.replace(window.location.protocol, "").replace("//", "").replace(window.location.host, "");
+		$.cookie("pageBeforeLogin", url, { path: '/' });
         $('#login-modal').modal('show');	
 	},
 	searchPledges: function() {

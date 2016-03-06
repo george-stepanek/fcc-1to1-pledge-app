@@ -1,11 +1,11 @@
 var MainPage = React.createClass({
     getInitialState: function() {
         if($.cookie("pledgeToAdd")) {
-            window.location.replace(window.location.origin + '/pledge/' + $.cookie("pledgeToAdd"));
+            this.props.updateUrl('/pledge/' + $.cookie("pledgeToAdd"), true);
             return null;
         }
 		else if ($.cookie("pageBeforeLogin")) {
-	        window.location.replace($.cookie("pageBeforeLogin"));
+	        this.props.updateUrl($.cookie("pageBeforeLogin"), true);
 	        $.removeCookie("pageBeforeLogin");
 	        return null;
         }
