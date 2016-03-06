@@ -7,6 +7,7 @@ var PledgePage = React.createClass({
     	var user, pledge, self = this;
         $.ajax({
     		url: window.location.origin + '/api/:id',
+    		cache : false,
     		async: false,
     		type: "get",
     		success: function(result) {
@@ -21,6 +22,7 @@ var PledgePage = React.createClass({
 
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
+    		cache : false,
     		async: false,
     		type: "get",
     		success: function(result) {

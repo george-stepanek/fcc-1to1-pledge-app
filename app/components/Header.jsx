@@ -20,12 +20,14 @@ var Header = React.createClass({
     	var user;
         $.ajax({
     		url: window.location.origin + '/api/:id',
+    		cache : false,
     		async: false,
     		type: "get",
     		success: function(result) {
                 user = result;
     		}
         });
+        console.log(user);
         return {user: user};
     },
 	userMenu: function() {
