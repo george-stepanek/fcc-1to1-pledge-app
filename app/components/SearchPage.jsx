@@ -6,6 +6,7 @@ var SearchPage = React.createClass({
         $.ajax({
     		url: window.location.origin + '/api/search/pledges?q=' + self.searchTerm,
     		async: false,
+    		cache : false,
     		type: "get",
     		success: function(result) {
                 pledges = result;

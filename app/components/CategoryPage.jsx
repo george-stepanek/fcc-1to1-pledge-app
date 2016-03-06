@@ -6,6 +6,7 @@ var CategoryPage = React.createClass({
     	var pledges;
         $.ajax({
     		url: window.location.origin + '/api/category/pledges/' + category,
+    		cache : false,
     		async: false,
     		type: "get",
     		success: function(result) {

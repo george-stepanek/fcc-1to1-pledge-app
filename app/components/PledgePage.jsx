@@ -131,6 +131,7 @@ var PledgePage = React.createClass({
     	var self = this;
         $.ajax({
     		url: window.location.origin + '/api/pledge/' + self.pledgeId,
+    		cache : false,
     		type: "get",
     		success: function(result) {
 		        $("#submit-button").prop("disabled", false);

@@ -3,6 +3,7 @@ var MyPledgesPage = React.createClass({
     	var pledges;
         $.ajax({
     		url: window.location.origin + '/api/my/pledges',
+    		cache : false,
     		async: false,
     		type: "get",
     		success: function(result) {

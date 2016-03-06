@@ -13,6 +13,7 @@ var MainPage = React.createClass({
     	var categories;
         $.ajax({
     		url: window.location.origin + '/api/all/categories',
+    		cache : false,
     		async: false,
     		type: "get",
     		success: function(results) {
