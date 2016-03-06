@@ -81,7 +81,7 @@ var PledgePage = React.createClass({
 	    		    	<i className="fa fa-tumblr"></i>
 	    		  	</a>
 	    		  	&nbsp;
-		    		<a className="pledge-btn" href="#" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
+		    		<a className="pledge-btn" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
 						<i className="fa fa-times-circle-o"></i>
 					</a>
 				</div>
