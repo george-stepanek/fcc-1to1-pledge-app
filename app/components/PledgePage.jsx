@@ -29,6 +29,7 @@ var PledgePage = React.createClass({
                 pledge = result;
     		}
         });
+        document.title = pledge.title;
         return {user: user, pledge: pledge};
     },
     componentDidMount: function() {
