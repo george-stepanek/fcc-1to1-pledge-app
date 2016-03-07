@@ -5,20 +5,22 @@ var testid = "12345678";
 
 function PledgeHandler () {
 	
-	function populateCalculatedProperties (req, results) {
-		var output = results.sort(function(a, b) {
-			if(a.category != b.category) {
-				return a.category > b.category ? 1 : -1;
+	function pledgeSort (a, b) {
+		if(a.category != b.category) {
+			return a.category > b.category ? 1 : -1;
+		}
+		else {
+			if(a.title != b.title) {
+				return a.title > b.title ? 1 : -1;
 			}
 			else {
-				if(a.title != b.title) {
-					return a.title > b.title ? 1 : -1;
-				}
-				else {
-					return 0;
-				}
+				return 0;
 			}
-		});
+		}
+	}
+	
+	function populateCalculatedProperties (req, results) {
+		var output = results.sort(pledgeSort);
 		
 	    for(var i = 0; i < output.length; i++) {
 	    	output[i].impactSoFar = 0;
@@ -113,7 +115,7 @@ function PledgeHandler () {
 			    if (err) { throw err; }
 			    var output = [];
 				for(var i = 0; i < categories.length; i++) {
-					var url = results.filter(function (value) { return value.category == categories[i]})[0].thumbnailUrl;
+					var url = results.sort(pledgeSort).filter(function (value) { return value.category == categories[i]})[0].thumbnailUrl;
 					output.push({ title: categories[i], imageUrl: url });
 				}
 		    	res.json(output);
