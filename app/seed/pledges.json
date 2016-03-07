@@ -18,7 +18,7 @@
 	"source": "Eco-cycle",
 	"citation": "http://www.ecocycle.org/bestrawfree/faqs",
 	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/thumb.png"
+	"thumbnailUrl": "/public/images/blank-thumb.png"
 },
 {
 	"title": "Love Those Leftovers",
@@ -62,7 +62,7 @@
 	"source": "Google it",
 	"citation": "http://www.google.com",
 	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/thumb.png"
+	"thumbnailUrl": "/public/images/blank-thumb.png"
 },
 {
 	"title": "Blank 2",
@@ -73,7 +73,7 @@
 	"source": "Google it",
 	"citation": "http://www.google.com",
 	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/thumb.png"
+	"thumbnailUrl": "/public/images/blank-thumb.png"
 },
 {
 	"title": "Blank 3",
@@ -84,6 +84,6 @@
 	"source": "Google it",
 	"citation": "http://www.google.com",
 	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/thumb.png"
+	"thumbnailUrl": "/public/images/blank-thumb.png"
 }]
 
