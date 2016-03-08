@@ -54,15 +54,15 @@
 	"thumbnailUrl": "/public/images/recycle-thumb.jpg"	
 },
 {
-	"title": "Dry Laundry With The Sun",
+	"title": "Dry Laundry In The Sun",
 	"category": "energy",
 	"explanation": "Either hang a clothesline (using anything from yarn to paracord) or use a foldable clothes drying rack instead of using gas or electric dryers.",
 	"impactPerWeek": 18.8,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/17-clothes-line",
-	"imageUrl": "/public/images/dry-laundry-with-the-sun.jpg",
-	"thumbnailUrl": "/public/images/dry-laundry-with-the-sun-thumb.jpg"
+	"imageUrl": "/public/images/dry-laundry-in-the-sun.jpg",
+	"thumbnailUrl": "/public/images/dry-laundry-in-the-sun-thumb.jpg"
 },
 {
 	"title": "Walk With Your Kids",
