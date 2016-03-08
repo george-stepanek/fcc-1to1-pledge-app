@@ -110,8 +110,8 @@ a {
   left: 50%;
   transition: transform .2s, opacity 0.3s;
   transform: translate(-50%, -50%);
-  -webkit-filter: saturate(30%) contrast(70%);
-  filter: saturate(30%) contrast(70%);
+  -webkit-filter: saturate(60%) contrast(60%) brightness(90%);
+  filter: saturate(60%) contrast(60%) brightness(90%);
 }
 .pledge-link:hover {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
