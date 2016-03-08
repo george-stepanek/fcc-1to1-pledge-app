@@ -55,3 +55,7 @@ var PageRouter = React.createClass({
         );
     }
 });
+
+$("document").ready(function() {
+	ReactDOM.render(<PageRouter/>, document.getElementById('content'));
+});
