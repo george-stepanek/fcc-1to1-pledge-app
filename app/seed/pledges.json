@@ -1,15 +1,4 @@
 [{
-	"title": "Refuse The Bag",
-	"category": "waste",
-	"explanation": "Say no to plastic bags when shopping. Plastic can take 1,000 years to degrade in a landfill. Bring your own bag!",
-	"impactPerWeek": 6,
-	"impactUnits": "plastic bags",
-	"source": "Reuse This Bag!",
-	"citation": "http://www.reusethisbag.com/25-reasons-to-go-reusable.php",
-	"imageUrl": "/public/images/refuse-the-bag.jpg",
-	"thumbnailUrl": "/public/images/refuse-the-bag.jpg"
-},
-{
 	"title": "Straws Suck",
 	"explanation": "Refuse straws when eating out at restaurants. People in the US use 500 million per day.",
 	"category": "waste",
@@ -19,6 +8,127 @@
 	"citation": "http://www.ecocycle.org/bestrawfree/faqs",
 	"imageUrl": "/public/images/straws-suck.jpg",
 	"thumbnailUrl": "/public/images/straws-suck-thumb.jpg"
+},
+{
+	"title": "Stick It To The Cup",
+	"explanation": "Bring your own reusable drink thermos to cut down on the excessive waste produced by drink cups.",
+	"category": "waste",
+	"impactPerWeek": 1.25,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/12-Paper-Coffee-Cups",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Stop Using Paper Towels",
+	"explanation": "Use cloth towels and sponges instead of single-use paper towels.",
+	"category": "waste",
+	"impactPerWeek": 1.48,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/36-paper-towels-environment",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Waste-Free Lunch",
+	"explanation": "Pack lunch in reusable packaging like tupperware or stainless steel lunch box compartments. This will also save you money as you can buy the snacks in bulk.",
+	"category": "waste",
+	"impactPerWeek": 10.4,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/24-waste-free-lunch",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Reusable Water Bottle",
+	"explanation": "You probably have one lying around the house. Carry a reusable water bottle with you to cut down on water bottle usage and cut down on the 1.5 billion gallons of fuel used for transport and 1.5 billions tons of water bottle plastic sent to landfills each year.",
+	"category": "waste",
+	"impactPerWeek": 3,
+	"impactUnits": "plastic bottles",
+	"source": "Ban The Bottle",
+	"citation": "https://www.banthebottle.net/bottled-water-facts/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Get Thrifty",
+	"explanation": "Need a new piece of clothing? Try your local thrift store for some funky and re-used finds.",
+	"category": "waste",
+	"impactPerWeek": 29,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/38-Recycle-clothes",
+	"imageUrl": "/public/images/get-thrifty.jpg",
+	"thumbnailUrl": "/public/images/get-thrifty-thumb.jpg"
+},
+{
+	"title": "Cloth Diapers",
+	"explanation": "Consider cloth diapers. If thats sounds gross, consider biodegradable disposable diaper liners that you can flush down the toilet. This cuts down on diaper waste.",
+	"category": "waste",
+	"impactPerWeek": 64,
+	"impactUnits": "diapers",
+	"source": "Environmental Protection Agency",
+	"citation": "http://www.epa.gov/reg3wcmd/solidwasterecyclingfacts.htm",
+	"imageUrl": "/public/images/cloth-diapers.jpg",
+	"thumbnailUrl": "/public/images/cloth-diapers-thumb.jpg"
+},
+{
+	"title": "Reuse The Lunchbox",
+	"explanation": "Pack your children’s lunch in a reusable lunch container with multiple compartments. Then, you can pack bulk foods and cut down the 4,320 pieces of trash the average American family creates per year by reducing packaging.",
+	"category": "waste",
+	"impactPerWeek": 10.6,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/24-waste-free-lunch",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "No Junk Mail",
+	"explanation": "Put a 'No Junk Mail' sticker on your mailbox, or register with 41pounds.org.",
+	"category": "waste",
+	"impactPerWeek": 1,
+	"impactUnits": "pounds of paper",
+	"source": "41 Pounds",
+	"citation": "https://www.41pounds.org/about/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Reduce Your Margins",
+	"explanation": "Reduce your margins from 1.25 inches to .75 before printing.",
+	"category": "waste",
+	"impactPerWeek": 0.7,
+	"impactUnits": "pounds of paper",
+	"source": "Environmental Protection Agency",
+	"citation": "http://www.epa.gov/osw/conserve/materials/paper/basics/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Recycle",
+	"category": "waste",
+	"explanation": "Recycle all paper, glass, aluminum, and plastics! Check out ways that your community is making it easier, as well as incentives that pay you for recyclables.",
+	"impactPerWeek": 14,
+	"impactUnits": "pounds of recyclable goods",
+	"source": "Green Waste",
+	"citation": "http://www.greenwaste.com/recycling-stats",
+	"imageUrl": "/public/images/recycle.jpg",
+	"thumbnailUrl": "/public/images/recycle-thumb.jpg"	
+},
+{
+	"title": "Refuse The Bag",
+	"category": "waste",
+	"explanation": "Say no to plastic bags when shopping. Plastic can take 1,000 years to degrade in a landfill. Bring your own bag!",
+	"impactPerWeek": 6,
+	"impactUnits": "plastic bags",
+	"source": "Reuse This Bag!",
+	"citation": "http://www.reusethisbag.com/25-reasons-to-go-reusable.php",
+	"imageUrl": "/public/images/refuse-the-bag.jpg",
+	"thumbnailUrl": "/public/images/refuse-the-bag.jpg"
 },
 {
 	"title": "Love Those Leftovers",
@@ -41,17 +151,6 @@
 	"citation": "http://www.epa.gov/WaterSense/pubs/outdoor.html",
 	"imageUrl": "/public/images/think-before-you-plant.jpg",
 	"thumbnailUrl": "/public/images/think-before-you-plant-thumb.jpg"	
-},
-{
-	"title": "Recycle",
-	"category": "waste",
-	"explanation": "Recycle all paper, glass, aluminum, and plastics! Check out ways that your community is making it easier, as well as incentives that pay you for recyclables.",
-	"impactPerWeek": 14,
-	"impactUnits": "pounds of recyclable goods",
-	"source": "Green Waste",
-	"citation": "http://www.greenwaste.com/recycling-stats",
-	"imageUrl": "/public/images/recycle.jpg",
-	"thumbnailUrl": "/public/images/recycle-thumb.jpg"	
 },
 {
 	"title": "Dry Laundry In The Sun",
