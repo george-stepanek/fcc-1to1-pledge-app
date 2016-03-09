@@ -10,6 +10,7 @@ var MyPledgesPage = React.createClass({
                 pledges = result;
     		}
         });
+        document.title = "My Pledges - 1to1 Movement Pledges";
         return {pledges: pledges};
     },
     pledgeGroup: function() {

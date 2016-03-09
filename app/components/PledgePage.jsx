@@ -29,7 +29,7 @@ var PledgePage = React.createClass({
                 pledge = result;
     		}
         });
-        document.title = pledge.title;
+        document.title = pledge.title + " - 1to1 Movement Pledges";
         return {user: user, pledge: pledge};
     },
     componentDidMount: function() {

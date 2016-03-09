@@ -13,6 +13,7 @@ var CategoryPage = React.createClass({
                 pledges = result;
     		}
         });
+        document.title = category[0].toUpperCase() + category.substring(1) + " Pledges - 1to1 Movement Pledges";
         return {pledges: pledges};
     },
     render: function() {

@@ -18,6 +18,7 @@ var SearchPage = React.createClass({
             return null;
         }
         
+        document.title = "Search Results - 1to1 Movement Pledges";
         return {pledges: pledges};
     },
     pledgeGroup: function() {

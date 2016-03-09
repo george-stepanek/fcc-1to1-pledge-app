@@ -20,6 +20,7 @@ var MainPage = React.createClass({
                 categories = results;
     		}
         });
+        document.title = "1to1 Movement Pledges";
         return {categories: categories};
     },
     render: function() {

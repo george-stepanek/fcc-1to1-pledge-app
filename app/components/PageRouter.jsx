@@ -31,20 +31,18 @@ var PageRouter = React.createClass({
         if(this.state.url.indexOf('/pledge/') > -1) {
             return ( <PledgePage key={this.state.url} /> );
         }
+        else if(this.state.url.indexOf('/category/') > -1) {
+            return ( <CategoryPage key={this.state.url} /> );
+        } 
+        else if(this.state.url.indexOf('/mypledges') > -1) {
+            return ( <MyPledgesPage key={this.state.url} /> );
+        } 
+        else if(this.state.url.indexOf('/search') > -1) {
+            return ( <SearchPage key={this.state.url} updateUrl={this.updateUrl} /> );
+        } 
         else {
-            document.title="1to1Movement Pledges";
-            
-            if(this.state.url.indexOf('/category/') > -1) {
-                return ( <CategoryPage key={this.state.url} /> );
-            } else if(this.state.url.indexOf('/mypledges') > -1) {
-                return ( <MyPledgesPage key={this.state.url} /> );
-            } else if(this.state.url.indexOf('/search') > -1) {
-                return ( <SearchPage key={this.state.url} updateUrl={this.updateUrl} /> );
-            } else {
-                return ( <MainPage key={this.state.url} updateUrl={this.updateUrl} /> );
-            }            
+            return ( <MainPage key={this.state.url} updateUrl={this.updateUrl} /> );
         }
-
     },
     render: function() {
         return ( 
