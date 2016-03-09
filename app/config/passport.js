@@ -22,23 +22,18 @@ module.exports = function (passport) {
 	var authenticate = function (token, refreshToken, profile, done) {
 		process.nextTick(function () {
 			User.findOne({ 'id': profile.id }, function (err, user) {
-				if (err) {
-					return done(err);
-				}
+				if (err) { return done(err); }
 
 				if (user) {
 					return done(null, user);
-				} else {
+				} 
+				else {
 					var newUser = new User();
-
 					newUser.id = profile.id;
 					newUser.displayName = profile.displayName;
 
 					newUser.save(function (err) {
-						if (err) {
-							throw err;
-						}
-
+						if (err) { throw err; }
 						return done(null, newUser);
 					});
 				}
@@ -51,7 +46,8 @@ module.exports = function (passport) {
 		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 		callbackURL: process.env.APP_URL + 'auth/google/callback',
     	passReqToCallback: false
-	}, googleAuthenticate));
+	},
+	googleAuthenticate));
 	
 	passport.use(new FacebookStrategy({
 		clientID: process.env.FACEBOOK_KEY,

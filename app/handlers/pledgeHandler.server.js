@@ -58,6 +58,7 @@ function PledgeHandler () {
 		    if (err) { throw err; }
 			var regex = new RegExp(req.params.title.replace(/-/g, " "), "i");
 			var pledges = populateCalculatedProperties(req, results);
+			
 			// return only the requested pledge
 		    res.json(pledges.filter(function (pledge) {	return regex.test(pledge.title) })[0]);
 		});
@@ -113,6 +114,7 @@ function PledgeHandler () {
 		    var categories = results.sort();
 			Pledges.find({ }).exec(function (err, results) { 
 			    if (err) { throw err; }
+			    
 			    var output = [];
 				for(var i = 0; i < categories.length; i++) {
 					var url = results.sort(pledgeSort).filter(function (value) { return value.category == categories[i]})[0].thumbnailUrl;
