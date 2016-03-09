@@ -17,8 +17,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/12-Paper-Coffee-Cups",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/stick-it-to-the-cup.jpg",
+	"thumbnailUrl": "/public/images/stick-it-to-the-cup-thumb.jpg"
 },
 {
 	"title": "Stop Using Paper Towels",
@@ -28,19 +28,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/36-paper-towels-environment",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
-},
-{
-	"title": "Waste-Free Lunch",
-	"explanation": "Pack lunch in reusable packaging like tupperware or stainless steel lunch box compartments. This will also save you money as you can buy the snacks in bulk.",
-	"category": "waste",
-	"impactPerWeek": 10.4,
-	"impactUnits": "pounds of carbon emissions",
-	"source": "Carbon Rally",
-	"citation": "http://www.carbonrally.com/challenges/24-waste-free-lunch",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/stop-using-paper-towels.jpg",
+	"thumbnailUrl": "/public/images/stop-using-paper-towels-thumb.jpg"
 },
 {
 	"title": "Reusable Water Bottle",
@@ -50,8 +39,8 @@
 	"impactUnits": "plastic bottles",
 	"source": "Ban The Bottle",
 	"citation": "https://www.banthebottle.net/bottled-water-facts/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/reusable-water-bottle.jpg",
+	"thumbnailUrl": "/public/images/reusable-water-bottle-thumb.jpg"
 },
 {
 	"title": "Get Thrifty",
@@ -77,14 +66,14 @@
 },
 {
 	"title": "Reuse The Lunchbox",
-	"explanation": "Pack your children’s lunch in a reusable lunch container with multiple compartments. Then, you can pack bulk foods and cut down the 4,320 pieces of trash the average American family creates per year by reducing packaging.",
+	"explanation": "Pack lunch in a reusable lunch container with multiple compartments. Then you can pack bulk foods and cut down the 4,320 pieces of trash the average American family creates per year by reducing packaging.",
 	"category": "waste",
 	"impactPerWeek": 10.6,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/24-waste-free-lunch",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/reuse-the-lunchbox.jpg",
+	"thumbnailUrl": "/public/images/reuse-the-lunchbox-thumb.jpg"
 },
 {
 	"title": "No Junk Mail",
@@ -94,8 +83,8 @@
 	"impactUnits": "pounds of paper",
 	"source": "41 Pounds",
 	"citation": "https://www.41pounds.org/about/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/no-junk-mail.jpg",
+	"thumbnailUrl": "/public/images/no-junk-mail-thumb.jpg"
 },
 {
 	"title": "Reduce Your Margins",
@@ -105,8 +94,8 @@
 	"impactUnits": "pounds of paper",
 	"source": "Environmental Protection Agency",
 	"citation": "http://www.epa.gov/osw/conserve/materials/paper/basics/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/reduce-your-margins.jpg",
+	"thumbnailUrl": "/public/images/reduce-your-margins-thumb.jpg"
 },
 {
 	"title": "Recycle",
