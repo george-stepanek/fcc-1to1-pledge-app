@@ -74,7 +74,8 @@ var PledgePage = React.createClass({
 		    		  	</a>
 		    		  	&nbsp;
 		    		  	<a className="pledge-btn" target="_blank" title="Pin it"
-		    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +	"&media=" + this.state.pledge.imageUrl}>
+		    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +	
+		    		  			"&media=" + window.location.origin + this.state.pledge.imageUrl}>
 		    		    	<i className="fa fa-pinterest"></i>
 		    		  	</a>
 		    		  	&nbsp;
