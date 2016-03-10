@@ -117,8 +117,11 @@ function PledgeHandler () {
 			    
 			    var output = [];
 				for(var i = 0; i < categories.length; i++) {
-					var url = results.sort(pledgeSort).filter(function (value) { return value.category == categories[i]})[0].thumbnailUrl;
-					output.push({ title: categories[i], imageUrl: url });
+					var pledges = results.sort(pledgeSort).filter(function (value) { return value.category == categories[i]});
+					var pledgeCount = 0;
+					pledges.forEach(function(pledge){ pledgeCount += pledge.users.length; });
+					var url = pledges[0].thumbnailUrl;
+					output.push({ title: categories[i], imageUrl: url, pledgeCount: pledgeCount });
 				}
 		    	res.json(output);
 			});

@@ -18,7 +18,7 @@ var PageRouter = React.createClass({
         });
     },
     updateUrl: function(href, replace) {
-        if(href != window.location.pathname) {
+        if(replace || href != window.location.pathname) {
             if(replace) {
                 window.history.replaceState('', 'New URL: ' + href, href);
             }
