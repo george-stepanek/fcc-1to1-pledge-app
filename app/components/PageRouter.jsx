@@ -18,14 +18,16 @@ var PageRouter = React.createClass({
         });
     },
     updateUrl: function(href, replace) {
-        if(replace) {
-            history.replaceState('', 'New URL: ' + href, href);
+        if(href != window.location.pathname) {
+            if(replace) {
+                window.history.replaceState('', 'New URL: ' + href, href);
+            }
+            else {
+                window.history.pushState('', 'New URL: ' + href, href);
+            }
+            this.setState({url: href});
+            this.updateLinks();
         }
-        else {
-            history.pushState('', 'New URL: ' + href, href);
-        }
-        this.setState({url: href});
-        this.updateLinks();        
     },
     getPage: function() {
         if(this.state.url.indexOf('/pledge/') > -1) {
