@@ -34,7 +34,8 @@ var MainPage = React.createClass({
 							    <span>{category.title.charAt(0).toUpperCase() + category.title.substr(1)}</span>
 							</h4>
 							<h4 className="pledge-info">
-								{category.userCount} {category.userCount == 1 ? "person has" : "people have"} made a total of {category.pledgedCount} {category.title}&#8209;related pledges so far&hellip;
+								{category.userCount} {category.userCount == 1 ? "person has " : "people have "}
+								made a total of {category.pledgedCount} {category.title} related pledges so far&hellip;
 							</h4>
 						</a>
 					</div>
