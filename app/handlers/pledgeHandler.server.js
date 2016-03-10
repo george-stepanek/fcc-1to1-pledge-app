@@ -117,11 +117,19 @@ function PledgeHandler () {
 			    
 			    var output = [];
 				for(var i = 0; i < categories.length; i++) {
+					var pledgedCount = 0, users = [];
 					var pledges = results.sort(pledgeSort).filter(function (value) { return value.category == categories[i]});
-					var pledgeCount = 0;
-					pledges.forEach(function(pledge){ pledgeCount += pledge.users.length; });
-					var url = pledges[0].thumbnailUrl;
-					output.push({ title: categories[i], imageUrl: url, pledgeCount: pledgeCount });
+					pledges.forEach(function(pledge) { 
+						pledgedCount += pledge.users.length;
+						
+						pledge.users.forEach(function(user) {
+							if(users.filter(function (value) { return value == user.id }).length == 0) {
+								users.push(user.id);
+							}
+						});
+					});
+
+					output.push({ title: categories[i], imageUrl: pledges[0].thumbnailUrl, pledgedCount: pledgedCount, userCount: users.length });
 				}
 		    	res.json(output);
 			});
