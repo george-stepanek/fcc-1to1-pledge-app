@@ -79,4 +79,7 @@ module.exports = function (app, passport) {
 		
 	app.route('/api/category/pledges/:category')
 		.get(pledgeHandler.getPledgesForCategory);
+		
+	app.route('/api/user/:id')
+		.get(pledgeHandler.getUser);
 };

@@ -1,6 +1,7 @@
 'use strict';
 
 var Pledges = require('../models/pledges.js');
+var Users = require('../models/users.js');
 var testid = "12345678";
 
 function PledgeHandler () {
@@ -140,6 +141,13 @@ function PledgeHandler () {
 		    if (err) { throw err; } 
 		    res.json(populateCalculatedProperties(req, results));
 		});	
+	};
+	
+	this.getUser = function (req, res) {
+		Users.findOne({ 'id': req.params.id }, { '_id': false }, function (err, result) {
+		    if (err) { throw err; } 
+		    res.json(result);
+		});
 	};
 }
 module.exports = PledgeHandler;

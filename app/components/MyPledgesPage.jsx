@@ -3,7 +3,18 @@ var MyPledgesPage = React.createClass({
     getInitialState: function() {
     	var path = window.location.pathname;
     	this.userId = path.slice(path.lastIndexOf("/") + 1);
-    	var pledges;
+    	
+    	var user, pledges;
+        $.ajax({
+    		url: window.location.origin + '/api/user/' + this.userId,
+    		cache : false,
+    		async: false,
+    		type: "get",
+    		success: function(result) {
+                user = result;
+    		}
+        });
+        
         $.ajax({
     		url: window.location.origin + '/api/my/pledges/' + this.userId,
     		cache : false,
@@ -13,17 +24,16 @@ var MyPledgesPage = React.createClass({
                 pledges = result;
     		}
         });
-        
-        document.title = "My Pledges - 1to1 Movement Pledges";
-        return {pledges: pledges};
+        document.title = user.displayName + "'s Pledges - 1to1 Movement Pledges";
+        return {user: user, pledges: pledges};
     },
     pledgeGroup: function() {
         if(this.state.pledges.length > 0) {
-            var myPledges = "These are my pledges...";
+            var myPledges = "These are " + this.state.user.displayName + "'s pledges...";
             return (
                 <div>
                     <div className="none-found">
-                        These are &lt;name&gt;'s pledges...
+                        These are {this.state.user.displayName}'s pledges...
                         <br/>
 		    		  	<a className="share-btn" target="_blank" title="Tweet this"
 		    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledges}>
