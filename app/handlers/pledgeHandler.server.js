@@ -65,8 +65,7 @@ function PledgeHandler () {
 	};
 
 	this.getMyPledges = function (req, res) {
-		var id = req.user ? req.user.id : testid;
-		Pledges.find({ 'users.id': id }).exec(function (err, results) { 
+		Pledges.find({ 'users.id': req.params.id }).exec(function (err, results) { 
 			if (err) { throw err; } 
 			res.json(populateCalculatedProperties(req, results));
 		});

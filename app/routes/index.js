@@ -20,7 +20,7 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/index.html');
 		});
 		
-	app.route('/mypledges')
+	app.route('/mypledges/:id')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/index.html');
 		});
@@ -67,7 +67,7 @@ module.exports = function (app, passport) {
 	app.route('/api/pledge/:title')
 		.get(pledgeHandler.getPledge);
 		
-	app.route('/api/my/pledges')
+	app.route('/api/my/pledges/:id')
 		.get(pledgeHandler.getMyPledges);
 		
 	app.route('/api/my/pledge/:title')

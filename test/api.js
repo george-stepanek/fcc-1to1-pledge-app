@@ -72,7 +72,7 @@ describe('pledges api', function() {
 
     it('should return the pledge I was added to', function(done) {
         server
-            .get('/api/my/pledges')
+            .get('/api/my/pledges/12345678')
             .expect("Content-type",/json/)
             .expect(200)
             .end(function(err,res){
@@ -97,7 +97,7 @@ describe('pledges api', function() {
 
     it('should check the pledge was removed', function(done) {
         server
-            .get('/api/my/pledges')
+            .get('/api/my/pledges/12345678')
             .expect("Content-type",/json/)
             .expect(200)
             .end(function(err,res){

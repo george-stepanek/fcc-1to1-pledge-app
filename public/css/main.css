@@ -30,13 +30,11 @@ body {
 }
 a {
   cursor: pointer;
+  text-decoration: none !important;
 }
 
 /* Menu bar
 ----------------------------------*/
-.logo-link {
-  text-decoration: none !important;
-}
 .logo-img {
   height: 45px;
   margin: 4px 0 0 4px;
@@ -174,7 +172,6 @@ a {
 }
 .pledge-btn, .pledge-btn:visited {
   color: white;
-  text-decoration: none !important;
   margin: 0 20px 0 20px;
 }
 .pledge-btn:hover {
@@ -189,7 +186,6 @@ a {
 	top: -10px;
 	width: 60px;
 	height: 30px;
-  text-decoration: none !important;
 }
 .arr-btn:hover {
 	opacity:0.7;
@@ -201,4 +197,13 @@ a {
 .arr-next {
 	background: url(/public/images/right-arrow.svg) no-repeat;
 	right: 20px;
+}
+
+
+.share-btn, .share-btn:visited {
+  color: grey;
+  margin: 0 20px 0 20px;
+}
+.share-btn:hover {
+  color: dimgrey;
 }

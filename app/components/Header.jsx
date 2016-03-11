@@ -28,7 +28,7 @@ var Header = React.createClass({
 		if (this.state.user) {
 			return ( 
 				<ul className="nav navbar-nav navbar-right">
-					<li><a href="/mypledges">MY PLEDGES</a></li>
+					<li><a href={"/mypledges/" + this.state.user.id}>MY PLEDGES</a></li>
 					<li><a href="/logout">SIGN OUT</a></li>
 				</ul>
 			);
