@@ -28,10 +28,10 @@ var MyPledgesPage = React.createClass({
         return {user: user, pledges: pledges};
     },
     socialSharing: function() {
-        var myPledges = "These are " + this.state.user.displayName + "'s pledges...";
+        var myPledges = "Here's my pledge achievements so far…";
         if(this.state.user.isCurrentUser) {
             return (
-                <br>
+                <div className="body-text">
         		  	<a className="share-btn" target="_blank" title="Tweet this"
         		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledges}>
         		    	<i className="fa fa-twitter"></i>
@@ -47,7 +47,7 @@ var MyPledgesPage = React.createClass({
     					href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledges}>
         		    	<i className="fa fa-tumblr"></i>
         		  	</a>
-                </br>
+                </div>
 		    );
         }
 	    else {
@@ -56,18 +56,33 @@ var MyPledgesPage = React.createClass({
     },
     pledgeGroup: function() {
         if(this.state.pledges.length > 0) {
+    		var pledges = this.state.pledges.map(function(pledge) {
+    			return (
+    				<div className="pledge-link col-lg-3 col-md-4 col-sm-6" key={pledge._id}>
+    					<a href={"/pledge/" + pledge.title.toLowerCase().replace(/\s/g, "-")}>
+    						<img src={pledge.thumbnailUrl}/>
+    						<h4 className="pledge-thumb-title"><span>{pledge.title}</span></h4>
+    						<h4 className="results-info">
+    						    …{pledge.impactSoFar + " " +  pledge.impactUnits} so far.
+    						</h4>
+    					</a>
+    				</div>
+    			);
+    		});
             return (
                 <div>
-                    <div className="none-found">
-                        These are {this.state.user.displayName}'s pledges...
-                        {this.socialSharing()}
+                    <div className="body-text">
+                        {this.state.user.displayName} has helped the planet by saving…
 		    		</div>
-                    <PledgeGroup pledges={this.state.pledges} />
+		    		<div className="row">
+                        {pledges}
+                    </div>
+                    {this.socialSharing()}
                 </div>
             );
         }
         else {
-            return ( <div className="none-found">You don't appear to have made any pledges yet.</div> );
+            return ( <div className="body-text">You don't appear to have made any pledges yet.</div> );
         }
     },
     render: function() {

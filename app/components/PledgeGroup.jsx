@@ -9,6 +9,7 @@ var PledgeGroup = React.createClass({
     render: function() {
 		var pledges = this.props.pledges.map(function(pledge) {
 			var explanation = pledge.explanation.slice(0, 80);
+			// if we need to trim the text, don't cut it off in the middle of a word
 			if(explanation.length == 80) {
 				explanation = explanation.slice(0, explanation.lastIndexOf(' ')) + "…";
 			}
