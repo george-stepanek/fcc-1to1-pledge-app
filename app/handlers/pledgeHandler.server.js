@@ -145,7 +145,8 @@ function PledgeHandler () {
 	
 	this.getUser = function (req, res) {
 		Users.findOne({ 'id': req.params.id }, { '_id': false }, function (err, result) {
-		    if (err) { throw err; } 
+		    if (err) { throw err; }
+		    result.isCurrentUser = (req.user != undefined) && (req.user.id == req.params.id);
 		    res.json(result);
 		});
 	};

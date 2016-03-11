@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 var User = new Schema({
 	id: String,
-	displayName: String
+	displayName: String,
+	isCurrentUser: Boolean
 });
 
 module.exports = mongoose.model('User', User);
