@@ -13,12 +13,14 @@ module.exports = function (app, passport) {
 
 	app.route('/pledge/:title')
 		.get(function (req, res) {
-			request(req.protocol + "://" + req.get("host") + '/api/pledge/' + req.params.title, function (error, response, body) {
+			var baseUrl = req.protocol + "://" + req.get("host");
+			request(baseUrl + '/api/pledge/' + req.params.title, function (error, response, body) {
 			  var js = JSON.parse(body);
 				res.render(path + '/public/index.ejs', {
-					"url": req.protocol + "://" + req.get("host") + req.originalUrl,
+					"url": baseUrl + req.originalUrl,
 					"title": js.title,
-					"description": "I have so pledged: '" + js.explanation + "'"
+					"description": "I have so pledged: '" + js.explanation + "'",
+					"image": baseUrl + js.thumbnailUrl
 				})
 			})
 		});
