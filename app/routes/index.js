@@ -1,5 +1,6 @@
 'use strict';
 
+var request = require("request");
 var path = process.cwd();
 var PledgeHandler = require(path + '/app/handlers/pledgeHandler.server.js');
 
@@ -12,14 +13,21 @@ module.exports = function (app, passport) {
 
 	app.route('/pledge/:title')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/index.html');
+			request(req.protocol + "://" + req.get("host") + '/api/pledge/' + req.params.title, function (error, response, body) {
+			  var js = JSON.parse(body);
+				res.render(path + '/public/index.ejs', {
+					"url": req.protocol + "://" + req.get("host") + req.originalUrl,
+					"title": js.title,
+					"description": "I have so pledged: '" + js.explanation + "'"
+				})
+			})
 		});
 
 	app.route('/search')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/index.html');
 		});
-		
+
 	app.route('/mypledges/:id')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/index.html');
@@ -58,7 +66,7 @@ module.exports = function (app, passport) {
 			successRedirect: '/',
 			failureRedirect: '/'
 		}));
-		
+
 	var pledgeHandler = new PledgeHandler();
 
 	app.route('/api/search/pledges')
@@ -66,20 +74,20 @@ module.exports = function (app, passport) {
 
 	app.route('/api/pledge/:title')
 		.get(pledgeHandler.getPledge);
-		
+
 	app.route('/api/my/pledges/:id')
 		.get(pledgeHandler.getMyPledges);
-		
+
 	app.route('/api/my/pledge/:title')
 		.post(pledgeHandler.addMeToPledge)
 		.delete(pledgeHandler.removeMeFromPledge);
-		
+
 	app.route('/api/all/categories')
 		.get(pledgeHandler.getCategories);
-		
+
 	app.route('/api/category/pledges/:category')
 		.get(pledgeHandler.getPledgesForCategory);
-		
+
 	app.route('/api/user/:id')
 		.get(pledgeHandler.getUser);
 };
