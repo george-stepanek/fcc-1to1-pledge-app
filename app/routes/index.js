@@ -19,7 +19,7 @@ module.exports = function (app, passport) {
 				res.render(path + '/public/index.ejs', {
 					"url": baseUrl + req.originalUrl,
 					"title": js.title,
-					"description": "I have so pledged: '" + js.explanation + "'",
+					"description": js.explanation,
 					"image": baseUrl + js.thumbnailUrl
 				})
 			})
