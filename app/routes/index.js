@@ -15,14 +15,14 @@ module.exports = function (app, passport) {
 		.get(function (req, res) {
 			var baseUrl = req.protocol + "://" + req.get("host");
 			request(baseUrl + '/api/pledge/' + req.params.title, function (error, response, body) {
-			  var js = JSON.parse(body);
+				var js = JSON.parse(body);
 				res.render(path + '/public/index.ejs', {
 					"url": baseUrl + req.originalUrl,
 					"title": js.title,
 					"description": js.explanation,
 					"image": baseUrl + js.thumbnailUrl
-				})
-			})
+				});
+			});
 		});
 
 	app.route('/search')

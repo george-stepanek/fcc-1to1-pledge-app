@@ -8,7 +8,6 @@ var session = require('express-session');
 var compression = require('compression');
 
 var app = express();
-// Set view engine
 app.set('view engine', 'ejs');
 
 require('dotenv').load();

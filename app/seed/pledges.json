@@ -162,5 +162,125 @@
 	"citation": "http://www.carbonrally.com/challenges/34-commuter-bike",
 	"imageUrl": "/public/images/walk-with-your-kids.jpg",
 	"thumbnailUrl": "/public/images/walk-with-your-kids-thumb.jpg"
+},
+{
+	"title": "Don’t Idle",
+	"category": "transportation",
+	"explanation": "A quarter of gas is burned simply from cars being still. Turn off the car if you will be still for over 30 seconds. Save 25% of your fuel.",
+	"impactPerWeek": 0.62,
+	"impactUnits": "gallons of fuel",
+	"source": "Sustainable America",
+	"citation": "http://www.sustainableamerica.org/blog/the-truth-about-idling-infographic/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Walk Or Bike Short Distances",
+	"category": "transportation",
+	"explanation": "Make sure to walk or ride a bike when your destination is within 2 miles of your home. This will cut fuel costs, give you exercise, and protect the Earth!",
+	"impactPerWeek": 182,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Trace",
+	"citation": "http://isocrates.us/bike/the-1-mile-solution/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Carpool",
+	"category": "transportation",
+	"explanation": "Find a co-worker or (future) friend who works nearby. Split the cost of driving, lower your emissions, use the carpool lane, and enjoy the company!",
+	"impactPerWeek": 182,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/29-carpool",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Slow Down!",
+	"category": "transportation",
+	"explanation": "Driving 70 mph instead of 60 is equivalent to adding 50 cents per gallon to gas prices.",
+	"impactPerWeek": 31.24,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/21-fuel-efficiency",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Turn Off Your Car",
+	"category": "transportation",
+	"explanation": "Park and walk into restaurants and banks instead of using the drive-thru.",
+	"impactPerWeek": 1.143,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/23",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Drive Efficiently",
+	"category": "transportation",
+	"explanation": "Check for correct tire pressure and drive at a consistent speed.",
+	"impactPerWeek": 6.7,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/6-tire-pressure",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Change Your Air Filter",
+	"category": "transportation",
+	"explanation": "Dirty air filters require fuel to push the air through. Clean or replace them!",
+	"impactPerWeek": 0.96,
+	"impactUnits": "gallons of fuel",
+	"source": "Environmental Protection Agency",
+	"citation": "http://www.epa.gov/otaq/consumer/420f08024.pdf",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Enjoy The Fresh Air",
+	"category": "transportation",
+	"explanation": "Though climate control can feel amazing, air conditioning uses a lot of fuel! (However, at speeds over 60 mph AC is better for fuel economy than an open window.)",
+	"impactPerWeek": 1.7,
+	"impactUnits": "gallons of fuel",
+	"source": "NY Department of Transportation",
+	"citation": "https://www.dot.ny.gov/programs/climate-change/ecodriving/drive-more-efficiently",
+	"imageUrl": "/public/images/enjoy-the-fresh-air.jpg",
+	"thumbnailUrl": "/public/images/enjoy-the-fresh-air-thumb.jpg"
+},
+{
+	"title": "Empty The Trunk",
+	"category": "transportation",
+	"explanation": "More weight equals more fuel. Don't carry more in the car than you need to.",
+	"impactPerWeek": 0.16,
+	"impactUnits": "gallons of fuel",
+	"source": "NY Department of Transportation",
+	"citation": "https://www.dot.ny.gov/programs/climate-change/ecodriving/drive-more-efficiently",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Park In The Shade",
+	"category": "transportation",
+	"explanation": "This keeps your car cool and reduces the need for air conditioning.",
+	"impactPerWeek": 1.92,
+	"impactUnits": "gallons of fuel",
+	"source": "NY Department of Transportation",
+	"citation": "https://www.dot.ny.gov/programs/climate-change/ecodriving/drive-more-efficiently",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Consider A Hybrid",
+	"category": "transportation",
+	"explanation": "Next time you purchase a car, consider a hybrid! The energy savings for the planet and your budget are remarkable.",
+	"impactPerWeek": 38,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Living Green Magazine",
+	"citation": "http://livinggreenmag.com/2013/02/13/energy-ecology/veganism-the-environment-by-the-numbers-infographic/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
 }]
-

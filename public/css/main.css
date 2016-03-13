@@ -169,6 +169,7 @@ a {
   font-family: 'Heartwell';
   font-size: 4em; /* Fallback */
   font-size: 10vw; /* Resize title for width */
+  line-height: 110%;
 }
 .pledge-btn, .pledge-btn:visited {
   color: white;
