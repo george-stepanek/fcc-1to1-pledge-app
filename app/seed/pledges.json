@@ -164,15 +164,15 @@
 	"thumbnailUrl": "/public/images/walk-with-your-kids-thumb.jpg"
 },
 {
-	"title": "Don’t Idle",
+	"title": "Switch Off The Engine",
 	"category": "transportation",
 	"explanation": "A quarter of gas is burned simply from cars being still. Turn off the car if you will be still for over 30 seconds. Save 25% of your fuel.",
 	"impactPerWeek": 0.62,
 	"impactUnits": "gallons of fuel",
 	"source": "Sustainable America",
 	"citation": "http://www.sustainableamerica.org/blog/the-truth-about-idling-infographic/",
-	"imageUrl": "/public/images/dont-idle.jpg",
-	"thumbnailUrl": "/public/images/dont-idle-thumb.jpg"
+	"imageUrl": "/public/images/switch-off-the-engine.jpg",
+	"thumbnailUrl": "/public/images/switch-off-the-engine-thumb.jpg"
 },
 {
 	"title": "Walk Or Bike Short Distances",
