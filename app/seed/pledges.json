@@ -171,8 +171,8 @@
 	"impactUnits": "gallons of fuel",
 	"source": "Sustainable America",
 	"citation": "http://www.sustainableamerica.org/blog/the-truth-about-idling-infographic/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/dont-idle.jpg",
+	"thumbnailUrl": "/public/images/dont-idle-thumb.jpg"
 },
 {
 	"title": "Walk Or Bike Short Distances",
@@ -193,8 +193,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/29-carpool",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/carpool.jpg",
+	"thumbnailUrl": "/public/images/carpool-thumb.jpg"
 },
 {
 	"title": "Slow Down!",
@@ -226,8 +226,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/6-tire-pressure",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/drive-efficiently.jpg",
+	"thumbnailUrl": "/public/images/drive-efficiently-thumb.jpg"
 },
 {
 	"title": "Change Your Air Filter",
@@ -237,8 +237,8 @@
 	"impactUnits": "gallons of fuel",
 	"source": "Environmental Protection Agency",
 	"citation": "http://www.epa.gov/otaq/consumer/420f08024.pdf",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/change-your-air-filter.jpg",
+	"thumbnailUrl": "/public/images/change-your-air-filter-thumb.jpg"
 },
 {
 	"title": "Enjoy The Fresh Air",
@@ -259,8 +259,8 @@
 	"impactUnits": "gallons of fuel",
 	"source": "NY Department of Transportation",
 	"citation": "https://www.dot.ny.gov/programs/climate-change/ecodriving/drive-more-efficiently",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/empty-the-trunk.jpg",
+	"thumbnailUrl": "/public/images/empty-the-trunk-thumb.jpg"
 },
 {
 	"title": "Park In The Shade",
@@ -281,6 +281,6 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Living Green Magazine",
 	"citation": "http://livinggreenmag.com/2013/02/13/energy-ecology/veganism-the-environment-by-the-numbers-infographic/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/consider-a-hybrid.jpg",
+	"thumbnailUrl": "/public/images/consider-a-hybrid-thumb.jpg"
 }]
