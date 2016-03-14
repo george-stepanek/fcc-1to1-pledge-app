@@ -182,8 +182,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Trace",
 	"citation": "http://isocrates.us/bike/the-1-mile-solution/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/walk-or-bike-short-distances.jpg",
+	"thumbnailUrl": "/public/images/walk-or-bike-short-distances-thumb.jpg"
 },
 {
 	"title": "Carpool",
@@ -197,26 +197,26 @@
 	"thumbnailUrl": "/public/images/carpool-thumb.jpg"
 },
 {
-	"title": "Slow Down!",
+	"title": "Slow Down",
 	"category": "transportation",
 	"explanation": "Driving 70 mph instead of 60 is equivalent to adding 50 cents per gallon to gas prices.",
 	"impactPerWeek": 31.24,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/21-fuel-efficiency",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/slow-down.jpg",
+	"thumbnailUrl": "/public/images/slow-down-thumb.jpg"
 },
 {
-	"title": "Turn Off Your Car",
+	"title": "Walk In",
 	"category": "transportation",
 	"explanation": "Park and walk into restaurants and banks instead of using the drive-thru.",
 	"impactPerWeek": 1.143,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/23",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/walk-in.jpg",
+	"thumbnailUrl": "/public/images/walk-in-thumb.jpg"
 },
 {
 	"title": "Drive Efficiently",
@@ -270,8 +270,8 @@
 	"impactUnits": "gallons of fuel",
 	"source": "NY Department of Transportation",
 	"citation": "https://www.dot.ny.gov/programs/climate-change/ecodriving/drive-more-efficiently",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/park-in-the-shade.jpg",
+	"thumbnailUrl": "/public/images/park-in-the-shade-thumb.jpg"
 },
 {
 	"title": "Consider A Hybrid",
