@@ -184,7 +184,7 @@ a {
 .arr-btn {
 	opacity: 1;
 	position: absolute;
-	top: -10px;
+	top: -20px;
 	width: 60px;
 	height: 30px;
 }
@@ -193,11 +193,11 @@ a {
 }
 .arr-prev {
 	background: url(/public/images/left-arrow.svg) no-repeat;
-	left: 20px;
+	left: 10px;
 }
 .arr-next {
 	background: url(/public/images/right-arrow.svg) no-repeat;
-	right: 20px;
+	right: 10px;
 }
 
 /* My Pledges page
