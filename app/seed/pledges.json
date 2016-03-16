@@ -54,15 +54,15 @@
 	"thumbnailUrl": "/public/images/get-thrifty-thumb.jpg"
 },
 {
-	"title": "Cloth Diapers",
+	"title": "Use Cloth Diapers",
 	"explanation": "Consider cloth diapers. If thats sounds gross, consider biodegradable disposable diaper liners that you can flush down the toilet. This cuts down on diaper waste.",
 	"category": "waste",
 	"impactPerWeek": 64,
 	"impactUnits": "diapers",
 	"source": "Environmental Protection Agency",
 	"citation": "http://www.epa.gov/reg3wcmd/solidwasterecyclingfacts.htm",
-	"imageUrl": "/public/images/cloth-diapers.jpg",
-	"thumbnailUrl": "/public/images/cloth-diapers-thumb.jpg"
+	"imageUrl": "/public/images/use-cloth-diapers.jpg",
+	"thumbnailUrl": "/public/images/use-cloth-diapers-thumb.jpg"
 },
 {
 	"title": "Reuse The Lunchbox",
@@ -171,8 +171,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/19-compost",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/compost.jpg",
+	"thumbnailUrl": "/public/images/compost-thumb.jpg"	
 },
 {
 	"title": "Change Up The Lunchbox",
@@ -193,8 +193,8 @@
 	"impactUnits": "pounds of waste",
 	"source": "Environmental Protection Agency",
 	"citation": "http://www.epa.gov/epawaste/nonhaz/municipal/index.htm",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/bring-your-own-packaging.jpg",
+	"thumbnailUrl": "/public/images/bring-your-own-packaging-thumb.jpg"	
 },
 {
 	"title": "Vegetarian Diet",
@@ -226,8 +226,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Leopold Center for Sustainable Agriculture",
 	"citation": "http://www.leopold.iastate.edu/pubs-and-papers/2003-07-food-odometer",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/eat-local.jpg",
+	"thumbnailUrl": "/public/images/eat-local-thumb.jpg"	
 },
 {
 	"title": "Think Before You Plant",
