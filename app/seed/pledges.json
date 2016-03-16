@@ -120,6 +120,17 @@
 	"thumbnailUrl": "/public/images/refuse-the-bag-thumb.jpg"
 },
 {
+	"title": "Grow Your Own Food",
+	"category": "food",
+	"explanation": "Grow a vegetable garden as big or small as you can. This can be done with any outdoor space you have, including windowsills.",
+	"impactPerWeek": 1.8,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/33-organic-gardening",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
 	"title": "Love Those Leftovers",
 	"category": "food",
 	"explanation": "Cut down on food waste by ensuring that you have finished all perishable food in the fridge before shopping for more. If there is perishable food, figure out what you can incorporate into more meals!",
@@ -129,6 +140,94 @@
 	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
 	"imageUrl": "/public/images/love-those-leftovers.jpg",
 	"thumbnailUrl": "/public/images/love-those-leftovers-thumb.jpg"	
+},
+{
+	"title": "Plan Your Menu",
+	"category": "food",
+	"explanation": "Plan a weekly food menu and use it when you shop at the store! This will save you money and transportation energy as you won’t go back to the store as often. Before heading out, shop around your pantry or refrigerator to make sure you factor in the food you have so you don’t buy too much.",
+	"impactPerWeek": 5,
+	"impactUnits": "pounds of food",
+	"source": "United States Department of Agriculture",
+	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
+	"title": "Meatless Monday",
+	"category": "food",
+	"explanation": "Eating meat uses so much water to produce! Try to cut down on red meat just one day a week.",
+	"impactPerWeek": 154,
+	"impactUnits": "gallons of water",
+	"source": "PETA",
+	"citation": "http://www.peta.org/action/mobile-meatless-monday/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
+	"title": "Compost",
+	"category": "food",
+	"explanation": "Recycle your food waste by creating a compost system to fertilize your garden!",
+	"impactPerWeek": 6.9,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/19-compost",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
+	"title": "Change Up The Lunchbox",
+	"category": "food",
+	"explanation": "If your child is coming home with food left in their lunchbox, talk to them about what they like and don’t like. Kids food tastes are constantly evolving, so this conversation could help your family cut down on waste!",
+	"impactPerWeek": 5,
+	"impactUnits": "pounds of food",
+	"source": "United States Department of Agriculture",
+	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
+	"imageUrl": "/public/images/reuse-the-lunchbox.jpg",
+	"thumbnailUrl": "/public/images/reuse-the-lunchbox-thumb.jpg"
+},
+{
+	"title": "Bring Your Own Packaging",
+	"category": "food",
+	"explanation": "Bring containers for bulk food items. This will cut down on packaging as well as food waste. (Hey, you’re only buying what you need!)",
+	"impactPerWeek": 2.66,
+	"impactUnits": "pounds of waste",
+	"source": "Environmental Protection Agency",
+	"citation": "http://www.epa.gov/epawaste/nonhaz/municipal/index.htm",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
+	"title": "Vegetarian Diet",
+	"category": "food",
+	"explanation": "Eat a vegetarian diet. Cutting down on meat consumption is an amazing way to save water & energy, and cut down on carbon emissions, not to mention saving animals’ lives!",
+	"impactPerWeek": 1080,
+	"impactUnits": "gallons of water",
+	"source": "NPR",
+	"citation": "http://www.npr.org/blogs/thesalt/2012/06/27/155527365/visualizing-a-nation-of-meat-eaters",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
+	"title": "Go Vegan",
+	"category": "food",
+	"explanation": "Go vegan! This will be even more energy efficient than driving a hybrid. There are a lot of resources available for how to cook healthy, filling vegan meals.",
+	"impactPerWeek": 57,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Living Green Magazine",
+	"citation": "http://livinggreenmag.com/2013/02/13/energy-ecology/veganism-the-environment-by-the-numbers-infographic/",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
+},
+{
+	"title": "Eat Local",
+	"category": "food",
+	"explanation": "Seek out food that has been grown within 50 miles of your home. This will cut down on the environmental impacts of packaging and transporting food from far away places. ",
+	"impactPerWeek": 1.4,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Leopold Center for Sustainable Agriculture",
+	"citation": "http://www.leopold.iastate.edu/pubs-and-papers/2003-07-food-odometer",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"	
 },
 {
 	"title": "Think Before You Plant",
@@ -254,7 +353,7 @@
 {
 	"title": "Empty The Trunk",
 	"category": "transportation",
-	"explanation": "More weight equals more fuel. Don't carry more in the car than you need to.",
+	"explanation": "More weight equals more fuel. Don’t carry more in the car than you need to.",
 	"impactPerWeek": 0.16,
 	"impactUnits": "gallons of fuel",
 	"source": "NY Department of Transportation",

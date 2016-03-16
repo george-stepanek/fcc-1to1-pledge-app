@@ -123,6 +123,7 @@ function PledgeHandler () {
 						pledgedCount += pledge.users.length;
 						
 						pledge.users.forEach(function(user) {
+							// find the unique users for this category
 							if(users.filter(function (value) { return value == user.id }).length == 0) {
 								users.push(user.id);
 							}
