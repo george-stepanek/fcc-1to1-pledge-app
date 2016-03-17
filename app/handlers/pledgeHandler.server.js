@@ -30,6 +30,7 @@ function PledgeHandler () {
 	    			var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
 				    output[i].impactSoFar += Math.round(millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
 	    		}
+	    		output[i].userCount = output[i].users.length;
 	    		
 	    		// drop all other user data from the pledge, for reasons of security and scalability
 	    		if(req.user) {

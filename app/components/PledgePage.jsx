@@ -41,7 +41,8 @@ var PledgePage = React.createClass({
     },
     impactPerWeek: function() {
     	return (
-			<p className="pledge-para">Pledge to save <i><b>
+			<p className="pledge-para">
+				Pledge to save <i><b>
 				{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
 				</b></i> per week.
 				<a href={this.state.pledge.citation} target="_blank" className="pledge-btn" title={"Source: " + this.state.pledge.source}>
@@ -151,18 +152,20 @@ var PledgePage = React.createClass({
     },
     render: function() {
         return (
-    		<div className="pledge-page">
-        <span className="pledge-img pledge-span"></span>
+			<div className="pledge-page">
+				<span className="pledge-img pledge-span"></span>
 				<img className="pledge-img" src={this.state.pledge.imageUrl}/>
 				<a className="arr-btn arr-prev" href={"/pledge/" + this.state.pledge.prevPledge} title="Previous pledge">&nbsp;</a>
 				<a className="arr-btn arr-next" href={"/pledge/" + this.state.pledge.nextPledge} title="Next pledge">&nbsp;</a>
+				<a className="arr-up" href={"/category/" + this.state.pledge.category} title="Back to category">^</a>
 				<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
 				<div className="row">
 					<div className="pledge-col col-md-6">
 						<p className="pledge-para">{this.state.pledge.explanation}</p>
-						<p className="pledge-para">A total of <i><b>
-							{this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}
-						</b></i> have been saved already!</p>
+						<p className="pledge-para">
+							{this.state.pledge.userCount} {this.state.pledge.userCount == 1 ? "person has " : "people have "} saved a total of 
+							<i><b> {this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}</b></i> so far&hellip;
+						</p>
 					</div>
 					{this.myImpactAndButtons()}
 				</div>

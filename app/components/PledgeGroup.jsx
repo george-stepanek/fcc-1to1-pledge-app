@@ -19,7 +19,10 @@ var PledgeGroup = React.createClass({
 					<a href={"/pledge/" + pledge.title.toLowerCase().replace(/\s/g, "-")}>
 						<img src={pledge.thumbnailUrl}/>
 						<h4 className="pledge-thumb-title"><span>{pledge.title}</span></h4>
-						<h4 className="pledge-info">{explanation}</h4>
+						<h4 className="pledge-info">
+							{pledge.userCount} {pledge.userCount == 1 ? "person has " : "people have "} saved a total
+							of {pledge.impactSoFar + " " +  pledge.impactUnits} so far&hellip;
+						</h4>
 					</a>
 				</div>
 			);

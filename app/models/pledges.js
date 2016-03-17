@@ -22,7 +22,8 @@ var Pledge = new Schema({
 	users: [ {
 	    id: String,
 	    when: Date
-	} ]
+	} ],
+	userCount: Number
 });
 
 module.exports = mongoose.model('Pledge', Pledge);

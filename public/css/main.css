@@ -42,8 +42,8 @@ a {
 .logo-text {
   font-family: Heartwell;
   font-size: 1.8em;
-  letter-spacing: 2px;
-  color: #787878 !important;
+  letter-spacing: 1px;
+  color: rgba(35, 155, 169, 0.9) !important;
   position:relative;
   bottom:-7px;
   left: 10px;
@@ -82,7 +82,7 @@ a {
   margin: 0;
 }
 .pledge-link {
-  background: rgba(64,180,194,0.8);
+  background: rgba(64,180,194,0.9);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -96,9 +96,11 @@ a {
   top: 50%;
   transform: translateY(-50%);
   padding: 25px;
-  color: black;
-  text-shadow: 0px 0px 5px white;
-  transition: opacity .5s
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 0px 0px 5px black;
+  transition: opacity .5s;
+  width: 100%;
 }
 .pledge-link img {
   position: relative;
@@ -110,11 +112,6 @@ a {
   transform: translate(-50%, -50%);
   -webkit-filter: saturate(60%) contrast(60%) brightness(90%);
   filter: saturate(60%) contrast(60%) brightness(90%);
-}
-.pledge-link:hover {
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .pledge-link:hover img {
   opacity: 0.2;
@@ -132,10 +129,8 @@ a {
 }
 .pledge-thumb-title span {
   color: white;
-  font-size: 1.25em;
-  background: rgb(8, 8, 8);
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px;
+  font-size: 1.5em;
+  text-shadow: 0px 0px 5px black;
 }
 
 /* Pledge page
@@ -165,18 +160,15 @@ a {
 }
 @media screen\0 { .pledge-img { transform: translate(-50%, -50%); } } /* IE hack */
 .pledge-title {
-  margin: 30px 0 30px 0;
+  margin: 60px 0 30px 0;
   font-family: 'Heartwell';
   font-size: 4em; /* Fallback */
   font-size: 10vw; /* Resize title for width */
-  line-height: 110%;
+  line-height: 105%;
 }
 .pledge-btn, .pledge-btn:visited {
   color: white;
   margin: 0 20px 0 20px;
-}
-.pledge-btn:hover {
-  color: lightgrey;
 }
 .pledge-para {
   margin-bottom: 40px;
@@ -184,7 +176,7 @@ a {
 .arr-btn {
 	opacity: 1;
 	position: absolute;
-	top: -20px;
+	top: -40px;
 	width: 60px;
 	height: 30px;
 }
@@ -193,11 +185,22 @@ a {
 }
 .arr-prev {
 	background: url(/public/images/left-arrow.svg) no-repeat;
-	left: 10px;
+	left: 20px;
 }
 .arr-next {
 	background: url(/public/images/right-arrow.svg) no-repeat;
-	right: 10px;
+	right: 20px;
+}
+.arr-up, .arr-up:visited {
+  font-family: Heartwell;
+  font-size: 5em;
+  color: white;
+  position: absolute;
+	top: -80px;
+	left: 50%;
+}
+.pledge-btn:hover, .arr-up:hover {
+  color: lightgrey;
 }
 
 /* My Pledges page
@@ -210,10 +213,10 @@ a {
   color: dimgrey;
 }
 .results-info {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 25px;
-  color: white;
-  text-shadow: 0px 0px 5px black;
+  top: 40px;
+  opacity: 1;
+}
+.my-pledge-title {
+  top: auto;
+  bottom: 20px;
 }

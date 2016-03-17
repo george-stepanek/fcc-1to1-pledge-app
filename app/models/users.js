@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var User = new Schema({
 	id: String,
 	displayName: String,
+	emailAddress: String,
 	isCurrentUser: Boolean
 });
 

@@ -61,10 +61,10 @@ var MyPledgesPage = React.createClass({
     				<div className="pledge-link col-lg-3 col-md-4 col-sm-6" key={pledge._id}>
     					<a href={"/pledge/" + pledge.title.toLowerCase().replace(/\s/g, "-")}>
     						<img src={pledge.thumbnailUrl}/>
-    						<h4 className="pledge-thumb-title"><span>{pledge.title}</span></h4>
-    						<h4 className="results-info">
-    						    …{pledge.impactSoFar + " " +  pledge.impactUnits} so far.
+    						<h4 className="pledge-info results-info">
+    						    {pledge.impactSoFar + " " +  pledge.impactUnits}<br/>so far
     						</h4>
+    						<h4 className="pledge-thumb-title my-pledge-title"><span>{pledge.title}</span></h4>
     					</a>
     				</div>
     			);
