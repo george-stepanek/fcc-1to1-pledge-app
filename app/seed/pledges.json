@@ -160,8 +160,8 @@
 	"impactUnits": "gallons of water",
 	"source": "PETA",
 	"citation": "http://www.peta.org/action/mobile-meatless-monday/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/meatless-mondays.jpg",
+	"thumbnailUrl": "/public/images/meatless-mondays-thumb.jpg"	
 },
 {
 	"title": "Compost",
@@ -204,8 +204,8 @@
 	"impactUnits": "gallons of water",
 	"source": "NPR",
 	"citation": "http://www.npr.org/blogs/thesalt/2012/06/27/155527365/visualizing-a-nation-of-meat-eaters",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/vegetarian-diet.jpg",
+	"thumbnailUrl": "/public/images/vegetarian-diet-thumb.jpg"	
 },
 {
 	"title": "Go Vegan",
@@ -215,8 +215,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Living Green Magazine",
 	"citation": "http://livinggreenmag.com/2013/02/13/energy-ecology/veganism-the-environment-by-the-numbers-infographic/",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/go-vegan.jpg",
+	"thumbnailUrl": "/public/images/go-vegan-thumb.jpg"	
 },
 {
 	"title": "Eat Local",
