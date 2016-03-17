@@ -55,7 +55,7 @@
 },
 {
 	"title": "Use Cloth Diapers",
-	"explanation": "Consider cloth diapers. If thats sounds gross, consider biodegradable disposable diaper liners that you can flush down the toilet. This cuts down on diaper waste.",
+	"explanation": "Consider cloth diapers. Alternatively, consider biodegradable disposable diaper liners that you can flush down the toilet. This cuts down on diaper waste.",
 	"category": "waste",
 	"impactPerWeek": 64,
 	"impactUnits": "diapers",
@@ -127,8 +127,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/33-organic-gardening",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/grow-your-own-food.jpg",
+	"thumbnailUrl": "/public/images/grow-your-own-food-thumb.jpg"	
 },
 {
 	"title": "Love Those Leftovers",
@@ -149,8 +149,8 @@
 	"impactUnits": "pounds of food",
 	"source": "United States Department of Agriculture",
 	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"	
+	"imageUrl": "/public/images/plan-your-menu.jpg",
+	"thumbnailUrl": "/public/images/plan-your-menu-thumb.jpg"	
 },
 {
 	"title": "Meatless Monday",
