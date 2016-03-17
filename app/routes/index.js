@@ -52,7 +52,7 @@ module.exports = function (app, passport) {
 		});
 
 	app.route('/auth/google')
-		.get(passport.authenticate('google', { scope: [ 'profile' ] } ));
+		.get(passport.authenticate('google', { scope: [ 'profile', 'email' ] } ));
 
 	app.route('/auth/google/callback')
 		.get(passport.authenticate('google', {
@@ -61,7 +61,7 @@ module.exports = function (app, passport) {
 		}));
 
 	app.route('/auth/facebook')
-		.get(passport.authenticate('facebook'));
+		.get(passport.authenticate('facebook', { scope: ['email'] }));
 
 	app.route('/auth/facebook/callback')
 		.get(passport.authenticate('facebook', {

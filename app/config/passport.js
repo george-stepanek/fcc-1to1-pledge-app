@@ -31,6 +31,7 @@ module.exports = function (passport) {
 					var newUser = new User();
 					newUser.id = profile.id;
 					newUser.displayName = profile.displayName;
+					newUser.emailAddress = profile.emails[0].value;
 
 					newUser.save(function (err) {
 						if (err) { throw err; }
@@ -53,7 +54,7 @@ module.exports = function (passport) {
 		clientID: process.env.FACEBOOK_KEY,
 		clientSecret: process.env.FACEBOOK_SECRET,
 		callbackURL: process.env.APP_URL + 'auth/facebook/callback',
-		profileFields: ['id', 'displayName', 'photos']
+		profileFields: ['id', 'displayName', 'email']
 	},
 	authenticate));
 };
