@@ -69,29 +69,29 @@ var PledgePage = React.createClass({
 						</b></i> so far.<br/>(Check back here for your progress!)
 					</p>
 					<p>
-                <a className="pledge-btn" target="_blank" title="Share it"
-                  href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href}>
-                  <i className="fa fa-facebook"></i>
-                </a>
-		    		  	<a className="pledge-btn" target="_blank" title="Tweet it"
-		    		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
-		    		    	<i className="fa fa-twitter"></i>
-		    		  	</a>
-		    		  	&nbsp;
-		    		  	<a className="pledge-btn" target="_blank" title="Pin it"
-		    		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +
-		    		  			"&media=" + window.location.origin + this.state.pledge.imageUrl}>
-		    		    	<i className="fa fa-pinterest"></i>
-		    		  	</a>
-		    		  	&nbsp;
-						<a className="pledge-btn" target="_blank" title="Share it"
+					<a className="pledge-btn" target="_blank" title="Share it"
+							href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href}>
+						<i className="fa fa-facebook"></i>
+					</a>
+					<a className="pledge-btn" target="_blank" title="Tweet it"
+							href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledge}>
+						<i className="fa fa-twitter"></i>
+					</a>
+					&nbsp;
+					<a className="pledge-btn" target="_blank" title="Pin it"
+							href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledge +
+							"&media=" + window.location.origin + this.state.pledge.imageUrl}>
+						<i className="fa fa-pinterest"></i>
+					</a>
+					&nbsp;
+					<a className="pledge-btn" target="_blank" title="Share it"
 							href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledge}>
-		    		    	<i className="fa fa-tumblr"></i>
-		    		  	</a>
-		    		  	&nbsp;
-			    		<a className="pledge-btn" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
-							<i className="fa fa-times-circle-o"></i>
-						</a>
+						<i className="fa fa-tumblr"></i>
+					</a>
+					&nbsp;
+					<a className="pledge-btn" onClick={this.removeMe} id="submit-button" title="I've changed my mind">
+						<i className="fa fa-times-circle-o"></i>
+					</a>
 					</p>
 				</div>
 			);

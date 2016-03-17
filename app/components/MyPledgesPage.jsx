@@ -32,21 +32,25 @@ var MyPledgesPage = React.createClass({
         if(this.state.user.isCurrentUser) {
             return (
                 <div className="body-text">
-        		  	<a className="share-btn" target="_blank" title="Tweet this"
-        		  		href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledges}>
-        		    	<i className="fa fa-twitter"></i>
-        		  	</a>
-        		  	&nbsp;
-        		  	<a className="share-btn" target="_blank" title="Pin this"
-        		  		href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledges +	
-        		  			"&media=" + window.location.origin + this.state.pledges[0].imageUrl}>
-        		    	<i className="fa fa-pinterest"></i>
-        		  	</a>
-        		  	&nbsp;
-    				<a className="share-btn" target="_blank" title="Share this"
-    					href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledges}>
-        		    	<i className="fa fa-tumblr"></i>
-        		  	</a>
+					<a className="share-btn" target="_blank" title="Share it"
+							href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href}>
+						<i className="fa fa-facebook"></i>
+					</a>
+                    <a className="share-btn" target="_blank" title="Tweet this"
+                            href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledges}>
+                        <i className="fa fa-twitter"></i>
+                    </a>
+                    &nbsp;
+                    <a className="share-btn" target="_blank" title="Pin this"
+                            href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledges +	
+                                "&media=" + window.location.origin + this.state.pledges[0].imageUrl}>
+                        <i className="fa fa-pinterest"></i>
+                    </a>
+                    &nbsp;
+                    <a className="share-btn" target="_blank" title="Share this"
+                            href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledges}>
+                        <i className="fa fa-tumblr"></i>
+                    </a>
                 </div>
 		    );
         }
