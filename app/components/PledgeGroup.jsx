@@ -21,7 +21,7 @@ var PledgeGroup = React.createClass({
 						<h4 className="pledge-thumb-title"><span>{pledge.title}</span></h4>
 						<h4 className="pledge-info">
 							{pledge.userCount} {pledge.userCount == 1 ? "person has " : "people have "} saved a total
-							of {pledge.impactSoFar + " " +  pledge.impactUnits} so far&hellip;
+							of {pledge.impactSoFar + " " +  pledge.impactUnits} so&nbsp;far&hellip;
 						</h4>
 					</a>
 				</div>

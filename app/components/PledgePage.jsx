@@ -164,7 +164,7 @@ var PledgePage = React.createClass({
 						<p className="pledge-para">{this.state.pledge.explanation}</p>
 						<p className="pledge-para">
 							{this.state.pledge.userCount} {this.state.pledge.userCount == 1 ? "person has " : "people have "} saved a total of 
-							<i><b> {this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}</b></i> so far&hellip;
+							<i><b> {this.state.pledge.impactSoFar + " " +  this.state.pledge.impactUnits}</b></i> so&nbsp;far&hellip;
 						</p>
 					</div>
 					{this.myImpactAndButtons()}
