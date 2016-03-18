@@ -43,7 +43,7 @@ var MyPledgesPage = React.createClass({
                     &nbsp;
                     <a className="share-btn" target="_blank" title="Pin this"
                             href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledges +	
-                                "&media=" + window.location.origin + this.state.pledges[0].imageUrl}>
+                                "&media=" + window.location.origin + "/public/images/think-before-you-plant-thumb.jpg"}>
                         <i className="fa fa-pinterest"></i>
                     </a>
                     &nbsp;
