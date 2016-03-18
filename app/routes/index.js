@@ -20,7 +20,9 @@ module.exports = function (app, passport) {
 					"url": baseUrl + req.originalUrl,
 					"title": js.title,
 					"description": js.explanation,
-					"image": baseUrl + js.thumbnailUrl
+					"image": baseUrl + js.thumbnailUrl,
+					"width": 600,
+					"height": 400
 				});
 			});
 		});
@@ -34,7 +36,9 @@ module.exports = function (app, passport) {
 					"url": baseUrl + req.originalUrl,
 					"title": js.displayName + "'s Pledges",
 					"description": js.displayName + "'s pledges to help the planet, and progress so far, via the 1to1 Movement website.",
-					"image": baseUrl + "/public/images/Logo.jpg"
+					"image": baseUrl + "/public/images/think-before-you-plant-thumb.jpg",
+					"width": 600,
+					"height": 400
 				});
 			});
 		});
