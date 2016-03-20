@@ -25,14 +25,19 @@ var PageRouter = React.createClass({
     },
     updateUrl: function(href, replace) {
         if(replace || href != window.location.pathname) {
-            if(replace) {
-                window.history.replaceState('', 'New URL: ' + href, href);
+            if(window.history.replaceState) {
+                if(replace) {
+                    window.history.replaceState('', 'New URL: ' + href, href);
+                }
+                else {
+                    window.history.pushState('', 'New URL: ' + href, href);
+                }
+                this.setState({url: href});
+                this.updateLinks();
             }
             else {
-                window.history.pushState('', 'New URL: ' + href, href);
+                window.location.href = href;
             }
-            this.setState({url: href});
-            this.updateLinks();
         }
     },
     getPage: function() {
