@@ -5,20 +5,20 @@ var MainPage = React.createClass({
             return null;
         }
 		else if ($.cookie("pageBeforeLogin")) {
-	        this.props.updateUrl($.cookie("pageBeforeLogin"), true);
-	        $.removeCookie("pageBeforeLogin");
-	        return null;
+			this.props.updateUrl($.cookie("pageBeforeLogin"), true);
+			$.removeCookie("pageBeforeLogin");
+			return null;
         }
 
-    	var categories;
+		var categories;
         $.ajax({
-    		url: window.location.origin + '/api/all/categories',
-    		cache : false,
-    		async: false,
-    		type: "get",
-    		success: function(results) {
+			url: window.location.origin + '/api/all/categories',
+			cache : false,
+			async: false,
+			type: "get",
+			success: function(results) {
                 categories = results;
-    		}
+			}
         });
         document.title = "1to1 Movement Pledges";
         return {categories: categories};
