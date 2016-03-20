@@ -6,9 +6,9 @@ var PledgeHandler = require(path + '/app/handlers/pledgeHandler.server.js');
 
 module.exports = function (app, passport) {
 
-	app.route('/')
+	app.route(['/', '/search', '/category/:category'])
 		.get(function (req, res) {
-			res.sendFile(path + '/public/index.html');
+			res.render(path + '/public/index.ejs', { "url": "", "title": "", "description": "",	"image": "", "width": "", "height": "" });
 		});
 
 	app.route('/pledge/:title')
@@ -41,16 +41,6 @@ module.exports = function (app, passport) {
 					"height": 400
 				});
 			});
-		});
-
-	app.route('/search')
-		.get(function (req, res) {
-			res.sendFile(path + '/public/index.html');
-		});
-
-	app.route('/category/:category')
-		.get(function (req, res) {
-			res.sendFile(path + '/public/index.html');
 		});
 
 	app.route('/logout')
