@@ -1,14 +1,24 @@
 'use strict';
 
-var request = require("request");
 var path = process.cwd();
+var defaultImage = "/public/images/think-before-you-plant-thumb.jpg";
+
+var request = require("request");
 var PledgeHandler = require(path + '/app/handlers/pledgeHandler.server.js');
 
 module.exports = function (app, passport) {
 
 	app.route(['/', '/search', '/category/:category'])
 		.get(function (req, res) {
-			res.render(path + '/public/index.ejs', { "url": "", "title": "", "description": "",	"image": "", "width": "", "height": "" });
+			var baseUrl = req.protocol + "://" + req.get("host");
+			res.render(path + '/public/index.ejs', {
+					"url": baseUrl + req.originalUrl,
+					"title": "1to1 Movement Pledges",
+					"description": "Pledges to help the planet, and progress so far.",
+					"image": baseUrl + defaultImage,
+					"width": 600,
+					"height": 400
+				});
 		});
 
 	app.route('/pledge/:title')
@@ -36,7 +46,7 @@ module.exports = function (app, passport) {
 					"url": baseUrl + req.originalUrl,
 					"title": js.displayName + "'s Pledges",
 					"description": js.displayName + "'s pledges to help the planet, and progress so far, via the 1to1 Movement website.",
-					"image": baseUrl + "/public/images/think-before-you-plant-thumb.jpg",
+					"image": baseUrl + defaultImage,
 					"width": 600,
 					"height": 400
 				});
