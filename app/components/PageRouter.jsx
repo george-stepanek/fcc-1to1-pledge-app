@@ -9,14 +9,17 @@ var PageRouter = React.createClass({
         var self = this;
         $( document ).ready(function() {
             self.updateLinks();
+            // Override the default behaviour for clicking the back & forwards browser buttons, because it's a single page app
             window.onpopstate = function(e) { self.setState({url: location.pathname}); };
         });
         return {url: window.location.href};
     },
     updateLinks: function() {
         var self = this;
+        // For most links we want to override the default click behaviour, so we can keep it as a slick & fast single-page application
         $('a').click(function(e) {
             var href = $(this).attr("href");
+            // However, control-clicking should not override the default behaviour, i.e. opening the new page in a new tab
             if (!e.ctrlKey && href && href.indexOf("logout") < 0 && href.indexOf("/auth/") < 0) {
                 self.updateUrl(href);
                 e.preventDefault();
@@ -24,7 +27,9 @@ var PageRouter = React.createClass({
         });
     },
     updateUrl: function(href, replace) {
+        // Chrome sometimes makes duplicate page requests, so we need to make sure we don't add spurious history entries
         if(replace || href != window.location.pathname) {
+            // Browsers like Opera and IE9 don't support the History API, so we need to ckeck that
             if(window.history.replaceState) {
                 if(replace) {
                     window.history.replaceState('', 'New URL: ' + href, href);
@@ -36,6 +41,7 @@ var PageRouter = React.createClass({
                 this.updateLinks();
             }
             else {
+                // Our fallback is working as a multi-page application
                 window.location.href = href;
             }
         }
@@ -54,6 +60,7 @@ var PageRouter = React.createClass({
             return ( <SearchPage key={this.state.url} updateUrl={this.updateUrl} /> );
         } 
         else {
+            // We don't have a specific 404 page, so any unrecognised URLs will simply display the main page
             return ( <MainPage key={this.state.url} updateUrl={this.updateUrl} /> );
         }
     },

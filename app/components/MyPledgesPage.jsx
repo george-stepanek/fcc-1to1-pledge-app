@@ -61,6 +61,7 @@ var MyPledgesPage = React.createClass({
     pledgeGroup: function() {
         if(this.state.pledges.length > 0) {
     		var pledges = this.state.pledges.map(function(pledge) {
+			// Bootstrap will arrange it in rows of four, three, two or one depending on how wide the display is
     			return (
     				<div className="pledge-link col-lg-3 col-md-4 col-sm-6" key={pledge._id}>
     					<a href={"/pledge/" + pledge.title.toLowerCase().replace(/\s/g, "-")}>

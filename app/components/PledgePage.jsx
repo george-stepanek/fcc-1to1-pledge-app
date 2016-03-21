@@ -1,43 +1,44 @@
 var PledgePage = React.createClass({
     pledgeId: "",
     getInitialState: function() {
-    	var path = window.location.pathname;
-    	this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
+		var path = window.location.pathname;
+		this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
 
     	var user, pledge, self = this;
         $.ajax({
-    		url: window.location.origin + '/api/:id',
-    		cache : false,
-    		async: false,
-    		type: "get",
-    		success: function(result) {
+			url: window.location.origin + '/api/:id',
+			cache : false,
+			async: false,
+			type: "get",
+			success: function(result) {
                 user = result;
-    		}
+			}
         });
 
+		// If the user was prompted to login when pledging, then we should automatically add them to that pledge
 		if($.cookie("pledgeToAdd") == this.pledgeId && user) {
-	    	this.addMe("afterLogin");
+			this.addMe("afterLogin");
         }
-	    $.removeCookie("pledgeToAdd", { path: '/' });
+		$.removeCookie("pledgeToAdd", { path: '/' });
 
         $.ajax({
-    		url: window.location.origin + '/api/pledge/' + self.pledgeId,
-    		cache : false,
-    		async: false,
-    		type: "get",
-    		success: function(result) {
+			url: window.location.origin + '/api/pledge/' + self.pledgeId,
+			cache : false,
+			async: false,
+			type: "get",
+			success: function(result) {
                 pledge = result;
-    		}
+			}
         });
         document.title = pledge.title + " - 1to1 Movement Pledges";
         return {user: user, pledge: pledge};
     },
     componentDidMount: function() {
-    	// preload the images for the next/prev pledges, for better performance
-	    var next = new Image();
-	    next.src = this.state.pledge.imageUrl;
-	    var prev = new Image();
-	    prev.src = this.state.pledge.imageUrl;
+		// Preload the images for the next/prev pledges, for better performance when the user clicks through to them
+		var next = new Image();
+		next.src = this.state.pledge.imageUrl;
+		var prev = new Image();
+		prev.src = this.state.pledge.imageUrl;
     },
     impactPerWeek: function() {
     	return (
@@ -54,7 +55,7 @@ var PledgePage = React.createClass({
 	myImpactAndButtons: function() {
 		var self = this;
 
-		// If the pledge has pledged users AND one of those users is me
+		// Only show the social sharing buttons if the pledge has pledged users, and one of those users is me
 		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
 		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			var myPledge = "I've pledged to save " + this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits + " per week.";
@@ -111,20 +112,20 @@ var PledgePage = React.createClass({
 	},
     addMe: function(afterLogin) {
 		if(afterLogin != "afterLogin" && !this.state.user) {
-		    $.cookie("pledgeToAdd", this.pledgeId, { path: '/' });
+			$.cookie("pledgeToAdd", this.pledgeId, { path: '/' });
             $('#login-modal').modal('show');
-		    return;
+			return;
 		}
 
 		$("#submit-button").prop("disabled", true);
 		var self = this;
 		$.ajax({
 			url: "/api/my/pledge/" + self.pledgeId,
-    		async: false,
-    		type: "post",
+			async: false,
+			type: "post",
 			success: function(result) {
-	            self.refreshPledge();
-		    }
+				self.refreshPledge();
+			}
 		});
     },
     removeMe: function() {
@@ -134,20 +135,20 @@ var PledgePage = React.createClass({
 			url: "/api/my/pledge/" + self.pledgeId,
 			type: "delete",
 			success: function(result) {
-		        self.refreshPledge();
-		    }
+			self.refreshPledge();
+			}
 		});
     },
     refreshPledge: function() {
     	var self = this;
         $.ajax({
-    		url: window.location.origin + '/api/pledge/' + self.pledgeId,
-    		cache : false,
-    		type: "get",
-    		success: function(result) {
-		        $("#submit-button").prop("disabled", false);
-		        self.setState({pledge: result});
-		    }
+			url: window.location.origin + '/api/pledge/' + self.pledgeId,
+			cache : false,
+			type: "get",
+			success: function(result) {
+				$("#submit-button").prop("disabled", false);
+				self.setState({pledge: result});
+			}
         });
     },
     render: function() {

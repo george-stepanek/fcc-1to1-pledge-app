@@ -1,24 +1,24 @@
 var Header = React.createClass({
     getInitialState: function() {
 	    $("document").ready(function () {
-			// cancel the post-login redirect if the user cancels out of the login modal
+			// We need to cancel the post-login redirect if the user has cancelled out of the login modal
 			$('#login-modal').on('hide.bs.modal', function () {
-	        	$.removeCookie("pageBeforeLogin", { path: '/' });
+				$.removeCookie("pageBeforeLogin", { path: '/' });
 			});
 
-			// pressing enter in the search text input will invoke it
+			// Pressing enter in the search text input should invoke the search
 			$('#q').keypress(function(e){
-	        	if(e.keyCode == 13) { $('#search-submit').click(); }
-    		});
+				if(e.keyCode == 13) { $('#search-submit').click(); }
+			});
 		});
 
     	var user;
         $.ajax({
-    		url: window.location.origin + '/api/:id',
-    		cache : false,
-    		async: false,
-    		type: "get",
-    		success: function(result) {
+			url: window.location.origin + '/api/:id',
+			cache : false,
+			async: false,
+			type: "get",
+			success: function(result) {
                 user = result;
     		}
         });
@@ -42,39 +42,39 @@ var Header = React.createClass({
 		}
 	},
 	showLogin: function() {
+		// Save the current location so we can return to it after logging in
 		var url = window.location.href.replace(window.location.protocol, "").replace("//", "").replace(window.location.host, "");
 		$.cookie("pageBeforeLogin", url, { path: '/' });
         $('#login-modal').modal('show');
 	},
 	searchPledges: function() {
 		this.props.updateUrl('/search?q=' + $('#q').val());
-    // Iffy code, testing in IE 11, not sure of native usage.
-    // Basically <= IE 10 doesn't work with reset #q val
-    // Checks for IE 10 or less and if not found, sets value to empty, then blurs search input
-    var browser = navigator.userAgent.match(/MSIE.(\d+)/i); // Check for <= IE 10
-    if (!browser || parseInt(browser[1]) > 10) {
-      $('#q').val("");
-    }
-    $('#q').blur();
+		$('#q').blur();		
+
+		// Resetting the input control causes an issue for IE <= 10, so we check the user agent string for those versions
+		var browser = navigator.userAgent.match(/MSIE.(\d+)/i);
+		if (!browser || parseInt(browser[1], 10) > 10) {
+			$('#q').val("");
+		}
 	},
 	render: function() {
-        return (
-    		<nav className="navbar navbar-default">
-    			<div className="container-fluid">
-    				<div className="navbar-header">
-	    				<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+		return (
+			<nav className="navbar navbar-default">
+				<div className="container-fluid">
+					<div className="navbar-header">
+						<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 							<span className="sr-only">Toggle navigation</span>
 							<span className="icon-bar"></span>
 							<span className="icon-bar"></span>
 							<span className="icon-bar"></span>
 						</button>
-    					<a className="logo-link" href="/" title="Home">
-    						<img className="logo-img" src="/public/images/Logo.jpg"/>
-	    					<span className="logo-text">PLEDGES</span>
-	    				</a>
-    				</div>
-    				<div className="collapse navbar-collapse" id="navbar-collapse">
-    					{this.userMenu()}
+						<a className="logo-link" href="/" title="Home">
+							<img className="logo-img" src="/public/images/Logo.jpg"/>
+							<span className="logo-text">PLEDGES</span>
+						</a>
+					</div>
+					<div className="collapse navbar-collapse" id="navbar-collapse">
+						{this.userMenu()}
 						<ul className="nav navbar-nav navbar-right">
 							<div className="navbar-form">
 								<div className="input-group">
@@ -100,12 +100,12 @@ var Header = React.createClass({
 							</div>
 							<div className="modal-body login-buttons">
 								<a className="btn btn-social btn-lg btn-facebook login-btn" href="/auth/facebook">
-			        		    	<i className="fa fa-facebook"></i> Sign in with Facebook
-			        		  	</a>
-			        		  	&nbsp;
-			        		  	<a className="btn btn-social btn-lg btn-google login-btn" href="/auth/google">
-			        		    	<i className="fa fa-google"></i> Sign in with Google
-			        		  	</a>
+								<i className="fa fa-facebook"></i> Sign in with Facebook
+							</a>
+							&nbsp;
+							<a className="btn btn-social btn-lg btn-google login-btn" href="/auth/google">
+								<i className="fa fa-google"></i> Sign in with Google
+							</a>
 							</div>
 						</div>
 					</div>
