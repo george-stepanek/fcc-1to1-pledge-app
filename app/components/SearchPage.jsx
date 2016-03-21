@@ -12,12 +12,12 @@ var SearchPage = React.createClass({
                 pledges = result;
     		}
         });
-        
+
         if(pledges.length == 1) {
             this.props.updateUrl('/pledge/' + pledges[0].title.toLowerCase().replace(/\s/g, "-"), true);
             return null;
         }
-        
+
         document.title = "Search Results - 1to1 Movement Pledges";
         return {pledges: pledges};
     },

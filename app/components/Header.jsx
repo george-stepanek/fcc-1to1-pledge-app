@@ -5,13 +5,13 @@ var Header = React.createClass({
 			$('#login-modal').on('hide.bs.modal', function () {
 	        	$.removeCookie("pageBeforeLogin", { path: '/' });
 			});
-			
-			// pressing enter in the search text input will invoke it 
+
+			// pressing enter in the search text input will invoke it
 			$('#q').keypress(function(e){
 	        	if(e.keyCode == 13) { $('#search-submit').click(); }
     		});
 		});
-	    
+
     	var user;
         $.ajax({
     		url: window.location.origin + '/api/:id',
@@ -26,7 +26,7 @@ var Header = React.createClass({
     },
 	userMenu: function() {
 		if (this.state.user) {
-			return ( 
+			return (
 				<ul className="nav navbar-nav navbar-right">
 					<li><a href={"/mypledges/" + this.state.user.id}>MY PLEDGES</a></li>
 					<li><a href="/logout">SIGN OUT</a></li>
@@ -34,7 +34,7 @@ var Header = React.createClass({
 			);
 		}
 		else {
-			return ( 
+			return (
 				<ul className="nav navbar-nav navbar-right">
 					<li><a onClick={this.showLogin}>SIGN IN</a></li>
 				</ul>
@@ -44,11 +44,18 @@ var Header = React.createClass({
 	showLogin: function() {
 		var url = window.location.href.replace(window.location.protocol, "").replace("//", "").replace(window.location.host, "");
 		$.cookie("pageBeforeLogin", url, { path: '/' });
-        $('#login-modal').modal('show');	
+        $('#login-modal').modal('show');
 	},
 	searchPledges: function() {
 		this.props.updateUrl('/search?q=' + $('#q').val());
-		$('#q').val("");
+    // Iffy code, testing in IE 11, not sure of native usage.
+    // Basically <= IE 10 doesn't work with reset #q val
+    // Checks for IE 10 or less and if not found, sets value to empty, then blurs search input
+    var browser = navigator.userAgent.match(/MSIE.(\d+)/i); // Check for <= IE 10
+    if (!browser || parseInt(browser[1]) > 10) {
+      $('#q').val("");
+    }
+    $('#q').blur();
 	},
 	render: function() {
         return (
