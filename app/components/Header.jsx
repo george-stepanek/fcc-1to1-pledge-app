@@ -57,6 +57,71 @@ var Header = React.createClass({
 			$('#q').val("");
 		}
 	},
+	breadcrumbs: function() {
+		var spacer = <span className="category-icon"><i className="fa fa-angle-right"></i></span>;
+		if(this.props.url.indexOf('/pledge/') > -1) {
+			var pledge, pledgeId = this.props.url.slice(this.props.url.lastIndexOf("/") + 1);
+	        $.ajax({
+				url: window.location.origin + '/api/pledge/' + pledgeId,
+				cache : false,
+				async: false,
+				type: "get",
+				success: function(result) {
+					pledge = result;
+				}
+	        });
+
+			return (
+				<span className="breadcrumbs">
+					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
+					{spacer}
+					<a className="category-icon" href={"/category/" + pledge.category} 
+							title={"Category: " + pledge.category.charAt(0).toUpperCase() + pledge.category.substr(1)}>
+						<i className={"fa " + icons[pledge.category]}></i>
+					</a>
+					{spacer}
+					<span className="category-icon" title={"Pledge: " + pledge.title}><i className="fa fa-thumbs-o-up"></i></span>
+				</span>
+			);
+        }
+        else if(this.props.url.indexOf('/category/') > -1) {
+			var category = this.props.url.slice(this.props.url.lastIndexOf("/") + 1);
+			return (
+				<span className="breadcrumbs">
+					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
+					{spacer}
+					<span className="category-icon" title={"Category: " + category.charAt(0).toUpperCase() + category.substr(1)}>
+						<i className={"fa " + icons[category]}></i>
+					</span>
+				</span>
+			);
+        } 
+        else if(this.props.url.indexOf('/mypledges') > -1) {
+			return (
+				<span className="breadcrumbs">
+					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
+					{spacer}
+					<span className="category-icon" title="My Pledges"><i className="fa fa-user"></i></span>
+				</span>
+			);
+        } 
+        else if(this.props.url.indexOf('/search') > -1) {
+			return (
+				<span className="breadcrumbs">
+					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
+					{spacer}
+					<span className="category-icon" title="Search"><i className="fa fa-search"></i></span>
+				</span>
+			);
+        } 
+        else {
+			return (
+				<span className="breadcrumbs">
+					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
+				</span>
+			);
+        }
+	},
 	render: function() {
 		return (
 			<nav className="navbar navbar-default">
@@ -68,10 +133,9 @@ var Header = React.createClass({
 							<span className="icon-bar"></span>
 							<span className="icon-bar"></span>
 						</button>
-						<a className="logo-link" href="/" title="Home">
-							<img className="logo-img" src="/public/images/Logo.jpg"/>
-							<span className="logo-text">PLEDGES</span>
-						</a>
+						<img className="logo-img" src="/public/images/Logo.jpg"/>
+						<span className="logo-text">PLEDGES</span>
+						{this.breadcrumbs()}
 					</div>
 					<div className="collapse navbar-collapse" id="navbar-collapse">
 						{this.userMenu()}

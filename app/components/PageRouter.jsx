@@ -67,7 +67,7 @@ var PageRouter = React.createClass({
     render: function() {
         return ( 
             <div>
-                <Header updateUrl={this.updateUrl} />
+                <Header url={this.state.url} updateUrl={this.updateUrl} />
                 {this.getPage()}
             </div>
         );

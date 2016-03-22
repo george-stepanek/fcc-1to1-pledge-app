@@ -1,3 +1,5 @@
+const icons = {energy: "fa-lightbulb-o", food: "fa-shopping-cart", transportation: "fa-bicycle", waste: "fa-trash-o", water: "fa-tint"};
+
 var MainPage = React.createClass({
     getInitialState: function() {
         if($.cookie("pledgeToAdd")) {
@@ -30,9 +32,11 @@ var MainPage = React.createClass({
 					<div className="pledge-link col-lg-2 col-md-4 col-sm-6" key={category.title}>
 						<a href={"/category/" + category.title}>
 							<img src={category.imageUrl}/>
-							<h4 className="pledge-thumb-title">
-							    <span>{category.title.charAt(0).toUpperCase() + category.title.substr(1)}</span>
-							</h4>
+							<span className="pledge-thumb-title">
+							    {category.title.charAt(0).toUpperCase() + category.title.substr(1)}
+							    <br/>
+							    <i className={"fa " + icons[category.title] + " category-icon"}></i>
+							</span>
 							<h4 className="pledge-info">
 								{category.userCount} {category.userCount == 1 ? "person has " : "people have "}
 								made a total of {category.pledgedCount} {category.title} related pledges so&nbsp;far&hellip;
