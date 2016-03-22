@@ -192,7 +192,7 @@ a {
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 2em;
+  font-size: 1.8em;
 }
 .pledge-img {
   position: fixed;
@@ -245,10 +245,10 @@ a {
 }
 .arr-up, .arr-up:visited {
   font-family: Heartwell;
-  font-size: 5em;
+  font-size: 5.6em;
   color: white;
   position: absolute;
-	top: -80px;
+	top: -79px;
 	left: 50%;
 }
 .pledge-btn:hover, .arr-up:hover {
