@@ -133,8 +133,10 @@ var Header = React.createClass({
 							<span className="icon-bar"></span>
 							<span className="icon-bar"></span>
 						</button>
-						<img className="logo-img" src="/public/images/Logo.jpg"/>
-						<span className="logo-text">PLEDGES</span>
+						<a href="/" title="Home">
+							<img className="logo-img" src="/public/images/Logo.jpg"/>
+							<span className="logo-text">PLEDGES</span>
+						</a>
 						{this.breadcrumbs()}
 					</div>
 					<div className="collapse navbar-collapse" id="navbar-collapse">

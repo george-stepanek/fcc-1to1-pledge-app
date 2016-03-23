@@ -28,7 +28,7 @@ function PledgeHandler () {
 	    	if(output[i].users) {
 	    		for(var j = 0; j < output[i].users.length; j++) {
 	    			var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
-				    output[i].impactSoFar += Math.round(millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+				    output[i].impactSoFar += Math.round(millisecsDiff * output[i].impactPerWeek * 10 / (1000 * 60 * 60 * 24 * 7)) / 10;
 	    		}
 	    		output[i].userCount = output[i].users.length;
 	    		
@@ -37,7 +37,7 @@ function PledgeHandler () {
 		    		var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
 		    		if(meIfPledged.length > 0) {
 		    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
-					    output[i].myImpactSoFar = Math.round(myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7));
+					    output[i].myImpactSoFar = Math.round(myMillisecsDiff * output[i].impactPerWeek * 10 / (1000 * 60 * 60 * 24 * 7)) / 10;
 		    		}
 		    		output[i].users = meIfPledged;
 	    		}
