@@ -173,7 +173,6 @@ a {
 }
 .pledge-thumb-title {
   position: absolute;
-  white-space: nowrap;
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
