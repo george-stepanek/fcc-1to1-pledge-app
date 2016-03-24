@@ -21,6 +21,8 @@ gulp.task('watch', function(){
 
 gulp.task('default', ['transform', 'watch']);
 
+gulp.task('dev', ['transform', 'seed']); // Transform wasn't closing
+
 gulp.task('seed', function() {
   // Load and parse the JSON data
   var counter = 0, pledgesData = require('./app/seed/pledges.json');
@@ -43,7 +45,7 @@ gulp.task('seed', function() {
 
 			pledge.save(function (err) {
         if(++counter == pledgesData.length) {
-          mongoose.connection.close();			    
+          mongoose.connection.close();
         }
 				if (err) { throw err; }
 			});
