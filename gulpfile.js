@@ -3,22 +3,17 @@ var concat = require('gulp-concat');
 var react = require('gulp-react');
 require('dotenv').load();
 
-var path = {
-  JS: ['app/components/*.js*'],
-  CONCAT_FILE: 'build.js',
-  DEST: 'public/scripts'
-};
-var seed = './app/seed/pledges.json';
+var path = ['app/components/*.js*'];
 
 gulp.task('transform', function(){
-  gulp.src(path.JS)
+  gulp.src(path)
     .pipe(react())
-    .pipe(concat(path.CONCAT_FILE))
-    .pipe(gulp.dest(path.DEST));
+    .pipe(concat('build.js'))
+    .pipe(gulp.dest('public/scripts'));
 });
 
 gulp.task('watch', function(){
-  gulp.watch(path.JS, ['transform']);
+  gulp.watch(path, ['transform']);
 });
 
 gulp.task('default', ['watch']);
@@ -28,7 +23,7 @@ gulp.task('seed', function() {
   mongoose.connect(process.env.MONGO_URI);
   var Pledge = require('./app/models/pledges.js');
   
-  var counter = 0, pledgesData = require(seed);
+  var counter = 0, pledgesData = require('./app/seed/pledges.json');
   pledgesData.forEach(function(pledgeData) {
 		Pledge.findOne({ 'title': pledgeData.title }, function (err, pledge) {
     if (err) { throw err; }
