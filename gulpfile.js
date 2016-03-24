@@ -1,9 +1,12 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var react = require('gulp-react');
-require('dotenv').load();
-
+var mongoose = require('mongoose');
+var Pledge = require('./app/models/pledges.js');
 var path = ['app/components/*.js*'];
+
+require('dotenv').load();
+mongoose.connect(process.env.MONGO_URI);
 
 gulp.task('transform', function(){
   gulp.src(path)
@@ -16,13 +19,10 @@ gulp.task('watch', function(){
   gulp.watch(path, ['transform']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['transform', 'watch']);
 
 gulp.task('seed', function() {
-  var mongoose = require('mongoose');
-  mongoose.connect(process.env.MONGO_URI);
-  var Pledge = require('./app/models/pledges.js');
-  
+  // Load and parse the JSON data
   var counter = 0, pledgesData = require('./app/seed/pledges.json');
   pledgesData.forEach(function(pledgeData) {
 		Pledge.findOne({ 'title': pledgeData.title }, function (err, pledge) {
