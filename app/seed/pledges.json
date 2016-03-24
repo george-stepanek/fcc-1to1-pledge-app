@@ -307,6 +307,17 @@
 	"thumbnailUrl": "/public/images/turn-off-water-thumb.jpg"
 },
 {
+	"title": "Charge For Two  Hours",
+	"category": "energy",
+	"explanation": "Nokia estimates that most cellular devices need only two hours to fully charge. Charging overnight wastes energy.",
+	"impactPerWeek": 0.13,
+	"impactUnits": "kilowatt-hours",
+	"source": "Natural Awakenings",
+	"citation": "http://www.naturalawakeningsmag.com/Natural-Awakenings/September-2014/Cell-Bill/",
+	"imageUrl": "/public/images/charge-for-two-hours.jpg",
+	"thumbnailUrl": "/public/images/charge-for-two-hours-thumb.jpg"
+},
+{
 	"title": "Dry Laundry In The Sun",
 	"category": "energy",
 	"explanation": "Either hang a clothesline (using anything from yarn to paracord) or use a foldable clothes drying rack instead of using gas or electric dryers.",
@@ -316,6 +327,61 @@
 	"citation": "http://www.carbonrally.com/challenges/17-clothes-line",
 	"imageUrl": "/public/images/dry-laundry-in-the-sun.jpg",
 	"thumbnailUrl": "/public/images/dry-laundry-in-the-sun-thumb.jpg"
+},
+{
+	"title": "Install An Energy Saving Thermostat",
+	"category": "energy",
+	"explanation": "This will allow you to lower energy costs. Your system will automatically turn off your AC/Heater and turn it back on 20 minutes before you arrive home! You will save energy (reduce your bill by 20%) and money by making this change! Look for Energy Star Labels.",
+	"impactPerWeek": 180,
+	"impactUnits": "kilowatt-hours",
+	"source": "Nest",
+	"citation": "https://nest.com/thermostat/real-savings/#we-didnt-think-thermostats-mattered-either",
+	"imageUrl": "/public/images/install-thermostat.jpg",
+	"thumbnailUrl": "/public/images/install-thermostat-thumb.png"
+},
+{
+	"title": "Install CFL Bulbs",
+	"category": "energy",
+	"explanation": "Compact Fluorescent Lightbulbs are more efficient than regular light bulbs because they use 75% less energy, give off less heat, and they can last up to 12 times longer than a regular incandescent light bulb.",
+	"impactPerWeek": 49,
+	"impactUnits": "kilowatt-hours",
+	"source": "Design Recycle Inc. and \"Living Like Ed\"",
+	"citation": "http://www.designrecycleinc.com/led%20comp%20chart.html",
+	"imageUrl": "/public/images/install-cfl-bulbs.jpg",
+	"thumbnailUrl": "/public/images/install-cfl-bulbs.jpg"
+},
+{
+	"title": "Switch It Off",
+	"category": "energy",
+	"explanation": "If it's hard to remember to turn off lights when you're not using a room, put reminders by your light switches. You can save 5 to 10 percent on energy costs by making this easy \"switch\".",
+	"impactPerWeek": 8.13,
+	"impactUnits": "pounds of CO2 emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/39-Lighting-energy",
+	"imageUrl": "/public/images/switch-it-off.jpg",
+	"thumbnailUrl": "/public/images/switch-it-off.jpg"
+},
+{
+	"title": "Turn Off The Computer",
+	"category": "energy",
+	"explanation": "",
+	"impactPerWeek": 20.35,
+	"impactUnits": "pounds of CO2 emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/10-save-energy",
+	"imageUrl": "/public/images/turn-off-the-computer.jpg",
+	"thumbnailUrl": "/public/images/turn-off-the-computer-thumb.jpg"
+},
+{
+	"title": "Wash On Cold",
+	"category": "energy",
+	"explanation": "Use cold water to wash your clothing and save 80% on energy costs.",
+	"impactPerWeek": 7.6,
+	"impactUnits": "pounds of CO2 emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/35-energy-star-washing-machines",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
 },
 {
 	"title": "Walk With Your Kids",
