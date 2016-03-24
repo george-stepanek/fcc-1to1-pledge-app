@@ -43,7 +43,7 @@ a {
   font-family: Heartwell;
   font-size: 1.8em;
   letter-spacing: 1px;
-  color: rgba(35, 155, 169, 0.9) !important;
+  color: rgba(35,155,169,0.9) !important;
   position:relative;
   bottom:-7px;
   left: 10px;
@@ -54,12 +54,6 @@ a {
   border-color: white;
   border: 0;
   margin-bottom: 0;
-}
-.nav li {
-  border-bottom: 3px solid white;
-}
-.nav li:hover {
-  border-bottom-color: black;
 }
 .nav form {
   width: 100%; /* Removes scrollbar for collapsed menu */
@@ -112,6 +106,17 @@ a {
   }
   .collapse.in {
     display: block !important;
+  }
+  .nav li:hover {
+    background-color: rgba(35,155,169,0.1);
+  }
+}
+@media (min-width: 992px) {
+  .nav li {
+    border-bottom: 3px solid white;
+  }
+  .nav li:hover {
+    border-bottom-color: black;
   }
 }
 

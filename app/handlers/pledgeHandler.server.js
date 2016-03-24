@@ -24,11 +24,11 @@ function PledgeHandler () {
 		var output = results.sort(pledgeSort);
 		
 	    for(var i = 0; i < output.length; i++) {
-	    	output[i].impactSoFar = 0;
+	    	var impact = 0;
 	    	if(output[i].users) {
 	    		for(var j = 0; j < output[i].users.length; j++) {
 	    			var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
-				    output[i].impactSoFar += Math.round(millisecsDiff * output[i].impactPerWeek * 10 / (1000 * 60 * 60 * 24 * 7)) / 10;
+				    impact += millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
 	    		}
 	    		output[i].userCount = output[i].users.length;
 	    		
@@ -37,7 +37,8 @@ function PledgeHandler () {
 		    		var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
 		    		if(meIfPledged.length > 0) {
 		    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
-					    output[i].myImpactSoFar = Math.round(myMillisecsDiff * output[i].impactPerWeek * 10 / (1000 * 60 * 60 * 24 * 7)) / 10;
+		    			var myImpact = myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
+					    output[i].myImpactSoFar = (Math.round(myImpact * 10) / 10).toFixed(1).replace(".0", "");
 		    		}
 		    		output[i].users = meIfPledged;
 	    		}
@@ -45,6 +46,7 @@ function PledgeHandler () {
 	    			output[i].users = [];
 	    		}
 	    	}
+    		output[i].impactSoFar = (Math.round(impact * 10) / 10).toFixed(1).replace(".0", ""); // round to 1dp or 0dp as appropriate
 	    	
 	    	output[i].prevPledge = output[i > 0 ? i - 1 : output.length - 1].title.toLowerCase().replace(/\s/g, "-");
 	    	output[i].nextPledge = output[i < output.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
