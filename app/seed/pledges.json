@@ -106,7 +106,7 @@
 	"source": "Green Waste",
 	"citation": "http://www.greenwaste.com/recycling-stats",
 	"imageUrl": "/public/images/recycle.jpg",
-	"thumbnailUrl": "/public/images/recycle-thumb.jpg"	
+	"thumbnailUrl": "/public/images/recycle-thumb.jpg"
 },
 {
 	"title": "Refuse The Bag",
@@ -128,7 +128,7 @@
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/33-organic-gardening",
 	"imageUrl": "/public/images/grow-your-own-food.jpg",
-	"thumbnailUrl": "/public/images/grow-your-own-food-thumb.jpg"	
+	"thumbnailUrl": "/public/images/grow-your-own-food-thumb.jpg"
 },
 {
 	"title": "Love Those Leftovers",
@@ -139,7 +139,7 @@
 	"source": "United States Department of Agriculture",
 	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
 	"imageUrl": "/public/images/love-those-leftovers.jpg",
-	"thumbnailUrl": "/public/images/love-those-leftovers-thumb.jpg"	
+	"thumbnailUrl": "/public/images/love-those-leftovers-thumb.jpg"
 },
 {
 	"title": "Plan Your Menu",
@@ -150,7 +150,7 @@
 	"source": "United States Department of Agriculture",
 	"citation": "http://www.nrdc.org/living/eatingwell/files/foodwaste_2pgr.pdf",
 	"imageUrl": "/public/images/plan-your-menu.jpg",
-	"thumbnailUrl": "/public/images/plan-your-menu-thumb.jpg"	
+	"thumbnailUrl": "/public/images/plan-your-menu-thumb.jpg"
 },
 {
 	"title": "Meatless Monday",
@@ -161,7 +161,7 @@
 	"source": "PETA",
 	"citation": "http://www.peta.org/action/mobile-meatless-monday/",
 	"imageUrl": "/public/images/meatless-mondays.jpg",
-	"thumbnailUrl": "/public/images/meatless-mondays-thumb.jpg"	
+	"thumbnailUrl": "/public/images/meatless-mondays-thumb.jpg"
 },
 {
 	"title": "Compost",
@@ -172,7 +172,7 @@
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/19-compost",
 	"imageUrl": "/public/images/compost.jpg",
-	"thumbnailUrl": "/public/images/compost-thumb.jpg"	
+	"thumbnailUrl": "/public/images/compost-thumb.jpg"
 },
 {
 	"title": "Change Up The Lunchbox",
@@ -194,7 +194,7 @@
 	"source": "Environmental Protection Agency",
 	"citation": "http://www.epa.gov/epawaste/nonhaz/municipal/index.htm",
 	"imageUrl": "/public/images/bring-your-own-packaging.jpg",
-	"thumbnailUrl": "/public/images/bring-your-own-packaging-thumb.jpg"	
+	"thumbnailUrl": "/public/images/bring-your-own-packaging-thumb.jpg"
 },
 {
 	"title": "Vegetarian Diet",
@@ -205,7 +205,7 @@
 	"source": "NPR",
 	"citation": "http://www.npr.org/blogs/thesalt/2012/06/27/155527365/visualizing-a-nation-of-meat-eaters",
 	"imageUrl": "/public/images/vegetarian-diet.jpg",
-	"thumbnailUrl": "/public/images/vegetarian-diet-thumb.jpg"	
+	"thumbnailUrl": "/public/images/vegetarian-diet-thumb.jpg"
 },
 {
 	"title": "Go Vegan",
@@ -216,7 +216,7 @@
 	"source": "Living Green Magazine",
 	"citation": "http://livinggreenmag.com/2013/02/13/energy-ecology/veganism-the-environment-by-the-numbers-infographic/",
 	"imageUrl": "/public/images/go-vegan.jpg",
-	"thumbnailUrl": "/public/images/go-vegan-thumb.jpg"	
+	"thumbnailUrl": "/public/images/go-vegan-thumb.jpg"
 },
 {
 	"title": "Eat Local",
@@ -227,7 +227,62 @@
 	"source": "Leopold Center for Sustainable Agriculture",
 	"citation": "http://www.leopold.iastate.edu/pubs-and-papers/2003-07-food-odometer",
 	"imageUrl": "/public/images/eat-local.jpg",
-	"thumbnailUrl": "/public/images/eat-local-thumb.jpg"	
+	"thumbnailUrl": "/public/images/eat-local-thumb.jpg"
+},
+{
+	"title": "Change Your Showerhead",
+	"category": "water",
+	"explanation": "Convert to a water efficient shower head.",
+	"impactPerWeek": 150,
+	"impactUnits": "gallons of water",
+	"source": "National Estuarine Research Reserve",
+	"citation": "https://www.dnr.sc.gov/marine/NERR/pdf/WaterUsage.pdf",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Don't Rinse",
+	"category": "water",
+	"explanation": "If your dishwasher is new, cut back on rinsing before loading because most newer models do that for you!",
+	"impactPerWeek": 80,
+	"impactUnits": "gallons of water",
+	"source": "Ask Umbra -- Grist.org",
+	"citation": "http://grist.org/living/ask-umbra-could-you-settle-the-debate-over-dishwashers-vs-hand-washing/",
+	"imageUrl": "/public/images/don't-rinse.jpg",
+	"thumbnailUrl": "/public/images/don't-rinse-thumb.jpg"
+},
+{
+	"title": "Fill That Dishwasher",
+	"category": "water",
+	"explanation": "Make sure the dishwasher is at least ¾ full and all dirty dishes facing downward before running.",
+	"impactPerWeek": 4,
+	"impactUnits": "gallons of water",
+	"source": "Office of Energy Efficiency & Renewable Energy",
+	"citation": "http://energy.gov/eere/femp/energy-and-cost-savings-calculators-energy-efficient-products",
+	"imageUrl": "/public/images/fill-that-dishwasher.jpg",
+	"thumbnailUrl": "/public/images/fill-that-dishwasher-thumb.jpg"
+},
+{
+	"title": "If It's Yellow, Leave It Mellow...",
+	"category": "water",
+	"explanation": "Instill an \"If its yellow leave it mellow, if its brown flush it down\" policy in your home toilets!",
+	"impactPerWeek": 42,
+	"impactUnits": "gallons of water",
+	"source": "Networx",
+	"citation": "http://www.networx.com/article/if-its-yellow-let-it-mellow-the-great",
+	"imageUrl": "/public/images/blank.png",
+	"thumbnailUrl": "/public/images/blank-thumb.png"
+},
+{
+	"title": "Save On The Washing Machine",
+	"category": "water",
+	"explanation": "Only wash clothes when you have a full load.",
+	"impactPerWeek": 80,
+	"impactUnits": "gallons of water",
+	"source": "Alliance for Water Efficiency",
+	"citation": "http://www.home-water-works.org/indoor-use/clothes-washer",
+	"imageUrl": "/public/images/save-on-the-washing-machine.jpg",
+	"thumbnailUrl": "/public/images/save-on-the-washing-machine-thumb.jpg"
 },
 {
 	"title": "Think Before You Plant",
@@ -238,7 +293,18 @@
 	"source": "Environmental Protection Agency",
 	"citation": "http://www.epa.gov/WaterSense/pubs/outdoor.html",
 	"imageUrl": "/public/images/think-before-you-plant.jpg",
-	"thumbnailUrl": "/public/images/think-before-you-plant-thumb.jpg"	
+	"thumbnailUrl": "/public/images/think-before-you-plant-thumb.jpg"
+},
+{
+	"title": "Turn Off Water While Teeth Brushing",
+	"category": "water",
+	"explanation": "Turn off the water while you brush your teeth.",
+	"impactPerWeek": 50,
+	"impactUnits": "gallons of water",
+	"source": "Environmental Protection Agency",
+	"citation": "https://www3.epa.gov/watersense/pubs/indoor.html",
+	"imageUrl": "/public/images/turn-off-water.jpg",
+	"thumbnailUrl": "/public/images/turn-off-water-thumb.jpg"
 },
 {
 	"title": "Dry Laundry In The Sun",
