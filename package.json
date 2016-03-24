@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "postinstall": "gulp transform && gulp seed",
-    "nodemon": "nodemon --ignore public --ignore app/components --ignore app/seed --ignore test"
+    "nodemon": "nodemon --ignore public --ignore app/components --ignore app/seed --ignore test --ignore gulpfile.js"
   },
   "author": "Herman Fassett & George Stepanek",
   "dependencies": {
