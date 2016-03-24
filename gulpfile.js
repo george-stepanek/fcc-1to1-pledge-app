@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var react = require('gulp-react');
-var mongodbData = require('gulp-mongodb-data');
 require('dotenv').load();
 
 var path = {
@@ -32,7 +31,7 @@ gulp.task('seed', function() {
   var counter = 0, pledgesData = require(seed);
   pledgesData.forEach(function(pledgeData) {
 		Pledge.findOne({ 'title': pledgeData.title }, function (err, pledge) {
-	    if (err) { throw err; }
+    if (err) { throw err; }
 			if (!pledge) {
 			  pledge = new Pledge();
 			  pledge.title = pledgeData.title;
@@ -48,9 +47,9 @@ gulp.task('seed', function() {
       pledge.thumbnailUrl = pledgeData.thumbnailUrl;
 
 			pledge.save(function (err) {
-			  if(++counter == pledgesData.length) {
-			    mongoose.connection.close();			    
-			  }
+        if(++counter == pledgesData.length) {
+          mongoose.connection.close();			    
+        }
 				if (err) { throw err; }
 			});
 		});
