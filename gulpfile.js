@@ -51,4 +51,14 @@ gulp.task('seed', function() {
   });
 });
 
-gulp.task('postinstall', ['transform', 'seed']); // Transform wasn't closing
+gulp.task('postinstall', ['transform', 'reload']);
+
+gulp.task('reload', function() {
+  gulp.src('app/seed/pledges.json')
+    .pipe(require('gulp-mongodb-data')({
+      mongoUrl: process.env.MONGO_URI,
+      collectionName: 'pledges',
+      dropCollection: true
+    }));
+});
+ 
