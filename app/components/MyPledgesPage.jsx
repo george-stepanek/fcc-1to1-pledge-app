@@ -32,6 +32,7 @@ var MyPledgesPage = React.createClass({
         if(this.state.user.isCurrentUser) {
             return (
                 <div className="body-text">
+                    <br/>
 					<a className="share-btn" target="_blank" title="Share it"
 							href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href}>
 						<i className="fa fa-facebook"></i>
