@@ -236,9 +236,9 @@
 	"impactPerWeek": 150,
 	"impactUnits": "gallons of water",
 	"source": "National Estuarine Research Reserve",
-	"citation": "https://www.dnr.sc.gov/marine/NERR/pdf/WaterUsage.pdf",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"citation": "http://www.dnr.sc.gov/marine/NERR/pdf/WaterUsage.pdf",
+	"imageUrl": "/public/images/change-your-showerhead.jpg",
+	"thumbnailUrl": "/public/images/change-your-showerhead-thumb.jpg"
 },
 {
 	"title": "Don't Rinse",
@@ -246,7 +246,7 @@
 	"explanation": "If your dishwasher is new, cut back on rinsing before loading because most newer models do that for you!",
 	"impactPerWeek": 80,
 	"impactUnits": "gallons of water",
-	"source": "Ask Umbra -- Grist.org",
+	"source": "Ask Umbra, Grist.org",
 	"citation": "http://grist.org/living/ask-umbra-could-you-settle-the-debate-over-dishwashers-vs-hand-washing/",
 	"imageUrl": "/public/images/don't-rinse.jpg",
 	"thumbnailUrl": "/public/images/don't-rinse-thumb.jpg"
@@ -265,13 +265,13 @@
 {
 	"title": "If It's Yellow Leave It Mellow",
 	"category": "water",
-	"explanation": "Instill an \"If its yellow leave it mellow, if its brown flush it down\" policy in your home toilets!",
+	"explanation": "Instil an \"If it's yellow leave it mellow, if it's brown flush it down\" policy for your home toilets!",
 	"impactPerWeek": 42,
 	"impactUnits": "gallons of water",
 	"source": "Networx",
 	"citation": "http://www.networx.com/article/if-its-yellow-let-it-mellow-the-great",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/if-it's-yellow.jpg",
+	"thumbnailUrl": "/public/images/if-it's-yellow-thumb.jpg"
 },
 {
 	"title": "Save On The Washing Machine",
@@ -296,7 +296,7 @@
 	"thumbnailUrl": "/public/images/think-before-you-plant-thumb.jpg"
 },
 {
-	"title": "Turn Off Water While Teeth Brushing",
+	"title": "Turn Off Water While Brushing",
 	"category": "water",
 	"explanation": "Turn off the water while you brush your teeth.",
 	"impactPerWeek": 50,
@@ -355,7 +355,7 @@
 	"category": "energy",
 	"explanation": "If it's hard to remember to turn off lights when you're not using a room, put reminders by your light switches. You can save 5 to 10 percent on energy costs by making this easy \"switch\".",
 	"impactPerWeek": 8.13,
-	"impactUnits": "pounds of CO2 emissions",
+	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/39-Lighting-energy",
 	"imageUrl": "/public/images/switch-it-off.jpg",
@@ -366,7 +366,7 @@
 	"category": "energy",
 	"explanation": "",
 	"impactPerWeek": 20.35,
-	"impactUnits": "pounds of CO2 emissions",
+	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/10-save-energy",
 	"imageUrl": "/public/images/turn-off-the-computer.jpg",
@@ -377,7 +377,7 @@
 	"category": "energy",
 	"explanation": "Use cold water to wash your clothing and save 80% on energy costs.",
 	"impactPerWeek": 7.6,
-	"impactUnits": "pounds of CO2 emissions",
+	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/35-energy-star-washing-machines",
 	"imageUrl": "/public/images/blank.png",

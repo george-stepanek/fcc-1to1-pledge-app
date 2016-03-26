@@ -51,7 +51,7 @@ gulp.task('seed', function() {
   });
 });
 
-gulp.task('postinstall', ['transform', 'seed']);
+gulp.task('postinstall', ['transform', 'reload']);
 
 gulp.task('reload', function() {
   gulp.src('app/seed/pledges.json')
