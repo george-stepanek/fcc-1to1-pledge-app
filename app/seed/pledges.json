@@ -331,7 +331,7 @@
 {
 	"title": "Install An Energy Saving Thermostat",
 	"category": "energy",
-	"explanation": "This will allow you to lower energy costs. Your system will automatically turn off your AC/Heater and turn it back on 20 minutes before you arrive home! You will save energy (reduce your bill by 20%) and money by making this change! Look for Energy Star Labels.",
+	"explanation": "This will allow you to reduce your bill by 20%. Your system will automatically turn off your AC or heater, and turn it back on 20 minutes before you arrive home. You will save energy and money by making this change!",
 	"impactPerWeek": 180,
 	"impactUnits": "kilowatt-hours",
 	"source": "Nest",
@@ -364,8 +364,8 @@
 {
 	"title": "Turn Off The Computer",
 	"category": "energy",
-	"explanation": "Leaving it on when not in use consumes as much energy as leaving the lights on, equal to three 300-kilowatt hours per year, or $35!",
-	"impactPerWeek": 20.35,
+	"explanation": "Leaving it on when it’s not in use consumes as much energy as leaving the lights on, or 300 kilowatt hours per year!",
+	"impactPerWeek": 11.8,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/10-save-energy",
