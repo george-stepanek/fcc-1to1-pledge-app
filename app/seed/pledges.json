@@ -232,7 +232,7 @@
 {
 	"title": "Change Your Showerhead",
 	"category": "water",
-	"explanation": "Convert to a water efficient shower head.",
+	"explanation": "Convert to a water-efficient shower head.",
 	"impactPerWeek": 150,
 	"impactUnits": "gallons of water",
 	"source": "National Estuarine Research Reserve",
@@ -243,7 +243,7 @@
 {
 	"title": "Don't Rinse",
 	"category": "water",
-	"explanation": "If your dishwasher is new, cut back on rinsing before loading because most newer models do that for you!",
+	"explanation": "If your dishwasher is new then cut back on rinsing before loading, because most newer models will do that for you!",
 	"impactPerWeek": 80,
 	"impactUnits": "gallons of water",
 	"source": "Ask Umbra, Grist.org",
@@ -254,7 +254,7 @@
 {
 	"title": "Fill That Dishwasher",
 	"category": "water",
-	"explanation": "Make sure the dishwasher is at least ¾ full and all dirty dishes facing downward before running.",
+	"explanation": "Make sure the dishwasher is at least ¾ full, and all dirty dishes are facing downwards before running.",
 	"impactPerWeek": 4,
 	"impactUnits": "gallons of water",
 	"source": "Office of Energy Efficiency & Renewable Energy",
@@ -265,7 +265,7 @@
 {
 	"title": "If It's Yellow Leave It Mellow",
 	"category": "water",
-	"explanation": "Instil an \"If it's yellow leave it mellow, if it's brown flush it down\" policy for your home toilets!",
+	"explanation": "Instil an “If it’s yellow leave it mellow, if it’s brown flush it down” policy for your home toilets!",
 	"impactPerWeek": 42,
 	"impactUnits": "gallons of water",
 	"source": "Networx",
@@ -337,34 +337,34 @@
 	"source": "Nest",
 	"citation": "https://nest.com/thermostat/real-savings/#we-didnt-think-thermostats-mattered-either",
 	"imageUrl": "/public/images/install-thermostat.jpg",
-	"thumbnailUrl": "/public/images/install-thermostat-thumb.png"
+	"thumbnailUrl": "/public/images/install-thermostat-thumb.jpg"
 },
 {
-	"title": "Install CFL Bulbs",
+	"title": "Install CFL Lightbulbs",
 	"category": "energy",
-	"explanation": "Compact Fluorescent Lightbulbs are more efficient than regular light bulbs because they use 75% less energy, give off less heat, and they can last up to 12 times longer than a regular incandescent light bulb.",
+	"explanation": "Compact fluorescent lightbulbs are more efficient than regular light bulbs because they use 75% less energy, give off less heat, and can last up to 12 times longer than an incandescent light bulb.",
 	"impactPerWeek": 49,
 	"impactUnits": "kilowatt-hours",
 	"source": "Design Recycle Inc. and \"Living Like Ed\"",
 	"citation": "http://www.designrecycleinc.com/led%20comp%20chart.html",
 	"imageUrl": "/public/images/install-cfl-bulbs.jpg",
-	"thumbnailUrl": "/public/images/install-cfl-bulbs.jpg"
+	"thumbnailUrl": "/public/images/install-cfl-bulbs-thumb.jpg"
 },
 {
 	"title": "Switch It Off",
 	"category": "energy",
-	"explanation": "If it's hard to remember to turn off lights when you're not using a room, put reminders by your light switches. You can save 5 to 10 percent on energy costs by making this easy \"switch\".",
+	"explanation": "If it’s hard to remember to turn off lights when you’re not using a room, put reminders by your light switches. You can save 5 to 10 percent on energy costs!",
 	"impactPerWeek": 8.13,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/39-Lighting-energy",
 	"imageUrl": "/public/images/switch-it-off.jpg",
-	"thumbnailUrl": "/public/images/switch-it-off.jpg"
+	"thumbnailUrl": "/public/images/switch-it-off-thumb.jpg"
 },
 {
 	"title": "Turn Off The Computer",
 	"category": "energy",
-	"explanation": "",
+	"explanation": "Leaving it on when not in use consumes as much energy as leaving the lights on, equal to three 300-kilowatt hours per year, or $35!",
 	"impactPerWeek": 20.35,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
@@ -380,8 +380,8 @@
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
 	"citation": "http://www.carbonrally.com/challenges/35-energy-star-washing-machines",
-	"imageUrl": "/public/images/blank.png",
-	"thumbnailUrl": "/public/images/blank-thumb.png"
+	"imageUrl": "/public/images/save-on-the-washing-machine.jpg",
+	"thumbnailUrl": "/public/images/save-on-the-washing-machine-thumb.jpg"
 },
 {
 	"title": "Walk With Your Kids",
