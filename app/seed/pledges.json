@@ -405,7 +405,17 @@
 	"imageUrl": "/public/images/plant-three-trees.jpg",
 	"thumbnailUrl": "/public/images/plant-three-trees-thumb.jpg"
 },
-
+{
+	"title": "Clean The Coils",
+	"category": "energy",
+	"explanation": "Unplug your fridge and clean the condenser coils once or twice a year. It’s free, and will allow your fridge to work more efficiently!",
+	"impactPerWeek": 5.8,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/16-save-electricity",
+	"imageUrl": "/public/images/clean-the-coils.jpg",
+	"thumbnailUrl": "/public/images/clean-the-coils-thumb.jpg"
+},
 {
 	"title": "Walk With Your Kids",
 	"category": "transportation",
