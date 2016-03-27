@@ -345,7 +345,7 @@
 	"explanation": "Compact fluorescent lightbulbs are more efficient than regular light bulbs because they use 75% less energy, give off less heat, and can last up to 12 times longer than an incandescent light bulb.",
 	"impactPerWeek": 49,
 	"impactUnits": "kilowatt-hours",
-	"source": "Design Recycle Inc. and \"Living Like Ed\"",
+	"source": "Design Recycle Inc.",
 	"citation": "http://www.designrecycleinc.com/led%20comp%20chart.html",
 	"imageUrl": "/public/images/install-cfl-bulbs.jpg",
 	"thumbnailUrl": "/public/images/install-cfl-bulbs-thumb.jpg"
@@ -383,6 +383,29 @@
 	"imageUrl": "/public/images/save-on-the-washing-machine.jpg",
 	"thumbnailUrl": "/public/images/save-on-the-washing-machine-thumb.jpg"
 },
+{
+	"title": "Use A Fan",
+	"category": "energy",
+	"explanation": "Switch off your AC and switch on a fan! This will cool you down by moving air around the room and across your skin.",
+	"impactPerWeek": 5.4,
+	"impactUnits": "pounds of carbon emissions",
+	"source": "Carbon Rally",
+	"citation": "http://www.carbonrally.com/challenges/22-air-conditioner-costs",
+	"imageUrl": "/public/images/use-a-fan.jpg",
+	"thumbnailUrl": "/public/images/use-a-fan-thumb.jpg"
+},
+{
+	"title": "Plant Three Trees",
+	"category": "energy",
+	"explanation": "Planting trees to shade your home will provide cooling that can drastically reduce your need for air conditioning!",
+	"impactPerWeek": 22,
+	"impactUnits": "kilowatt-hours",
+	"source": "Department of Energy",
+	"citation": "https://www.firstenergycorp.com/content/customer/help/saving_energy/trees.html",
+	"imageUrl": "/public/images/plant-three-trees.jpg",
+	"thumbnailUrl": "/public/images/plant-three-trees-thumb.jpg"
+},
+
 {
 	"title": "Walk With Your Kids",
 	"category": "transportation",
