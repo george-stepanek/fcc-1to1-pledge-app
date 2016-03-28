@@ -50,9 +50,8 @@ var MainPage = React.createClass({
 					<div className="body-text">
 						The 1to1Movement exists to inspire and simplify sustainability in daily life.
 						We’re helping each person find their own way to save the world.
-						We’re here to help make sustainability simple, 
-						so here’s a collection of basic environmental pledges you can undertake, 
-						to make a real difference&hellip;
+						<br/>
+						So why don’t you take on some of these environmental pledges, and help make a real difference&hellip;
 					</div>
 					<div className="row">
 						<div className="col-lg-1"/>
