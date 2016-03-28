@@ -307,6 +307,39 @@
 	"thumbnailUrl": "/public/images/turn-off-water-thumb.jpg"
 },
 {
+	"title": "Plug The Sink",
+	"category": "water",
+	"explanation": "When shaving, plug the sink so you don’t have to keep running the water!",
+	"impactPerWeek": 21,
+	"impactUnits": "gallons of water",
+	"source": "National Estuarine Research Reserve",
+	"citation": "http://www.dnr.sc.gov/marine/NERR/pdf/WaterUsage.pdf",
+	"imageUrl": "/public/images/plug-the-sink.jpg",
+	"thumbnailUrl": "/public/images/plug-the-sink-thumb.jpg"
+},
+{
+	"title": "Pause The Shower",
+	"category": "water",
+	"explanation": "Turn off the water while you’re washing your hair or soaping your body.",
+	"impactPerWeek": 70,
+	"impactUnits": "gallons of water",
+	"source": "Living Green and Saving Energy",
+	"citation": "http://livinggreenandsavingenergy.com/green-tips",
+	"imageUrl": "/public/images/pause-the-shower.jpg",
+	"thumbnailUrl": "/public/images/pause-the-shower-thumb.jpg"
+},
+{
+	"title": "Scrape And Scrub",
+	"category": "water",
+	"explanation": "Scrape the food scraps into the trash. Then use a tub of soapy water to scrub the dishes, and a second tub of clean water next to it to rinse them.",
+	"impactPerWeek": 189,
+	"impactUnits": "gallons of water",
+	"source": "Environmental Protection Agency ",
+	"citation": "http://www.epa.gov/WaterSense/pubs/indoor.html",
+	"imageUrl": "/public/images/scrape-and-scrub.jpg",
+	"thumbnailUrl": "/public/images/scrape-and-scrub-thumb.jpg"
+},
+{
 	"title": "Charge For Two  Hours",
 	"category": "energy",
 	"explanation": "Nokia estimates that most cellular devices need only two hours to fully charge. Charging overnight wastes energy.",

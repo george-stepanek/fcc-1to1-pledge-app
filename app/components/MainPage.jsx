@@ -48,10 +48,8 @@ var MainPage = React.createClass({
 			return (
 	            <div>
 					<div className="body-text">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						The 1to1Movement exists to inspire and simplify sustainability in daily life. We’re helping each person find their own way to save the world.
+						We’re here to help make sustainability simple, so here’s a collection of basic environmental pledges you can undertake, to make a real difference.
 					</div>
 	        		<div className="row">
 	        			<div className="col-lg-1"/>
