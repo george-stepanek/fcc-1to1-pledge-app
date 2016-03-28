@@ -33,9 +33,9 @@ var MainPage = React.createClass({
 						<a href={"/category/" + category.title}>
 							<img src={category.imageUrl}/>
 							<span className="pledge-thumb-title">
-							    {category.title.charAt(0).toUpperCase() + category.title.substr(1)}
-							    <br/>
-							    <i className={"fa " + icons[category.title] + " category-icon"}></i>
+								{category.title.charAt(0).toUpperCase() + category.title.substr(1)}
+								<br/>
+								<i className={"fa " + icons[category.title] + " category-icon"}></i>
 							</span>
 							<h4 className="pledge-info">
 								{category.userCount} {category.userCount == 1 ? "person has " : "people have "}
@@ -46,20 +46,23 @@ var MainPage = React.createClass({
 				);
 			});
 			return (
-	            <div>
+				<div>
 					<div className="body-text">
-						The 1to1Movement exists to inspire and simplify sustainability in daily life. We’re helping each person find their own way to save the world.
-						We’re here to help make sustainability simple, so here’s a collection of basic environmental pledges you can undertake, to make a real difference.
+						The 1to1Movement exists to inspire and simplify sustainability in daily life.
+						We’re helping each person find their own way to save the world.
+						We’re here to help make sustainability simple, 
+						so here’s a collection of basic environmental pledges you can undertake, 
+						to make a real difference&hellip;
 					</div>
-	        		<div className="row">
-	        			<div className="col-lg-1"/>
-	                    {categories}
-	        		</div>
-	    		</div>
+					<div className="row">
+						<div className="col-lg-1"/>
+						{categories}
+					</div>
+				</div>
 			);
-    	}
-    	else {
-    		return(<div/>);
-    	}
+		}
+		else {
+			return(<div/>);
+		}
 	}
 });
