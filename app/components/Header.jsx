@@ -69,14 +69,13 @@ var Header = React.createClass({
 				success: function(result) {
 					pledge = result;
 				}
-	        });
+			});
 
 			return (
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
 					{spacer}
-					<a className="category-icon" href={"/category/" + pledge.category} 
-							title={"Category: " + pledge.category.charAt(0).toUpperCase() + pledge.category.substr(1)}>
+					<a className="category-icon" href={"/category/" + pledge.category} title={category.charAt(0).toUpperCase() + category.substr(1) + " Pledges"}>
 						<i className={"fa " + icons[pledge.category]}></i>
 					</a>
 					{spacer}
@@ -90,7 +89,7 @@ var Header = React.createClass({
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
 					{spacer}
-					<span className="category-icon" title={"Category: " + category.charAt(0).toUpperCase() + category.substr(1)}>
+					<span className="category-icon" title={category.charAt(0).toUpperCase() + category.substr(1) + " Pledges"}>
 						<i className={"fa " + icons[category]}></i>
 					</span>
 				</span>
@@ -176,7 +175,7 @@ var Header = React.createClass({
 						</div>
 					</div>
 				</div>
-    		</nav>
+			</nav>
 		);
 	}
 });

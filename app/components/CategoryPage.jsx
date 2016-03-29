@@ -1,17 +1,17 @@
 var CategoryPage = React.createClass({
     getInitialState: function() {
-    	var path = window.location.pathname;
-    	var category = path.slice(path.lastIndexOf("/") + 1);
+        var path = window.location.pathname;
+        var category = path.slice(path.lastIndexOf("/") + 1);
 
-    	var pledges;
+        var pledges;
         $.ajax({
-    		url: window.location.origin + '/api/category/pledges/' + category,
-    		cache : false,
-    		async: false,
-    		type: "get",
-    		success: function(result) {
+            url: window.location.origin + '/api/category/pledges/' + category,
+            cache : false,
+            async: false,
+            type: "get",
+            success: function(result) {
                 pledges = result;
-    		}
+            }
         });
         document.title = category[0].toUpperCase() + category.substring(1) + " Pledges - 1to1 Movement Pledges";
         return {pledges: pledges};
