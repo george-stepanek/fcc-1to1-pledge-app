@@ -28,11 +28,11 @@ gulp.task('seed', function() {
 		Pledge.findOne({ 'no': pledgeData.no }, function (err, pledge) {
     if (err) { throw err; }
 			if (!pledge) {
-			  pledge = new Pledge();
+        pledge = new Pledge();
         pledge.no = pledgeData.no;
 			}
 
-		  pledge.title = pledgeData.title;
+      pledge.title = pledgeData.title;
       pledge.category = pledgeData.category;
       pledge.explanation = pledgeData.explanation;
       pledge.impactPerWeek = pledgeData.impactPerWeek;
@@ -53,13 +53,3 @@ gulp.task('seed', function() {
 });
 
 gulp.task('postinstall', ['transform', 'seed']);
-
-gulp.task('reload', function() {
-  gulp.src('app/seed/pledges.json')
-    .pipe(require('gulp-mongodb-data')({
-      mongoUrl: process.env.MONGO_URI,
-      collectionName: 'pledges',
-      dropCollection: true
-    }));
-});
- 
