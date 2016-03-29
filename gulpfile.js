@@ -25,14 +25,14 @@ gulp.task('seed', function() {
   // Load and parse the JSON data
   var counter = 0, pledgesData = require('./app/seed/pledges.json');
   pledgesData.forEach(function(pledgeData) {
-		Pledge.findOne({ 'title': pledgeData.title }, function (err, pledge) {
+		Pledge.findOne({ 'no': pledgeData.no }, function (err, pledge) {
     if (err) { throw err; }
 			if (!pledge) {
 			  pledge = new Pledge();
-			  pledge.title = pledgeData.title;
+        pledge.no = pledgeData.no;
 			}
 
-      pledge.no = pledgeData.no;
+		  pledge.title = pledgeData.title;
       pledge.category = pledgeData.category;
       pledge.explanation = pledgeData.explanation;
       pledge.impactPerWeek = pledgeData.impactPerWeek;
