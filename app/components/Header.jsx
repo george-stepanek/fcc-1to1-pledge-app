@@ -75,11 +75,12 @@ var Header = React.createClass({
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
 					{spacer}
-					<a className="category-icon" href={"/category/" + pledge.category} title={category.charAt(0).toUpperCase() + category.substr(1) + " Pledges"}>
+					<a className="category-icon" href={"/category/" + pledge.category} 
+							title={pledge.category.charAt(0).toUpperCase() + pledge.category.substr(1) + " Pledges"}>
 						<i className={"fa " + icons[pledge.category]}></i>
 					</a>
 					{spacer}
-					<span className="category-icon" title={"Pledge: " + pledge.title}><i className="fa fa-thumbs-o-up"></i></span>
+					<span className="category-icon" title={pledge.title}><i className="fa fa-thumbs-o-up"></i></span>
 				</span>
 			);
         }
