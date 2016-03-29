@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Pledge = new Schema({
+	no: Number,
 	title: String,
 	category: String,
 	explanation: String,

@@ -32,6 +32,7 @@ gulp.task('seed', function() {
 			  pledge.title = pledgeData.title;
 			}
 
+      pledge.no = pledgeData.no;
       pledge.category = pledgeData.category;
       pledge.explanation = pledgeData.explanation;
       pledge.impactPerWeek = pledgeData.impactPerWeek;
