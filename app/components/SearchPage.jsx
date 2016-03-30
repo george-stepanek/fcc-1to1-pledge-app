@@ -23,16 +23,11 @@ var SearchPage = React.createClass({
 		return {pledges: pledges};
 	},
 	pledgeGroup: function() {
-		if(this.state && this.state.pledges) {
-			if(this.state && this.state.pledges && this.state.pledges.length > 0) {
-				return ( <PledgeGroup pledges={this.state.pledges} /> );
-			}
-			else {
-				return ( <div className="body-text">No pledges found for this search term: "{this.searchTerm}"</div> );
-			}
+		if(this.state && this.state.pledges && this.state.pledges.length > 0) {
+			return ( <PledgeGroup pledges={this.state.pledges} /> );
 		}
 		else {
-			return ("");
+			return ( <div className="body-text">No pledges found for this search term: "{this.searchTerm}"</div> );
 		}
 	},
 	render: function() {

@@ -25,15 +25,20 @@ module.exports = function (app, passport) {
 		.get(function (req, res) {
 			var baseUrl = req.protocol + "://" + req.get("host");
 			request(baseUrl + '/api/pledge/' + req.params.title, function (error, response, body) {
+				if(body.length) {
 				var js = JSON.parse(body);
-				res.render(path + '/public/index.ejs', {
-					"url": baseUrl + req.originalUrl,
-					"title": js.title,
-					"description": js.explanation,
-					"image": baseUrl + js.thumbnailUrl,
-					"width": 600,
-					"height": 400
-				});
+					res.render(path + '/public/index.ejs', {
+						"url": baseUrl + req.originalUrl,
+						"title": js.title,
+						"description": js.explanation,
+						"image": baseUrl + js.thumbnailUrl,
+						"width": 600,
+						"height": 400
+					});
+				}
+				else {
+					res.redirect('/');
+				}
 			});
 		});
 
