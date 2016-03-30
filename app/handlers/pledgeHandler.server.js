@@ -23,48 +23,48 @@ function PledgeHandler () {
 	function populateCalculatedProperties (req, results) {
 		var output = results.sort(pledgeSort);
 		
-	    for(var i = 0; i < output.length; i++) {
-	    	var impact = 0;
-	    	if(output[i].users) {
-	    		for(var j = 0; j < output[i].users.length; j++) {
-	    			var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
-				    impact += millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
-	    		}
-	    		output[i].userCount = output[i].users.length;
-	    		
-	    		// drop all other user data from the pledge, for reasons of security and scalability
-	    		if(req.user) {
-		    		var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
-		    		if(meIfPledged.length > 0) {
-		    			var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
-		    			var myImpact = myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
-					    output[i].myImpactSoFar = (Math.round(myImpact * 10) / 10).toFixed(1).replace(".0", "");
-		    		}
-		    		output[i].users = meIfPledged;
-	    		}
-	    		else {
-	    			output[i].users = [];
-	    		}
-	    	}
-    		output[i].impactSoFar = (Math.round(impact * 10) / 10).toFixed(1).replace(".0", ""); // round to 1dp or 0dp as appropriate
-	    	
-	    	output[i].prevPledge = output[i > 0 ? i - 1 : output.length - 1].title.toLowerCase().replace(/\s/g, "-");
-	    	output[i].nextPledge = output[i < output.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
-	    	output[i].prevUrl = output[i > 0 ? i - 1 : output.length - 1].imageUrl;
-	    	output[i].nextUrl = output[i < output.length - 1 ? i + 1 : 0].imageUrl;
-	    }
-	    return output;
+		for(var i = 0; i < output.length; i++) {
+			var impact = 0;
+			if(output[i].users) {
+				for(var j = 0; j < output[i].users.length; j++) {
+					var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
+					impact += millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
+				}
+				output[i].userCount = output[i].users.length;
+				
+				// drop all other user data from the pledge, for reasons of security and scalability
+				if(req.user) {
+					var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
+					if(meIfPledged.length > 0) {
+						var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
+						var myImpact = myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
+						output[i].myImpactSoFar = (Math.round(myImpact * 10) / 10).toFixed(1).replace(".0", "");
+					}
+					output[i].users = meIfPledged;
+				}
+				else {
+					output[i].users = [];
+				}
+			}
+			output[i].impactSoFar = (Math.round(impact * 10) / 10).toFixed(1).replace(".0", ""); // round to 1dp or 0dp as appropriate
+			
+			output[i].prevPledge = output[i > 0 ? i - 1 : output.length - 1].title.toLowerCase().replace(/\s/g, "-");
+			output[i].nextPledge = output[i < output.length - 1 ? i + 1 : 0].title.toLowerCase().replace(/\s/g, "-");
+			output[i].prevUrl = output[i > 0 ? i - 1 : output.length - 1].imageUrl;
+			output[i].nextUrl = output[i < output.length - 1 ? i + 1 : 0].imageUrl;
+		}
+		return output;
 	}
 
 	this.getPledge = function (req, res) {
 		// first need to get all of the pledges, so we can populate the prevPledge and nextPledge properties
 		Pledges.find({ }).exec(function (err, results) { 
-		    if (err) { throw err; }
+			if (err) { throw err; }
 			var regex = new RegExp(req.params.title.replace(/-/g, " "), "i");
 			var pledges = populateCalculatedProperties(req, results);
 			
 			// return only the requested pledge
-		    res.json(pledges.filter(function (pledge) {	return regex.test(pledge.title) })[0]);
+			res.json(pledges.filter(function (pledge) {	return regex.test(pledge.title) })[0]);
 		});
 	};
 
@@ -86,7 +86,7 @@ function PledgeHandler () {
 			if(result.length == 0) {
 				Pledges.findOneAndUpdate({ 'title': { $regex : new RegExp(title, "i") } }, { $push: { 'users': user } }).exec(function (err, result) { 
 					if (err) { throw err; } 
-				    res.json(result);
+					res.json(result);
 				});
 			}
 			else {
@@ -99,26 +99,26 @@ function PledgeHandler () {
 		var id = req.user ? req.user.id : testid;
 		var title = req.params.title.replace(/-/g, " ");
 		Pledges.findOneAndUpdate({ 'title': { $regex : new RegExp(title, "i") } }, { $pull: { "users" : { id: id } } }).exec(function (err, result) { 
-		    if (err) { throw err; } 
-		    res.json(result);
+			if (err) { throw err; } 
+			res.json(result);
 		});
 	};
 	
 	this.searchPledges = function(req, res) {
 		Pledges.find({ 'title': RegExp(req.query.q || "", "i") }).exec(function (err, results) { 	
-		    if (err) { throw err; } 
-		    res.json(populateCalculatedProperties(req, results));
+			if (err) { throw err; } 
+			res.json(populateCalculatedProperties(req, results));
 		});
 	};
 	
 	this.getCategories = function(req, res) {
 		Pledges.distinct('category', function(err, results) {
-		    if (err) { throw err; }
-		    var categories = results.sort();
+			if (err) { throw err; }
+			var categories = results.sort();
 			Pledges.find({ }).exec(function (err, results) { 
-			    if (err) { throw err; }
-			    
-			    var output = [];
+				if (err) { throw err; }
+				
+				var output = [];
 				for(var i = 0; i < categories.length; i++) {
 					var pledgedCount = 0, users = [];
 					var pledges = results.sort(pledgeSort).filter(function (value) { return value.category == categories[i]});
@@ -135,23 +135,25 @@ function PledgeHandler () {
 
 					output.push({ title: categories[i], imageUrl: pledges[0].thumbnailUrl, pledgedCount: pledgedCount, userCount: users.length });
 				}
-		    	res.json(output);
+				res.json(output);
 			});
 		});
 	};
 	
 	this.getPledgesForCategory = function(req, res) {
 		Pledges.find({ 'category': req.params.category }).exec(function (err, results) { 	
-		    if (err) { throw err; } 
-		    res.json(populateCalculatedProperties(req, results));
+			if (err) { throw err; } 
+			res.json(populateCalculatedProperties(req, results));
 		});	
 	};
 	
 	this.getUser = function (req, res) {
 		Users.findOne({ 'id': req.params.id }, { '_id': false }, function (err, result) {
-		    if (err) { throw err; }
-		    result.isCurrentUser = (req.user != undefined) && (req.user.id == req.params.id);
-		    res.json(result);
+			if (err) { throw err; }
+			if(result) {
+				result.isCurrentUser = (req.user != undefined) && (req.user.id == req.params.id);
+			}
+			res.json(result);
 		});
 	};
 }

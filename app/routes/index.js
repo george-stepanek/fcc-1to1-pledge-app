@@ -42,14 +42,19 @@ module.exports = function (app, passport) {
 			var baseUrl = req.protocol + "://" + req.get("host");
 			request(baseUrl + '/api/user/' + req.params.id, function (error, response, body) {
 				var js = JSON.parse(body);
-				res.render(path + '/public/index.ejs', {
-					"url": baseUrl + req.originalUrl,
-					"title": js.displayName + "'s Pledges",
-					"description": js.displayName + "'s pledges to help the planet, and progress so far, via the 1to1 Movement website.",
-					"image": baseUrl + defaultImage,
-					"width": 600,
-					"height": 400
-				});
+				if(js) {
+					res.render(path + '/public/index.ejs', {
+						"url": baseUrl + req.originalUrl,
+						"title": js.displayName + "'s Pledges",
+						"description": js.displayName + "'s pledges to help the planet, and progress so far, via the 1to1 Movement website.",
+						"image": baseUrl + defaultImage,
+						"width": 600,
+						"height": 400
+					});
+				}
+				else {
+					res.redirect('/');
+				}
 			});
 		});
 
