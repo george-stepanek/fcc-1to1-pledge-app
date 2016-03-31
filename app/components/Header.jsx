@@ -162,15 +162,15 @@ var Header = React.createClass({
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 className="modal-title" id="modalLabel">Please sign in using the same service each time:</h4>
+								<h4 className="modal-title" id="modalLabel">Please sign in the same way each time:</h4>
 							</div>
 							<div className="modal-body login-buttons">
 								<a className="btn btn-social btn-lg btn-facebook login-btn" href="/auth/facebook">
-								<i className="fa fa-facebook"></i> Sign in with Facebook
+								<i className="fa fa-facebook"></i> Sign in via Facebook
 							</a>
 							&nbsp;
 							<a className="btn btn-social btn-lg btn-google login-btn" href="/auth/google">
-								<i className="fa fa-google"></i> Sign in with Google
+								<i className="fa fa-google"></i> Sign in via Google
 							</a>
 							</div>
 						</div>
