@@ -160,7 +160,7 @@ var PledgePage = React.createClass({
 				<a className="arr-btn arr-next" href={"/pledge/" + this.state.pledge.nextPledge} title="Next pledge">&nbsp;</a>
 				<a className="arr-up" href={"/category/" + this.state.pledge.category} title="Back to category">^</a>
 				<p className="pledge-title"><i>{this.state.pledge.title}</i></p>
-				<div className="row">
+				<div className="row pledge-row">
 					<div className="pledge-col col-md-6">
 						<p className="pledge-para">{this.state.pledge.explanation}</p>
 						<p className="pledge-para">

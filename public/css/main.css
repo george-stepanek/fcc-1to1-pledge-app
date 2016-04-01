@@ -219,9 +219,13 @@ a {
 .pledge-title {
   margin: 60px 0 30px 0;
   font-family: 'Heartwell';
-  font-size: 4em; /* Fallback */
-  font-size: 10vw; /* Resize title for width */
+  font-size: 4em;
   line-height: 105%;
+}
+@media (max-width: 991px) { .pledge-title { font-size: 10vw; } }
+.pledge-row {
+  max-width: 1800px;
+  margin: auto;
 }
 .pledge-btn, .pledge-btn:visited {
   color: white;
