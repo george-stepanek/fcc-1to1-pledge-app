@@ -2,7 +2,7 @@
   font-family: Heartwell;
   font-style: normal;
   src: url("/public/fonts/Heartwell 1.2.otf") format("opentype");
-	src: url('/public/fonts/Heartwell 1.2.eot');
+  src: url('/public/fonts/Heartwell 1.2.eot');
   src: url('/public/fonts/Heartwell 1.2.woff') format('woff'),
        url('/public/fonts/Heartwell 1.2.ttf') format('truetype'),
        url('/public/fonts/Heartwell 1.2.svg') format('svg');
@@ -11,7 +11,7 @@
   font-family: Heartwell;
   font-style: italic;
   src: url("/public/fonts/Heartwell Italic 1.2.otf") format("opentype");
-	src: url('/public/fonts/Heartwell Italic 1.2.eot');
+  src: url('/public/fonts/Heartwell Italic 1.2.eot');
   src: url('/public/fonts/Heartwell Italic 1.2.woff') format('woff'),
        url('/public/fonts/Heartwell Italic 1.2.ttf') format('truetype'),
        url('/public/fonts/Heartwell Italic 1.2.svg') format('svg');}
@@ -235,30 +235,30 @@ a {
   margin-bottom: 40px;
 }
 .arr-btn {
-	opacity: 1;
-	position: absolute;
-	top: -40px;
-	width: 60px;
-	height: 30px;
+  opacity: 1;
+  position: absolute;
+  top: -40px;
+  width: 60px;
+  height: 30px;
 }
 .arr-btn:hover {
-	opacity:0.7;
+  opacity:0.7;
 }
 .arr-prev {
-	background: url(/public/images/left-arrow.svg) no-repeat;
-	left: 20px;
+  background: url(/public/images/left-arrow.svg) no-repeat;
+  left: 20px;
 }
 .arr-next {
-	background: url(/public/images/right-arrow.svg) no-repeat;
-	right: 20px;
+  background: url(/public/images/right-arrow.svg) no-repeat;
+  right: 20px;
 }
 .arr-up, .arr-up:visited {
   font-family: Heartwell;
   font-size: 5.6em;
   color: white;
   position: absolute;
-	top: -79px;
-	left: 50%;
+  top: -79px;
+  left: 50%;
 }
 .pledge-btn:hover, .arr-up:hover {
   color: lightgrey;

@@ -1,32 +1,32 @@
 const icons = {energy: "fa-lightbulb-o", food: "fa-shopping-cart", transportation: "fa-bicycle", waste: "fa-recycle", water: "fa-tint"};
 
 var MainPage = React.createClass({
-    getInitialState: function() {
-        if($.cookie("pledgeToAdd")) {
-            this.props.updateUrl('/pledge/' + $.cookie("pledgeToAdd"), true);
-            return null;
-        }
+	getInitialState: function() {
+		if($.cookie("pledgeToAdd")) {
+			this.props.updateUrl('/pledge/' + $.cookie("pledgeToAdd"), true);
+			return null;
+		}
 		else if ($.cookie("pageBeforeLogin")) {
 			this.props.updateUrl($.cookie("pageBeforeLogin"), true);
 			$.removeCookie("pageBeforeLogin");
 			return null;
-        }
+		}
 
 		var categories;
-        $.ajax({
+		$.ajax({
 			url: window.location.origin + '/api/all/categories',
 			cache : false,
 			async: false,
 			type: "get",
 			success: function(results) {
-                categories = results;
+				categories = results;
 			}
-        });
-        document.title = "1to1 Movement Pledges";
-        return {categories: categories};
-    },
-    render: function() {
-    	if(this.state) {
+		});
+		document.title = "1to1 Movement Pledges";
+		return {categories: categories};
+	},
+	render: function() {
+		if(this.state) {
 			var categories = this.state.categories.map(function(category) {
 				return (
 					<div className="pledge-link col-lg-2 col-md-4 col-sm-6" key={category.title}>

@@ -1,6 +1,6 @@
 var Header = React.createClass({
-    getInitialState: function() {
-	    $("document").ready(function () {
+	getInitialState: function() {
+		$("document").ready(function () {
 			// We need to cancel the post-login redirect if the user has cancelled out of the login modal
 			$('#login-modal').on('hide.bs.modal', function () {
 				$.removeCookie("pageBeforeLogin", { path: '/' });
@@ -12,18 +12,18 @@ var Header = React.createClass({
 			});
 		});
 
-    	var user;
-        $.ajax({
+		var user;
+		$.ajax({
 			url: window.location.origin + '/api/:id',
 			cache : false,
 			async: false,
 			type: "get",
 			success: function(result) {
-                user = result;
-    		}
-        });
-        return {user: user};
-    },
+				user = result;
+			}
+		});
+		return {user: user};
+	},
 	userMenu: function() {
 		if (this.state.user) {
 			return (
@@ -45,7 +45,7 @@ var Header = React.createClass({
 		// Save the current location so we can return to it after logging in
 		var url = window.location.href.replace(window.location.protocol, "").replace("//", "").replace(window.location.host, "");
 		$.cookie("pageBeforeLogin", url, { path: '/' });
-        $('#login-modal').modal('show');
+		$('#login-modal').modal('show');
 	},
 	searchPledges: function() {
 		this.props.updateUrl('/search?q=' + $('#q').val());
@@ -61,7 +61,7 @@ var Header = React.createClass({
 		var spacer = <span className="category-icon"><i className="fa fa-angle-right"></i></span>;
 		if(this.props.url.indexOf('/pledge/') > -1) {
 			var pledge, pledgeId = this.props.url.slice(this.props.url.lastIndexOf("/") + 1);
-	        $.ajax({
+			$.ajax({
 				url: window.location.origin + '/api/pledge/' + pledgeId,
 				cache : false,
 				async: false,
@@ -83,8 +83,8 @@ var Header = React.createClass({
 					<span className="category-icon" title={pledge.title}><i className="fa fa-thumbs-o-up"></i></span>
 				</span>
 			);
-        }
-        else if(this.props.url.indexOf('/category/') > -1) {
+		}
+		else if(this.props.url.indexOf('/category/') > -1) {
 			var category = this.props.url.slice(this.props.url.lastIndexOf("/") + 1);
 			return (
 				<span className="breadcrumbs">
@@ -95,8 +95,8 @@ var Header = React.createClass({
 					</span>
 				</span>
 			);
-        } 
-        else if(this.props.url.indexOf('/mypledges') > -1) {
+		} 
+		else if(this.props.url.indexOf('/mypledges') > -1) {
 			return (
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
@@ -104,8 +104,8 @@ var Header = React.createClass({
 					<span className="category-icon" title="My Pledges"><i className="fa fa-user"></i></span>
 				</span>
 			);
-        } 
-        else if(this.props.url.indexOf('/search') > -1) {
+		} 
+		else if(this.props.url.indexOf('/search') > -1) {
 			return (
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
@@ -113,14 +113,14 @@ var Header = React.createClass({
 					<span className="category-icon" title="Search"><i className="fa fa-search"></i></span>
 				</span>
 			);
-        } 
-        else {
+		} 
+		else {
 			return (
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
 				</span>
 			);
-        }
+		}
 	},
 	render: function() {
 		return (

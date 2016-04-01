@@ -1,47 +1,47 @@
 var PledgePage = React.createClass({
-    pledgeId: "",
-    getInitialState: function() {
+	pledgeId: "",
+	getInitialState: function() {
 		var path = window.location.pathname;
 		this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
 
-    	var user, pledge, self = this;
-        $.ajax({
+		var user, pledge, self = this;
+		$.ajax({
 			url: window.location.origin + '/api/:id',
 			cache : false,
 			async: false,
 			type: "get",
 			success: function(result) {
-                user = result;
+				user = result;
 			}
-        });
+		});
 
 		// If the user was prompted to login when pledging, then we should automatically add them to that pledge
 		if($.cookie("pledgeToAdd") == this.pledgeId && user) {
 			this.addMe("afterLogin");
-        }
+		}
 		$.removeCookie("pledgeToAdd", { path: '/' });
 
-        $.ajax({
+		$.ajax({
 			url: window.location.origin + '/api/pledge/' + self.pledgeId,
 			cache : false,
 			async: false,
 			type: "get",
 			success: function(result) {
-                pledge = result;
+				pledge = result;
 			}
-        });
-        document.title = pledge.title + " - 1to1 Movement Pledges";
-        return {user: user, pledge: pledge};
-    },
-    componentDidMount: function() {
+		});
+		document.title = pledge.title + " - 1to1 Movement Pledges";
+		return {user: user, pledge: pledge};
+	},
+	componentDidMount: function() {
 		// Preload the images for the next/prev pledges, for better performance when the user clicks through to them
 		var next = new Image();
 		next.src = this.state.pledge.imageUrl;
 		var prev = new Image();
 		prev.src = this.state.pledge.imageUrl;
-    },
-    impactPerWeek: function() {
-    	return (
+	},
+	impactPerWeek: function() {
+		return (
 			<p className="pledge-para">
 				Pledge to save <i><b>
 				{this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits}
@@ -51,7 +51,7 @@ var PledgePage = React.createClass({
 				</a>
 			</p>
 		);
-    },
+	},
 	myImpactAndButtons: function() {
 		var self = this;
 
@@ -110,10 +110,10 @@ var PledgePage = React.createClass({
 			);
 		}
 	},
-    addMe: function(afterLogin) {
+	addMe: function(afterLogin) {
 		if(afterLogin != "afterLogin" && !this.state.user) {
 			$.cookie("pledgeToAdd", this.pledgeId, { path: '/' });
-            $('#login-modal').modal('show');
+			$('#login-modal').modal('show');
 			return;
 		}
 
@@ -127,8 +127,8 @@ var PledgePage = React.createClass({
 				self.refreshPledge();
 			}
 		});
-    },
-    removeMe: function() {
+	},
+	removeMe: function() {
 		$("#submit-button").prop("disabled", true);
 		var self = this;
 		$.ajax({
@@ -138,10 +138,10 @@ var PledgePage = React.createClass({
 			self.refreshPledge();
 			}
 		});
-    },
-    refreshPledge: function() {
-    	var self = this;
-        $.ajax({
+	},
+	refreshPledge: function() {
+		var self = this;
+		$.ajax({
 			url: window.location.origin + '/api/pledge/' + self.pledgeId,
 			cache : false,
 			type: "get",
@@ -149,10 +149,10 @@ var PledgePage = React.createClass({
 				$("#submit-button").prop("disabled", false);
 				self.setState({pledge: result});
 			}
-        });
-    },
-    render: function() {
-        return (
+		});
+	},
+	render: function() {
+		return (
 			<div className="pledge-page">
 				<span className="pledge-img pledge-span"></span>
 				<img className="pledge-img" src={this.state.pledge.imageUrl}/>
