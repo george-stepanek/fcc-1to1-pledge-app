@@ -138,6 +138,7 @@ var Header = React.createClass({
 						</a>
 						<span className="logo-text">PLEDGES</span>
 						{this.breadcrumbs()}
+						<div className="logo-pad"></div>
 					</div>
 					<div className="collapse navbar-collapse" id="navbar-collapse">
 						{this.userMenu()}

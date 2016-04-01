@@ -46,9 +46,9 @@ a {
   letter-spacing: 1px;
   color: rgba(35,155,169,0.9) !important;
   position:relative;
-  bottom:-7px;
+  bottom:-5px;
   left: 10px;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 .navbar-default {
   background-color: white;
@@ -62,9 +62,9 @@ a {
 .breadcrumbs {
   color: grey;
   font-size: 1.5em;
-  line-height: 100%;
   position: relative;
-  top: 9px;
+  top: 6px;
+  white-space: nowrap;
 }
 .breadcrumbs a, .breadcrumbs a:visited, .breadcrumbs span {
   color: grey;
@@ -72,6 +72,10 @@ a {
 }
 .breadcrumbs a:hover {
   color: black;
+}
+.logo-pad {
+  height: 40px;
+  float: left;
 }
 /* Override Bootstrap so the collapse occurs on sm (below 992px) instead of xs (below 768px) */
 @media (max-width: 991px) {
