@@ -1,4 +1,4 @@
-const icons = {energy: "fa-lightbulb-o", food: "fa-shopping-cart", transportation: "fa-bicycle", waste: "fa-recycle", water: "fa-tint"};
+var icons = {energy: "fa-lightbulb-o", food: "fa-shopping-cart", transportation: "fa-bicycle", waste: "fa-recycle", water: "fa-tint"};
 
 var MainPage = React.createClass({
 	getInitialState: function() {
