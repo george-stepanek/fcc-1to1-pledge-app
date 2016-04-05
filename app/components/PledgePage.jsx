@@ -34,11 +34,13 @@ var PledgePage = React.createClass({
 		return {user: user, pledge: pledge};
 	},
 	componentDidMount: function() {
-		// Preload the images for the next/prev pledges, for better performance when the user clicks through to them
-		var next = new Image();
-		next.src = this.state.pledge.imageUrl;
-		var prev = new Image();
-		prev.src = this.state.pledge.imageUrl;
+		$(window).on("load", function() {
+			// Preload the images for the next/prev pledges, for better performance when the user clicks through to them
+			var next = new Image();
+			next.src = this.state.pledge.imageUrl;
+			var prev = new Image();
+			prev.src = this.state.pledge.imageUrl;
+		});
 	},
 	impactPerWeek: function() {
 		return (
