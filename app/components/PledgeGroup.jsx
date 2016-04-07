@@ -1,10 +1,11 @@
 var PledgeGroup = React.createClass({
 	componentDidMount: function() {
+		var self = this;
 		$(window).on("load", function() {
 			// Preload the main images for the pledges in this group, for better performance when the user clicks through to them
-			for(var i = 0; i < this.props.pledges.length; i++) {
+			for(var i = 0; i < self.props.pledges.length; i++) {
 				var img = new Image();
-				img.src = this.props.pledges[i].imageUrl;
+				img.src = self.props.pledges[i].imageUrl;
 			}
 		});
 	},

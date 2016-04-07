@@ -115,4 +115,9 @@ module.exports = function (app, passport) {
 
 	app.route('/api/user/:id')
 		.get(pledgeHandler.getUser);
+	
+	// If the route doesn't exist just redirect to the main page
+	app.get('*', function (req, res) {
+		res.redirect('/');
+	});
 };
