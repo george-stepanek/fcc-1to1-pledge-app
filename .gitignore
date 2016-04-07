@@ -1,4 +1,5 @@
 node_modules/
+public/scripts/
 .eslintrc
 .env
-public/scripts/
+npm-debug.log
