@@ -446,7 +446,7 @@
 	"no": 38,
 	"title": "Wash On Cold",
 	"category": "energy",
-	"explanation": "Use cold water to wash your clothing and save 80% on energy costs.",
+	"explanation": "Use cold water to wash your clothing and save 80% on energy costs!",
 	"impactPerWeek": 7.6,
 	"impactUnits": "pounds of carbon emissions",
 	"source": "Carbon Rally",
