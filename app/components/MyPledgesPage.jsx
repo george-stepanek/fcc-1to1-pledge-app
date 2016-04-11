@@ -33,22 +33,22 @@ var MyPledgesPage = React.createClass({
 			return (
 				<div className="body-text">
 					<br/>
-					<a className="share-btn" target="_blank" title="Share it"
+					<a className="share-btn" target="_blank" title="Share this"
 							href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href}>
 						<i className="fa fa-facebook"></i>
 					</a>
-					<a className="share-btn" target="_blank" title="Tweet it"
+					<a className="share-btn" target="_blank" title="Tweet this"
 							href={"https://twitter.com/intent/tweet?tw_p=tweetbutton&url=" + window.location.href + "&text=" + myPledges}>
 						<i className="fa fa-twitter"></i>
 					</a>
 					&nbsp;
-					<a className="share-btn" target="_blank" title="Pin it"
+					<a className="share-btn" target="_blank" title="Pin this"
 							href={"https://www.pinterest.com/pin/create/button/?url=" + window.location.href + "&description=" + myPledges +	
 								"&media=" + window.location.origin + "/public/images/think-before-you-plant-thumb.jpg"}>
 						<i className="fa fa-pinterest"></i>
 					</a>
 					&nbsp;
-					<a className="share-btn" target="_blank" title="Share it"
+					<a className="share-btn" target="_blank" title="Share this"
 							href={"https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + window.location.href + "&title=" + myPledges}>
 						<i className="fa fa-tumblr"></i>
 					</a>
