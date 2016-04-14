@@ -38,6 +38,7 @@ var PageRouter = React.createClass({
 					window.history.pushState('', 'New URL: ' + href, href);
 				}
 				this.setState({url: href});
+				window.scrollTo(0, 0);
 				this.updateLinks();
 			}
 			else {
