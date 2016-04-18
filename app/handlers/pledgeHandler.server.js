@@ -152,6 +152,9 @@ function PledgeHandler () {
 			if (err) { throw err; }
 			if(result) {
 				result.isCurrentUser = (req.user != undefined) && (req.user.id == req.params.id);
+				
+				// make sure email addresses can't be accessed in the front end
+				result.emailAddress = null;
 			}
 			res.json(result);
 		});
