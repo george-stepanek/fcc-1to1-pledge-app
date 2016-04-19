@@ -20,12 +20,15 @@ function PledgeHandler () {
 		}
 	}
 	
-	function populateCalculatedProperties (req, results) {
+	function populateCalculatedProperties (req, results, id) {
 		var output = results.sort(pledgeSort);
 		
 		for(var i = 0; i < output.length; i++) {
 			var impact = 0;
 			if(output[i].users) {
+				// if we're passed an id then we're calculating impacts for the mypledges page of another user
+				var idUser = output[i].users.filter(function(user) {return user.id == id;});
+
 				for(var j = 0; j < output[i].users.length; j++) {
 					var millisecsDiff = new Date().getTime() - output[i].users[j].when.getTime();
 					impact += millisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
@@ -34,16 +37,17 @@ function PledgeHandler () {
 				
 				// drop all other user data from the pledge, for reasons of security and scalability
 				if(req.user) {
-					var meIfPledged = output[i].users.filter(function(user) {return user.id == req.user.id;});
-					if(meIfPledged.length > 0) {
-						var myMillisecsDiff = new Date().getTime() - meIfPledged[0].when.getTime();
-						var myImpact = myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
-						output[i].myImpactSoFar = (Math.round(myImpact * 10) / 10).toFixed(1).replace(".0", "");
-					}
-					output[i].users = meIfPledged;
+					output[i].users = output[i].users.filter(function(user) {return user.id == req.user.id;});
 				}
 				else {
 					output[i].users = [];
+				}
+
+				var userToShow = id ? idUser : output[i].users;
+				if(userToShow.length > 0) {
+					var myMillisecsDiff = new Date().getTime() - userToShow[0].when.getTime();
+					var myImpact = myMillisecsDiff * output[i].impactPerWeek / (1000 * 60 * 60 * 24 * 7);
+					output[i].myImpactSoFar = (Math.round(myImpact * 10) / 10).toFixed(1).replace(".0", "");
 				}
 			}
 			output[i].impactSoFar = (Math.round(impact * 10) / 10).toFixed(1).replace(".0", ""); // round to 1dp or 0dp as appropriate
@@ -71,7 +75,7 @@ function PledgeHandler () {
 	this.getMyPledges = function (req, res) {
 		Pledges.find({ 'users.id': req.params.id }).exec(function (err, results) { 
 			if (err) { throw err; } 
-			res.json(populateCalculatedProperties(req, results));
+			res.json(populateCalculatedProperties(req, results, req.params.id));
 		});
 	};
 	
