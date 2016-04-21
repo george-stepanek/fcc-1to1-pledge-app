@@ -28,7 +28,7 @@ var SearchPage = React.createClass({
 				return ( <PledgeGroup pledges={this.state.pledges} /> );
 			}
 			else {
-				return ( <div className="none-found">No pledges found for this search term: "{this.searchTerm}"</div> );
+				return ( <div className="body-text">No pledges found for this search term: "{this.searchTerm}"</div> );
 			}
 		}
 		else {
