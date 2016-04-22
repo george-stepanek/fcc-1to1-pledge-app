@@ -8,17 +8,17 @@ var PledgeHandler = require(path + '/app/handlers/pledgeHandler.server.js');
 
 module.exports = function (app, passport) {
 
-	app.route(['/', '/search', '/category/:category'])
+	app.route(['/', '/search', '/category/:category', '/404'])
 		.get(function (req, res) {
 			var baseUrl = req.protocol + "://" + req.get("host");
 			res.render(path + '/public/index.ejs', {
-					"url": baseUrl + req.originalUrl,
-					"title": "1to1 Movement Pledges",
-					"description": "Pledges to help the planet, and progress so far.",
-					"image": baseUrl + defaultImage,
-					"width": 600,
-					"height": 400
-				});
+				"url": baseUrl + req.originalUrl,
+				"title": "1to1 Movement Pledges",
+				"description": "Pledges to help the planet, and progress so far.",
+				"image": baseUrl + defaultImage,
+				"width": 600,
+				"height": 400
+			});
 		});
 
 	app.route('/pledge/:title')
@@ -26,7 +26,7 @@ module.exports = function (app, passport) {
 			var baseUrl = req.protocol + "://" + req.get("host");
 			request(baseUrl + '/api/pledge/' + req.params.title, function (error, response, body) {
 				if(body.length) {
-				var js = JSON.parse(body);
+					var js = JSON.parse(body);
 					res.render(path + '/public/index.ejs', {
 						"url": baseUrl + req.originalUrl,
 						"title": js.title,
@@ -37,7 +37,7 @@ module.exports = function (app, passport) {
 					});
 				}
 				else {
-					res.redirect('/');
+					res.redirect('/404');
 				}
 			});
 		});
@@ -58,7 +58,7 @@ module.exports = function (app, passport) {
 					});
 				}
 				else {
-					res.redirect('/');
+					res.redirect('/404');
 				}
 			});
 		});
@@ -116,8 +116,8 @@ module.exports = function (app, passport) {
 	app.route('/api/user/:id')
 		.get(pledgeHandler.getUser);
 	
-	// If the route doesn't exist just redirect to the main page
+	// If the route doesn't exist just show the main page with a 404 message
 	app.get('*', function (req, res) {
-		res.redirect('/');
+		res.redirect('/404');
 	});
 };

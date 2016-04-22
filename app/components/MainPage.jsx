@@ -25,6 +25,21 @@ var MainPage = React.createClass({
 		document.title = "1to1 Movement Pledges";
 		return {categories: categories};
 	},
+	notFoundAlert: function() {
+		if(window.location.pathname != "/") {
+			return (
+				<div className="alert alert-info alert-dismissible fade in" role="alert">
+					<button type="button" className="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					Sorry, that page doesn't exist.
+				</div>
+			);
+		}
+		else {
+			return "";
+		}
+	},
 	render: function() {
 		if(this.state) {
 			var categories = this.state.categories.map(function(category) {
@@ -48,6 +63,7 @@ var MainPage = React.createClass({
 			return (
 				<div>
 					<div className="body-text">
+						{this.notFoundAlert()}
 						The 1to1Movement exists to inspire and simplify sustainability in daily life.
 						We’re helping each person find their own way to save the world.
 						<br/>

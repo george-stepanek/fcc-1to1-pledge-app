@@ -91,7 +91,7 @@ var Header = React.createClass({
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
 					{spacer}
 					<span className="category-icon" title={category.charAt(0).toUpperCase() + category.substr(1) + " Pledges"}>
-						<i className={"fa " + icons[category]}></i>
+						<i className={"fa " + (icons[category] ? icons[category] : "fa-question-circle-o")}></i>
 					</span>
 				</span>
 			);

@@ -29,6 +29,9 @@ body {
   color: grey;
   max-width: 1000px;
 }
+.alert {
+  font-size: 0.75em;
+}
 a {
   cursor: pointer;
   text-decoration: none !important;
