@@ -11,24 +11,13 @@ var Header = React.createClass({
 				if(e.keyCode == 13) { $('#search-submit').click(); }
 			});
 		});
-
-		var user;
-		$.ajax({
-			url: window.location.origin + '/api/:id',
-			cache : false,
-			async: false,
-			type: "get",
-			success: function(result) {
-				user = result;
-			}
-		});
-		return {user: user};
+		return {};
 	},
 	userMenu: function() {
-		if (this.state.user) {
+		if (this.props.user) {
 			return (
 				<ul className="nav navbar-nav navbar-right">
-					<li><a href={"/mypledges/" + this.state.user.id}>MY PLEDGES</a></li>
+					<li><a href={"/mypledges/" + this.props.user.id}>MY PLEDGES</a></li>
 					<li><a href="/logout">SIGN OUT</a></li>
 				</ul>
 			);

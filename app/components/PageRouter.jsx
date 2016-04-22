@@ -12,7 +12,18 @@ var PageRouter = React.createClass({
 			// Override the default behaviour for clicking the back & forwards browser buttons, because it's a single page app
 			window.onpopstate = function(e) { self.setState({url: location.pathname}); };
 		});
-		return {url: window.location.href};
+
+		var user;
+		$.ajax({
+			url: window.location.origin + '/api/:id',
+			cache : false,
+			async: false,
+			type: "get",
+			success: function(result) {
+				user = result;
+			}
+		});
+		return {url: window.location.href, user: user};
 	},
 	updateLinks: function() {
 		var self = this;
@@ -49,7 +60,7 @@ var PageRouter = React.createClass({
 	},
 	getPage: function() {
 		if(this.state.url.indexOf('/pledge/') > -1) {
-			return ( <PledgePage key={this.state.url} /> );
+			return ( <PledgePage key={this.state.url} user={this.state.user} /> );
 		}
 		else if(this.state.url.indexOf('/category/') > -1) {
 			return ( <CategoryPage key={this.state.url} /> );
@@ -68,7 +79,7 @@ var PageRouter = React.createClass({
 	render: function() {
 		return ( 
 			<div>
-				<Header url={this.state.url} updateUrl={this.updateUrl} />
+				<Header url={this.state.url} user={this.state.user} updateUrl={this.updateUrl} />
 				{this.getPage()}
 			</div>
 		);

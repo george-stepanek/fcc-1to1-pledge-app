@@ -1,14 +1,4 @@
 var PledgeGroup = React.createClass({
-	componentDidMount: function() {
-		var self = this;
-		$(window).on("load", function() {
-			// Preload the main images for the pledges in this group, for better performance when the user clicks through to them
-			for(var i = 0; i < self.props.pledges.length; i++) {
-				var img = new Image();
-				img.src = self.props.pledges[i].imageUrl;
-			}
-		});
-	},
 	render: function() {
 		var pledges = this.props.pledges.map(function(pledge) {
 			// Bootstrap will arrange it in rows of four, three, two or one depending on how wide the display is

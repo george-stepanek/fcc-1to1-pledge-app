@@ -4,23 +4,13 @@ var PledgePage = React.createClass({
 		var path = window.location.pathname;
 		this.pledgeId = path.slice(path.lastIndexOf("/") + 1);
 
-		var user, pledge, self = this;
-		$.ajax({
-			url: window.location.origin + '/api/:id',
-			cache : false,
-			async: false,
-			type: "get",
-			success: function(result) {
-				user = result;
-			}
-		});
-
 		// If the user was prompted to login when pledging, then we should automatically add them to that pledge
-		if($.cookie("pledgeToAdd") == this.pledgeId && user) {
+		if($.cookie("pledgeToAdd") == this.pledgeId && this.props.user) {
 			this.addMe("afterLogin");
 		}
 		$.removeCookie("pledgeToAdd", { path: '/' });
 
+		var pledge, self = this;
 		$.ajax({
 			url: window.location.origin + '/api/pledge/' + self.pledgeId,
 			cache : false,
@@ -31,16 +21,14 @@ var PledgePage = React.createClass({
 			}
 		});
 		document.title = pledge.title + " - 1to1 Movement Pledges";
-		return {user: user, pledge: pledge};
+		return {pledge: pledge};
 	},
 	componentDidMount: function() {
 		var self = this;
 		$(window).on("load", function() {
-			// Preload the images for the next/prev pledges, for better performance when the user clicks through to them
+			// Preload the image for the next pledge, for better performance when the user clicks through to it
 			var next = new Image();
 			next.src = self.state.pledge.imageUrl;
-			var prev = new Image();
-			prev.src = self.state.pledge.imageUrl;
 		});
 	},
 	impactPerWeek: function() {
@@ -59,8 +47,8 @@ var PledgePage = React.createClass({
 		var self = this;
 
 		// Only show the social sharing buttons if the pledge has pledged users, and one of those users is me
-		var thisUserOnly = function(user) {return user.id == self.state.user.id;};
-		if (this.state.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
+		var thisUserOnly = function(user) {return user.id == self.props.user.id;};
+		if (this.props.user && this.state.pledge.users && this.state.pledge.users.filter(thisUserOnly).length > 0) {
 			var myPledge = "I've pledged to save " + this.state.pledge.impactPerWeek + " " + this.state.pledge.impactUnits + " per week.";
 			return (
 				<div className="pledge-col col-md-6">
@@ -114,7 +102,7 @@ var PledgePage = React.createClass({
 		}
 	},
 	addMe: function(afterLogin) {
-		if(afterLogin != "afterLogin" && !this.state.user) {
+		if(afterLogin != "afterLogin" && !this.props.user) {
 			$.cookie("pledgeToAdd", this.pledgeId, { path: '/' });
 			$('#login-modal').modal('show');
 			return;
