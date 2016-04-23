@@ -48,28 +48,17 @@ var Header = React.createClass({
 	},
 	breadcrumbs: function() {
 		var spacer = <span className="category-icon"><i className="fa fa-angle-right"></i></span>;
-		if(this.props.url.indexOf('/pledge/') > -1) {
-			var pledge, pledgeId = this.props.url.slice(this.props.url.lastIndexOf("/") + 1);
-			$.ajax({
-				url: window.location.origin + '/api/pledge/' + pledgeId,
-				cache : false,
-				async: false,
-				type: "get",
-				success: function(result) {
-					pledge = result;
-				}
-			});
-
+		if(this.props.url.indexOf('/pledge/') > -1 && this.props.pledge) {
 			return (
 				<span className="breadcrumbs">
 					<a className="category-icon" href="/" title="Home"><i className="fa fa-home"></i></a>
 					{spacer}
-					<a className="category-icon" href={"/category/" + pledge.category} 
-							title={pledge.category.charAt(0).toUpperCase() + pledge.category.substr(1) + " Pledges"}>
-						<i className={"fa " + icons[pledge.category]}></i>
+					<a className="category-icon" href={"/category/" + this.props.pledge.category} 
+							title={this.props.pledge.category.charAt(0).toUpperCase() + this.props.pledge.category.substr(1) + " Pledges"}>
+						<i className={"fa " + icons[this.props.pledge.category]}></i>
 					</a>
 					{spacer}
-					<span className="category-icon" title={pledge.title}><i className="fa fa-thumbs-o-up"></i></span>
+					<span className="category-icon" title={this.props.pledge.title}><i className="fa fa-thumbs-o-up"></i></span>
 				</span>
 			);
 		}

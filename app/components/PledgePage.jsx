@@ -20,6 +20,9 @@ var PledgePage = React.createClass({
 				pledge = result;
 			}
 		});
+
+		// Populate the header breadcrumbs with details from this pledge
+		this.props.setPledge(pledge);
 		document.title = pledge.title + " - 1to1 Movement Pledges";
 		return {pledge: pledge};
 	},

@@ -58,9 +58,12 @@ var PageRouter = React.createClass({
 			}
 		}
 	},
+	setPledge: function(pledge) {
+		this.setState({pledge: pledge});	
+	},
 	getPage: function() {
 		if(this.state.url.indexOf('/pledge/') > -1) {
-			return ( <PledgePage key={this.state.url} user={this.state.user} /> );
+			return ( <PledgePage key={this.state.url} user={this.state.user} setPledge={this.setPledge} /> );
 		}
 		else if(this.state.url.indexOf('/category/') > -1) {
 			return ( <CategoryPage key={this.state.url} /> );
@@ -79,7 +82,7 @@ var PageRouter = React.createClass({
 	render: function() {
 		return ( 
 			<div>
-				<Header url={this.state.url} user={this.state.user} updateUrl={this.updateUrl} />
+				<Header url={this.state.url} user={this.state.user} pledge={this.state.pledge} updateUrl={this.updateUrl} />
 				{this.getPage()}
 			</div>
 		);
