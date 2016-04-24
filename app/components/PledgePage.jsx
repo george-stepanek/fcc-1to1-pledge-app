@@ -115,7 +115,6 @@ var PledgePage = React.createClass({
 		var self = this;
 		$.ajax({
 			url: "/api/my/pledge/" + self.pledgeId,
-			async: false,
 			type: "post",
 			success: function(result) {
 				self.refreshPledge();
