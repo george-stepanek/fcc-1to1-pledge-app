@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node server.js",
     "postinstall": "gulp postinstall",
-    "nodemon": "nodemon --ignore public --ignore app/components --ignore app/seed --ignore test --ignore gulpfile.js"
+    "nodemon": "nodemon --ignore public --ignore app/components --ignore app/seed --ignore test --ignore gulpfile.js",
+    "all": "start /b mongod --smallfiles & start /b gulp & npm run nodemon"
   },
   "author": "Herman Fassett & George Stepanek",
   "dependencies": {
