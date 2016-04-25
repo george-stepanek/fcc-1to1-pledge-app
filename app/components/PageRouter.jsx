@@ -69,7 +69,7 @@ var PageRouter = React.createClass({
 			return ( <CategoryPage key={this.state.url} /> );
 		} 
 		else if(this.state.url.indexOf('/mypledges') > -1) {
-			return ( <MyPledgesPage key={this.state.url} /> );
+			return ( <MyPledgesPage user={this.state.user} key={this.state.url} /> );
 		} 
 		else if(this.state.url.indexOf('/search') > -1) {
 			return ( <SearchPage key={this.state.url} updateUrl={this.updateUrl} /> );

@@ -5,15 +5,21 @@ var MyPledgesPage = React.createClass({
 		this.userId = path.slice(path.lastIndexOf("/") + 1);
 		
 		var user, pledges;
-		$.ajax({
-			url: window.location.origin + '/api/user/' + this.userId,
-			cache : false,
-			async: false,
-			type: "get",
-			success: function(result) {
-				user = result;
-			}
-		});
+		if(this.props.user && this.props.user.id == this.userId) {
+			user = this.props.user;
+			user.isCurrentUser = true;
+		}
+		else {
+			$.ajax({
+				url: window.location.origin + '/api/user/' + this.userId,
+				cache : false,
+				async: false,
+				type: "get",
+				success: function(result) {
+					user = result;
+				}
+			});
+		}
 		
 		$.ajax({
 			url: window.location.origin + '/api/my/pledges/' + this.userId,
