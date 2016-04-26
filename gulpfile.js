@@ -26,7 +26,7 @@ gulp.task('seed', function() {
   var counter = 0, pledgesData = require('./app/seed/pledges.json');
   pledgesData.forEach(function(pledgeData) {
 		Pledge.findOne({ 'no': pledgeData.no }, function (err, pledge) {
-    if (err) { throw err; }
+      if (err) { throw err; }
 			if (!pledge) {
         pledge = new Pledge();
         pledge.no = pledgeData.no;
