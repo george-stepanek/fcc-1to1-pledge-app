@@ -36,7 +36,7 @@ Pledge Json File FAQ
 * The 'impactPerWeek" must be a number and *not* in quotes.
 * The "impactUnits" should be plural, e.g. "pounds of carbon".
 * Every pledge should include a "source" name and "citation" url for people to click through and learn more about the issue.
-* Images should be 1800 pixels wide by 1200 high, and saved as medium/low quality (ideally no more than 300 kB). For best quality, images should start larger and be scaled down and/or cropped to size. (Scaling up small images will look very rough.)
-* Thumbnails should be 600 pixels wide by 400 high, and also saved as medium/low quality (ideally no more than 75 kB). We found that https://tinypng.com/ could reduce the size of the thumbnail files by about 50%.
+* Images should be in JEPG format, 1800 pixels wide by 1200 high, and saved as medium/low quality (ideally no more than 300 kB). For best quality, images should start larger and be scaled down and/or cropped to size. (Scaling up small images will look very rough.)
+* Thumbnails should be in JEPG format, 600 pixels wide by 400 high, and also saved as medium/low quality (ideally no more than 75 kB). We found that https://tinypng.com/ could reduce the size of the thumbnail files by about 50%.
 * It is recommended that images and thumbnails should be named as per the pledge title (to make them easy to find).
 * Upload the image and thumbnail files to https://github.com/george-stepanek/fcc-1to1-pledge-app/upload/master/public/images, and commit changes (as above).
