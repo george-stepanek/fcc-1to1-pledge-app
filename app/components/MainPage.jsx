@@ -64,7 +64,8 @@ var MainPage = React.createClass({
 				<div>
 					<div className="body-text">
 						{this.notFoundAlert()}
-						The 1to1Movement exists to inspire and simplify sustainability in daily life.
+						The <a href='http://1to1movement.org/' title="1to1 Movement's main website">1to1Movement </a> 
+						exists to inspire and simplify sustainability in daily life.
 						We’re helping each person find their own way to save the world.
 						<br/>
 						You can make a real difference by pledging specific actions to help the environment.

@@ -29,6 +29,9 @@ body {
   color: grey;
   max-width: 1000px;
 }
+.body-text a {
+  color: rgba(35,155,169,0.9) !important;
+}
 .alert {
   font-size: 0.75em;
 }
